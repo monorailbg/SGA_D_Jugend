@@ -1,4 +1,7 @@
 ---
+import { withBase } from '../lib/base';
+import { phases } from '../data/phases';
+
 const links: [string, string][] = [
   ['#ueberblick', 'Überblick'],
   ['#faden', 'Roter Faden'],
@@ -9,8 +12,26 @@ const links: [string, string][] = [
   ['#legende', 'Legende'],
 ];
 ---
-<nav class="bar">
+<nav class="bar" id="site-nav">
   <div class="inner">
-    {links.map(([href, label]) => <a href={href}>{label}</a>)}
+    <a href="#top" class="nav-logo" aria-label="Nach oben">
+      <img src={withBase('/images/misc/logo.png')} alt="SGA" class="nav-logo-img" width="28" height="28" />
+    </a>
+    <div class="nav-links" id="nav-links">
+      {links.map(([href, label]) => <a href={href} data-nav-link={href}>{label}</a>)}
+    </div>
+    <label class="nav-phase">
+      <span class="nav-phase-label">Phase</span>
+      <select id="phase-select" aria-label="Zu Saisonphase springen">
+        <option value="">–</option>
+        {phases.map((p) => <option value={p.id}>{p.id} · {p.name}</option>)}
+      </select>
+    </label>
   </div>
 </nav>
+<script>
+  import { initScrollSpy } from '../scripts/scroll-spy';
+  import { initPhaseSelect } from '../scripts/phase-select';
+  initScrollSpy();
+  initPhaseSelect();
+</script>

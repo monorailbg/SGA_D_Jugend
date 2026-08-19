@@ -1,12 +1,28 @@
 ---
 import { exercises } from '../data/exercises';
+import { categories } from '../data/categories';
 import ExerciseCard from './ExerciseCard.astro';
+import Accordion from './Accordion.astro';
 
-const sorted = [...exercises].sort((a, b) => a.code.localeCompare(b.code));
+const grouped = categories.map((category) => ({
+  category,
+  items: exercises.filter((e) => e.category === category.code).sort((a, b) => a.code.localeCompare(b.code)),
+}));
 ---
 <section id="katalog">
   <div class="seclabel">06</div>
   <h2>Übungskatalog</h2>
-  <p class="lead">Alle {sorted.length} Übungen im Detail, alphabetisch nach Code sortiert.</p>
-  {sorted.map((exercise) => <ExerciseCard exercise={exercise} />)}
+  <p class="lead">Alle {exercises.length} Übungen, gruppiert nach Kategorie. Kategorie antippen zum Auf-/Zuklappen.</p>
+  {grouped.map(({ category, items }, i) => (
+    <div class="card katalog-group">
+      <Accordion
+        title={`${category.code} · ${category.name}`}
+        badge={String(items.length)}
+        accent={category.color}
+        open={i === 0}
+      >
+        {items.map((exercise) => <ExerciseCard exercise={exercise} />)}
+      </Accordion>
+    </div>
+  ))}
 </section>

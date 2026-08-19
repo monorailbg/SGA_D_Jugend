@@ -11,7 +11,7 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import { TABS, useAppContext, type TabId } from '@/lib/AppContext';
-import { phases } from '@/lib/data/phases';
+import PhaseDropdown from './PhaseDropdown';
 
 const ICONS: Record<TabId, LucideIcon> = {
   ueberblick: LayoutGrid,
@@ -24,7 +24,7 @@ const ICONS: Record<TabId, LucideIcon> = {
 };
 
 export default function TabNav() {
-  const { activeTab, setActiveTab, requestPhase } = useAppContext();
+  const { activeTab, setActiveTab } = useAppContext();
 
   return (
     <nav className="sticky top-0 z-30 border-b border-line/70 bg-white/70 shadow-[0_1px_0_rgba(255,255,255,.6)_inset,0_4px_16px_rgba(10,25,41,.05)] backdrop-blur-xl backdrop-saturate-150 max-[600px]:fixed max-[600px]:inset-x-0 max-[600px]:bottom-0 max-[600px]:top-auto max-[600px]:w-full max-[600px]:border-b-0 max-[600px]:border-t">
@@ -66,25 +66,7 @@ export default function TabNav() {
           })}
         </div>
 
-        <label className="hidden shrink-0 items-center gap-1.5 text-xs font-bold text-muted min-[600px]:flex">
-          Phase
-          <select
-            aria-label="Zu Saisonphase springen"
-            className="cursor-pointer rounded-full border border-line bg-soft px-2.5 py-1.5 font-ui text-[12.5px] font-bold text-ink"
-            value=""
-            onChange={(e) => {
-              if (e.target.value) requestPhase(Number(e.target.value));
-              e.target.value = '';
-            }}
-          >
-            <option value="">–</option>
-            {phases.map((p) => (
-              <option key={p.id} value={p.id}>
-                {p.id} · {p.name}
-              </option>
-            ))}
-          </select>
-        </label>
+        <PhaseDropdown />
       </div>
     </nav>
   );

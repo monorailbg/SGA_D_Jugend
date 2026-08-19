@@ -1,0 +1,16 @@
+---
+const links: [string, string][] = [
+  ['#ueberblick', 'Überblick'],
+  ['#faden', 'Roter Faden'],
+  ['#wochen', 'Wochenplan'],
+  ['#finder', 'Finder'],
+  ['#camp', 'Trainingslager'],
+  ['#katalog', 'Katalog'],
+  ['#legende', 'Legende'],
+];
+---
+<nav class="bar">
+  <div class="inner">
+    {links.map(([href, label]) => <a href={href}>{label}</a>)}
+  </div>
+</nav>

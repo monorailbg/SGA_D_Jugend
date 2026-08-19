@@ -1,0 +1,40 @@
+---
+import { slots } from '../data/slots';
+import { exercisesForSlot } from '../data/exercises';
+import { categoryByCode } from '../data/categories';
+import { withBase } from '../lib/base';
+
+const slotEmoji: Record<number, string> = { 1: '🔥', 2: '🎯', 3: '🎯', 4: '⚽' };
+---
+<section id="finder">
+  <div class="seclabel">04</div>
+  <h2>Übungs-Finder nach Slot</h2>
+  <p class="lead">
+    Alle Übungen sortiert nach Trainingsslot – zum schnellen Finden einer Alternative.
+    Klick auf eine Kachel springt zur Detailansicht.
+  </p>
+  {slots.map((slot) => (
+    <div class="finder-slot">
+      <div class="finder-slot-head" style={`border-color:${slot.color};color:${slot.color}`}>
+        {slotEmoji[slot.number]} Slot {slot.number} · {slot.name}
+      </div>
+      <div class="finder-grid">
+        {exercisesForSlot(slot.number).map((ex) => {
+          const category = categoryByCode[ex.category];
+          return (
+            <a href={`#ex-${ex.code}`} class="finder-tile">
+              <div class="ft-thumb">
+                {ex.image && <img src={withBase(ex.image)} alt={ex.title} loading="lazy" />}
+              </div>
+              <div class="ft-body">
+                <span class="ft-chip" style={`background:${category.color}`}>{category.code}</span>
+                <span class="ft-id">{ex.code}</span>
+                <span class="ft-title">{ex.title}</span>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  ))}
+</section>

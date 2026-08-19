@@ -1,0 +1,12 @@
+---
+import { exercises } from '../data/exercises';
+import ExerciseCard from './ExerciseCard.astro';
+
+const sorted = [...exercises].sort((a, b) => a.code.localeCompare(b.code));
+---
+<section id="katalog">
+  <div class="seclabel">06</div>
+  <h2>Übungskatalog</h2>
+  <p class="lead">Alle {sorted.length} Übungen im Detail, alphabetisch nach Code sortiert.</p>
+  {sorted.map((exercise) => <ExerciseCard exercise={exercise} />)}
+</section>

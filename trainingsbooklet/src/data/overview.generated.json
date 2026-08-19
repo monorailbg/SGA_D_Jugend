@@ -1,0 +1,27 @@
+[
+  {
+    "phase_html": "<td class=\"ph\"><span class=\"phnum\" style=\"background:#1f9d57\">1</span><b>Vorbereitung Hinrunde</b></td>",
+    "zeitraum_html": "<td>10.08. – 28.08.2026 (3 Wochen + Trainingslager 22./23.08.)</td>",
+    "schwerpunkt_html": "<td><ul class=\"bul\"><li>Wieder reinkommen, Spaß, Gruppe finden</li><li>Ballbeherrschung &amp; Dribbling auffrischen</li><li>1-gegen-1-Grundlagen</li><li>erste Bausteine Spielaufbau im 2-1-2-1</li><li>Athletik über Spielformen (kein Rundenlaufen)</li></ul></td>"
+  },
+  {
+    "phase_html": "<td class=\"ph\"><span class=\"phnum\" style=\"background:#2f6fd0\">2</span><b>Hinrunde</b></td>",
+    "zeitraum_html": "<td>29.08. – ca. 06.12.2026 (~14 Wochen, Spieltage)</td>",
+    "schwerpunkt_html": "<td><ul class=\"bul\"><li>Passen &amp; Freilaufen</li><li>„nicht abschalten“ nach Ballabgabe (Anbieten/Nachrücken)</li><li>Spielaufbau 2-1-2-1 festigen</li><li>Umschalten über Spielformen</li><li>Zweikampf weiter schulen</li></ul></td>"
+  },
+  {
+    "phase_html": "<td class=\"ph\"><span class=\"phnum\" style=\"background:#4a90c2\">3</span><b>Halle / Winter</b></td>",
+    "zeitraum_html": "<td>ca. 07.12.2026 – 13.03.2027 (Hallentraining 15 × 10 m, einzelne Turniere)</td>",
+    "schwerpunkt_html": "<td><ul class=\"bul\"><li>Technik-Hochphase (enger Raum, viele Kontakte)</li><li>1-gegen-1 / 2-gegen-2</li><li>Ballbeherrschung &amp; schwacher Fuß</li><li>Turniervorbereitung (Hallenformat)</li></ul></td>"
+  },
+  {
+    "phase_html": "<td class=\"ph\"><span class=\"phnum\" style=\"background:#e8821e\">4</span><b>Vorbereitung Rückrunde</b></td>",
+    "zeitraum_html": "<td>ca. 09.03. – 20.03.2027 (~2 Wochen, Übergang Halle → Platz)</td>",
+    "schwerpunkt_html": "<td><ul class=\"bul\"><li>zurück auf den Platz / größerer Raum</li><li>Tempo &amp; Athletik spielnah aufbauen</li><li>Aufbau &amp; Abläufe auffrischen</li><li>kurzes Testspiel</li></ul></td>"
+  },
+  {
+    "phase_html": "<td class=\"ph\"><span class=\"phnum\" style=\"background:#d23b3b\">5</span><b>Rückrunde</b></td>",
+    "zeitraum_html": "<td>ca. 21.03. – 20.06.2027 (~13 Wochen, Spieltage)</td>",
+    "schwerpunkt_html": "<td><ul class=\"bul\"><li>Tempo, Zweikampf, Torabschluss</li><li>Kombination &amp; Spielaufbau anwenden</li><li>Selbstvertrauen über Erfolgserlebnisse</li><li>alles spielnah</li></ul></td>"
+  }
+]

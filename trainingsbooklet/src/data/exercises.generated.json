@@ -1,0 +1,972 @@
+[
+  {
+    "code": "A-01",
+    "title": "Spielaufbau 2-1-2-1 – von hinten heraus",
+    "color": "#3f51b5",
+    "tags": [
+      "Slot 2 · Spielform/Schwerpunkt",
+      "Slot 3 · Schwerpunkt",
+      "A · Spielaufbau & Positionsspiel"
+    ],
+    "image": "/images/exercises/A-01.svg",
+    "blocks": {
+      "Ziel": "<p>Aufbau aus der Abwehr durch den 6er oder Außen; Ball sicher aus Pressing herausspielen.</p>",
+      "Material": "<p>1 Ball, Hütchen für Zielzone, Leibchen (3 Farben)</p>",
+      "Aufbau": "<p>TW + 2 IV + 6er + 2 Außen (blau) gegen 3 rote Pressingspieler. Zielzone (ca. 5×5m) im Angriffsbereich statt Anspielpartner.</p>",
+      "Ablauf": "<ol class=\"num\"><li>TW spielt IV an. IV sucht 6er oder Außen.</li>\n<li>6er nimmt entgegen, dreht auf oder legt zurück.</li>\n<li>Außen nimmt Ball mit und bringt ihn in die Zielzone.</li>\n<li>Rote Pressingspieler versuchen Ball im Mittelfeld zu gewinnen.</li>\n<li>Bei Ballgewinn: Neustarten; bei erfolgreichem Zielzonen-Pass: Punkt für Blau.</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li>Erweiterung: TW + 6 vs 4 Pressingspieler – zweite Angriffslinie hinzufügen</li>\n<li>Sonderregel: Nur 2 Kontakte für IV und 6er</li>\n<li>Variation: rote Spieler gewinnen Ball → Konter auf das Jugendtor</li>\n<li>Variation: TW passt auf 6er, der nach außen verteilt</li>\n<li>Variation: IV oder 6er passen zurück auf TW, der den Ball lang schlägt auf LA, RA oder 9</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>IV: Anbieten vor dem TW-Abstoß, Körper öffnen</li>\n<li>6er: Blickrichtung anpassen, Schulterblick vor dem Empfang</li>\n<li>Außen: Breit stehen, sofort anspielbereit bei Ballgewinn 6er</li>\n<li>Kein langer Ball ohne Anspielstation – sauber aufbauen</li></ul>",
+      "Plan B (≥ 5 Kinder)": "<p>Ab 5 Kindern: 3 gegen 2 mit TW, Zielzone bleibt.</p>"
+    }
+  },
+  {
+    "code": "A-02",
+    "title": "Eröffnung mit langem Ball",
+    "color": "#3f51b5",
+    "tags": [
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "A · Spielaufbau & Positionsspiel"
+    ],
+    "image": "/images/exercises/A-02.svg",
+    "blocks": {
+      "Ziel": "<p>Spieleröffnung vom TW über IV/6er mit anschließendem langen Ball in die Tiefe schulen.</p>",
+      "Material": "<p>Bälle, Leibchen, Jugendtor, halbes Spielfeld</p>",
+      "Aufbau": "<p>TW im Tor. IV und 6er vor dem Strafraum. RA, LA und 9 in vorderer Linie aufgestellt.</p>",
+      "Ablauf": "<ol class=\"num\">\n<li>TW passt auf IV oder 6er.</li>\n<li>IV/6er nimmt an, sichert kurz und spielt den Rückpass auf den TW.</li>\n<li>TW schlägt den Ball lang auf RA, LA oder 9 in die Tiefe.</li>\n<li>Annahme und Weiterverarbeitung (Abschluss oder nächste Aktion).</li>\n</ol>",
+      "Varianten": "<ul class=\"bul\">\n<li>TW spielt direkt auf 6er, der nach außen weiterverteilt.</li>\n<li>Gegner (passiv) auf RA/LA – Annahme unter leichtem Druck.</li>\n<li>Langer Ball muss mit einem Kontakt mitgenommen werden.</li>\n</ul>",
+      "Coaching-Punkte": "<ul class=\"bul\">\n<li>IV/6er: Anbieten vor dem Pass, Körper öffnen, sauberer Rückpass.</li>\n<li>TW: Timing des langen Balls – warten, bis RA/LA/9 startet.</li>\n<li>RA/LA/9: frühzeitig starten, Ball in Laufrichtung annehmen.</li>\n</ul>"
+    }
+  },
+  {
+    "code": "F-01",
+    "title": "Torschuss-Challenge",
+    "color": "#e91e63",
+    "tags": [
+      "Slot 2 · Spielform/Schwerpunkt",
+      "Slot 3 · Schwerpunkt",
+      "F · Torabschluss"
+    ],
+    "image": "/images/exercises/F-01.jpg",
+    "blocks": {
+      "Ziel": "<p>Torabschluss nach Dribbling unter leichtem Zeitdruck; TW aktiv eingebunden.</p>",
+      "Material": "<p>Bälle (je 1 pro Spieler), 2 Jugendtore, Hütchen für Schusszone</p>",
+      "Aufbau": "<p>5-Feld ca. 40×24m. Eines der Jugendtore einrücken → 2 Tore stehen sich ~30m gegenüber. In der Mitte eine Schusszone (10m tief) markieren. 2 Teams, je mit Ball neben ihrem Tor.</p>",
+      "Ablauf": "<ol class=\"num\"><li>1. Spieler Team Rot: stellt sich als TW ins Tor.</li>\n<li>2. Spieler Team Blau: dribbelt in Schusszone, schließt ab, sprintet zurück ins eigene Tor.</li>\n<li>TW Rot verlässt Tor, stellt sich hinten an.</li>\n<li>1. Spieler Blau (neben Tor) startet sofort nach Torschuss: dribbeln → schießen → TW werden.</li>\n<li>Wechsel: Schießen → TW → Anstellen. Wer zuerst 10 Tore? (3 min.)</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li>Nur schwacher Fuß beim Abschluss</li>\n<li>Abschluss aus dem Lauf ohne Stoppen</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>Abschluss in die ECKEN, nicht in die Mitte</li>\n<li>Bis zur Schusszone dribbeln, dann direkt abschließen</li>\n<li>TW: mutig raus – Winkel verkürzen</li></ul>",
+      "Plan B (≥ 5 Kinder)": "<p>Ab 5: beide Teams auf 1 Tor; TW-Wechsel nach 3 Schüssen.</p>"
+    }
+  },
+  {
+    "code": "F-02",
+    "title": "3 Angriffe – Dribbling, Abschluss, Umschalten",
+    "color": "#e91e63",
+    "tags": [
+      "Slot 2 · Spielform/Schwerpunkt",
+      "Slot 3 · Schwerpunkt",
+      "F · Torabschluss"
+    ],
+    "image": "/images/exercises/F-02.png",
+    "blocks": {
+      "Ziel": "<p>Dribbling durch Slalom + Torabschluss + sofortiges Gegenpressing; alle Kinder ständig aktiv.</p>",
+      "Material": "<p>Bälle, Jugendtor mit TW, 3×4 Stangen (Slalom), Leibchen</p>",
+      "Aufbau": "<p>3 Startpositionen 1 (links, ~15m), 2 (Mitte, ~18m), 3 (rechts, ~20m) vor dem Jugendtor. Je 4 Slalomstangen an der Startposition. Trios bilden, alle wechseln durch.</p>",
+      "Ablauf": "<ol class=\"num\"><li>1 dribbelt durch Slalom, schließt aufs Tor ab.</li>\n<li>Sofort nach Abschluss startet 2: Slalom + Abschluss. 1 schaltet um und verteidigt gegen 2.</li>\n<li>Nach 2-Abschluss startet 3: Slalom + Abschluss. 1 ist anspielbar für 3; 2 schaltet um und verteidigt gegen 3 und 1.</li>\n<li>Nach 3-Abschluss: nächstes Trio startet bei A. Alle wechseln Position (1→2→3→Anstellen).</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li>Passeinleitung: 1 erhält vor Slalom einen Pass vom Trainer</li>\n<li>3 darf 1 anspielen → Doppelpass vor Abschluss</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>Nach Abschluss sofort umschalten – Kopf hoch, Gegner beobachten</li>\n<li>Zielstrebig abschließen, nicht zu weit vortragen</li>\n<li>A: nach Verteidigung schnell zurückfinden</li></ul>",
+      "Plan B (≥ 5 Kinder)": "<p>Ab 5: nur 2 Startpositionen (A+B), Trio = A, B, TW.</p>"
+    }
+  },
+  {
+    "code": "F-03",
+    "title": "Sprint mit Ballmitnahme und Torschuss",
+    "color": "#e91e63",
+    "tags": [
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "F · Torabschluss"
+    ],
+    "image": "/images/exercises/F-03.jpg",
+    "blocks": {
+      "Ziel": "<p>Tempodribbling nach Zuspiel + Torabschluss aus dem Lauf; Anspieler als Druckvariante.</p>",
+      "Material": "<p>Bälle, Jugendtor mit TW, Hütchen (Starthütchen + Eckhütchen), Anspieler (Spieler oder Trainer)</p>",
+      "Aufbau": "<p>Feld vor dem Tor. Starthütchen am Mittelkreis (2 Seiten). 2 Anspieler an Starthütchen mit Bällen. Übrige Spieler an den Eckhütchen.</p>",
+      "Ablauf": "<ol class=\"num\"><li>Passempfänger sprintet um das diagonal entfernte Eckhütchen.</li>\n<li>Erhält Zuspiel vom Anspieler, nimmt mit in Richtung Tor.</li>\n<li>Umdribbeln des entfernten Hütchens auf anderer Seite, dann Torabschluss.</li>\n<li>Nächste Spieler starten von der anderen Seite. Positionen tauschen nach Runde.</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li>Passempfänger startet mit Sidesteps</li>\n<li>Direkter Abschluss ohne Hütchen umdribbeln (Tempo!)</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>Ersten Kontakt sofort in Richtung Tor mitnehmen</li>\n<li>Maximales Tempo – zielstrebig abschließen</li>\n<li>TW wechselt nach 4 Schüssen</li></ul>",
+      "Plan B (≥ 5 Kinder)": "<p>Anspieler = Trainer; 1 Seite statt 2.</p>"
+    }
+  },
+  {
+    "code": "F-04",
+    "title": "Doppelpass und Torschuss",
+    "color": "#e91e63",
+    "tags": [
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "F · Torabschluss"
+    ],
+    "image": "/images/exercises/F-04.jpg",
+    "blocks": {
+      "Ziel": "<p>Kombinationsspiel (Doppelpass) + Abschluss von der Strafraumgrenze; Spieler unter Zeitdruck präzise abschließen lassen.</p>",
+      "Material": "<p>Bälle, Jugendtor mit TW, 4 Eckhütchen (Strafraumlinie), 2 Anspieler</p>",
+      "Aufbau": "<p>Wie F-03. Spieler mit Bällen stellen sich an den Eckhütchen auf der Strafraumlinie auf. 2 Anspieler zentral bereit.</p>",
+      "Ablauf": "<ol class=\"num\"><li>Erster Ballbesitzer umdribbelt das diagonal gegenüberliegende Eckhütchen und passt zum Anspieler.</li>\n<li>Anschließend sprintet er um das andere Eckhütchen und erhält hier ein Zuspiel des Anspielers.</li>\n<li>Passempfänger nimmt sofort in Richtung Tor mit und schließt von der Strafraumgrenze ab.</li>\n<li>Danach stellt sich der Spieler auf der jeweils anderen Seite wieder an.</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li>Ballbesitzer führt vor dem Abschluss eine frei wählbare Finte aus.</li>\n<li>1 Verteidiger versucht den Torabschluss zu verhindern.</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>Ersten Kontakt sofort in Richtung Tor mitnehmen – kein Stoppen!</li>\n<li>Präzise und zielstrebig abschließen.</li>\n<li>Torhüter wechseln nach je 4 Aktionen.</li>\n<li>Anspieler regelmäßig wechseln.</li></ul>",
+      "Plan B (≥ 5 Kinder)": "<p>Ohne Verteidiger; Anspieler = Trainer.</p>"
+    }
+  },
+  {
+    "code": "F-05",
+    "title": "Ballkontrolle und Torschuss",
+    "color": "#e91e63",
+    "tags": [
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "F · Torabschluss",
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "F · Torabschluss",
+      "Slot 3 · Schwerpunkt",
+      "F · Torabschluss",
+      "Slot 1 · Erwärmung",
+      "K · Koordination & Athletik",
+      "Slot 2 · Spielform/Schwerpunkt",
+      "Slot 3 · Schwerpunkt",
+      "K · Koordination & Athletik",
+      "Slot 1 · Erwärmung",
+      "K · Koordination & Athletik",
+      "Slot 3 · Schwerpunkt",
+      "K · Koordination",
+      "Slot 1 · Erwärmung",
+      "K · Koordination & Athletik",
+      "Slot 1 · Erwärmung",
+      "K · Koordination",
+      "🏟 Halle",
+      "Slot 1 · Erwärmung",
+      "K · Koordination",
+      "🏟 Halle",
+      "Slot 1 · Erwärmung",
+      "K · Koordination",
+      "Slot 1 · Erwärmung",
+      "K · Koordination",
+      "Slot 1 · Erwärmung",
+      "Slot 2 · Spielform",
+      "P · Passen & Freilaufen",
+      "Slot 2 · Spielform/Schwerpunkt",
+      "Slot 3 · Schwerpunkt",
+      "P · Passen & Freilaufen",
+      "Slot 2 · Spielform/Schwerpunkt",
+      "Slot 3 · Schwerpunkt",
+      "P · Passen & Freilaufen",
+      "Slot 1 · Erwärmung",
+      "Slot 2 · Spielform/Schwerpunkt",
+      "P · Passen & Freilaufen",
+      "Slot 1 · Erwärmung",
+      "Slot 2 · Spielform",
+      "P · Passen",
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "P · Passen",
+      "🏟 Halle",
+      "Slot 2 · Spielform",
+      "P · Passen",
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "P · Passen",
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "P · Passen",
+      "Slot 2 · Spielform/Schwerpunkt",
+      "S · Spielformen & Umschalten",
+      "Slot 4 · Abschlussspiel",
+      "S · Spielformen & Umschalten",
+      "Slot 2 · Spielform/Schwerpunkt",
+      "Slot 4 · Abschlussspiel",
+      "S · Spielformen & Umschalten",
+      "Slot 2 · Spielform",
+      "Slot 4 · Abschlussspiel",
+      "S · Spielform",
+      "Slot 2 · Spielform",
+      "Slot 4 · Abschlussspiel",
+      "S · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "T · Technik & Ballbeherrschung",
+      "Slot 1 · Erwärmung",
+      "T · Technik & Ballbeherrschung",
+      "Slot 1 · Erwärmung",
+      "Slot 3 · Schwerpunkt",
+      "T · Technik",
+      "Slot 1 · Erwärmung",
+      "Slot 3 · Schwerpunkt",
+      "T · Technik",
+      "🏟 Halle",
+      "Slot 2 · Spielform/Schwerpunkt",
+      "Slot 3 · Schwerpunkt",
+      "Z · Zweikampf & 1-gegen-1",
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "Z · Zweikampf / Spiel",
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "Z · Zweikampf / Spiel",
+      "Slot 3 · Schwerpunkt",
+      "Z · Zweikampf / Spiel",
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "Z · Zweikampf / Spiel"
+    ],
+    "image": "/images/exercises/F-05.jpg",
+    "blocks": {
+      "Ziel": "<p>Zweikampfstärke und Dribblingdurchsetzung im 1v1 schulen.</p>",
+      "Material": "<p>2 Hütchentore, 1 Ball, Leibchen</p>",
+      "Aufbau": "<p>Zwei Hütchentore aufstellen. Spieler 1 startet mit Ball, Spieler 2 als Gegner gegenüber.</p>",
+      "Ablauf": "<ol class=\"num\">\n<li>Spieler 1 versucht mit Ball durch eines der beiden Hütchentore zu dribbeln.</li>\n<li>Spieler 2 versucht ihn daran zu hindern.</li>\n<li>Wenn Spieler 2 den Ball erobert, startet er einen Gegenangriff auf das andere Tor.</li>\n</ol>",
+      "Varianten": "<ul class=\"bul\">\n<li>Gegenangriff-Regel direkt ab Balleroberung: schnelles Umschalten trainieren.</li>\n<li>3 Hütchentore – mehr Entscheidungsoptionen für Spieler 1.</li>\n</ul>",
+      "Coaching-Punkte": "<ul class=\"bul\">\n<li>Blick heben – beide Tore im Blick behalten, Entscheidung spät treffen.</li>\n<li>Körpertäuschung einsetzen, um den Gegner zu binden.</li>\n<li>Verteidiger: Geduld, tief bleiben – nicht zu früh ins Bein gehen.</li>\n</ul>",
+      "Plan B (≥ 5 Kinder)": "<p>Bei wenig Spielern: 1 Parcours; B kann vom Trainer besetzt werden.</p>"
+    }
+  },
+  {
+    "code": "F-06",
+    "title": "Doppelpass + Verlagerung",
+    "color": "#e91e63",
+    "tags": [
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "F · Torabschluss",
+      "Slot 3 · Schwerpunkt",
+      "F · Torabschluss",
+      "Slot 1 · Erwärmung",
+      "K · Koordination & Athletik",
+      "Slot 2 · Spielform/Schwerpunkt",
+      "Slot 3 · Schwerpunkt",
+      "K · Koordination & Athletik",
+      "Slot 1 · Erwärmung",
+      "K · Koordination & Athletik",
+      "Slot 3 · Schwerpunkt",
+      "K · Koordination",
+      "Slot 1 · Erwärmung",
+      "K · Koordination & Athletik",
+      "Slot 1 · Erwärmung",
+      "K · Koordination",
+      "🏟 Halle",
+      "Slot 1 · Erwärmung",
+      "K · Koordination",
+      "🏟 Halle",
+      "Slot 1 · Erwärmung",
+      "K · Koordination",
+      "Slot 1 · Erwärmung",
+      "K · Koordination",
+      "Slot 1 · Erwärmung",
+      "Slot 2 · Spielform",
+      "P · Passen & Freilaufen",
+      "Slot 2 · Spielform/Schwerpunkt",
+      "Slot 3 · Schwerpunkt",
+      "P · Passen & Freilaufen",
+      "Slot 2 · Spielform/Schwerpunkt",
+      "Slot 3 · Schwerpunkt",
+      "P · Passen & Freilaufen",
+      "Slot 1 · Erwärmung",
+      "Slot 2 · Spielform/Schwerpunkt",
+      "P · Passen & Freilaufen",
+      "Slot 1 · Erwärmung",
+      "Slot 2 · Spielform",
+      "P · Passen",
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "P · Passen",
+      "🏟 Halle",
+      "Slot 2 · Spielform",
+      "P · Passen",
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "P · Passen",
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "P · Passen",
+      "Slot 2 · Spielform/Schwerpunkt",
+      "S · Spielformen & Umschalten",
+      "Slot 4 · Abschlussspiel",
+      "S · Spielformen & Umschalten",
+      "Slot 2 · Spielform/Schwerpunkt",
+      "Slot 4 · Abschlussspiel",
+      "S · Spielformen & Umschalten",
+      "Slot 2 · Spielform",
+      "Slot 4 · Abschlussspiel",
+      "S · Spielform",
+      "Slot 2 · Spielform",
+      "Slot 4 · Abschlussspiel",
+      "S · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "T · Technik & Ballbeherrschung",
+      "Slot 1 · Erwärmung",
+      "T · Technik & Ballbeherrschung",
+      "Slot 1 · Erwärmung",
+      "Slot 3 · Schwerpunkt",
+      "T · Technik",
+      "Slot 1 · Erwärmung",
+      "Slot 3 · Schwerpunkt",
+      "T · Technik",
+      "🏟 Halle",
+      "Slot 2 · Spielform/Schwerpunkt",
+      "Slot 3 · Schwerpunkt",
+      "Z · Zweikampf & 1-gegen-1",
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "Z · Zweikampf / Spiel",
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "Z · Zweikampf / Spiel",
+      "Slot 3 · Schwerpunkt",
+      "Z · Zweikampf / Spiel",
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "Z · Zweikampf / Spiel"
+    ],
+    "image": "/images/exercises/F-06.jpg",
+    "blocks": {
+      "Ziel": "<p>Zweikampfstärke und Dribblingdurchsetzung im 1v1 schulen.</p>",
+      "Material": "<p>2 Hütchentore, 1 Ball, Leibchen</p>",
+      "Aufbau": "<p>Zwei Hütchentore aufstellen. Spieler 1 startet mit Ball, Spieler 2 als Gegner gegenüber.</p>",
+      "Ablauf": "<ol class=\"num\">\n<li>Spieler 1 versucht mit Ball durch eines der beiden Hütchentore zu dribbeln.</li>\n<li>Spieler 2 versucht ihn daran zu hindern.</li>\n<li>Wenn Spieler 2 den Ball erobert, startet er einen Gegenangriff auf das andere Tor.</li>\n</ol>",
+      "Varianten": "<ul class=\"bul\">\n<li>Gegenangriff-Regel direkt ab Balleroberung: schnelles Umschalten trainieren.</li>\n<li>3 Hütchentore – mehr Entscheidungsoptionen für Spieler 1.</li>\n</ul>",
+      "Coaching-Punkte": "<ul class=\"bul\">\n<li>Blick heben – beide Tore im Blick behalten, Entscheidung spät treffen.</li>\n<li>Körpertäuschung einsetzen, um den Gegner zu binden.</li>\n<li>Verteidiger: Geduld, tief bleiben – nicht zu früh ins Bein gehen.</li>\n</ul>",
+      "Plan B (≥ 5 Kinder)": "<p>Bei wenig Spielern: 1 Parcours; B kann vom Trainer besetzt werden.</p>"
+    }
+  },
+  {
+    "code": "F-07",
+    "title": "Flügelspiel",
+    "color": "#e91e63",
+    "tags": [
+      "Slot 3 · Schwerpunkt",
+      "F · Torabschluss"
+    ],
+    "image": "/images/exercises/F-07.jpg",
+    "blocks": {
+      "Ziel": "<p>Kombinationsspiel über den Flügel mit Flanke und Torabschluss schulen.</p>",
+      "Material": "<p>Bälle, 3 Hütchen, Jugendtor, halbes Halbfeld</p>",
+      "Aufbau": "<p>Halbes Halbfeld mit Jugendtor. 3 Hütchen oder Stangen markieren Startpositionen A, B, C. Spieler auf Startpositionen verteilen. Mindestens 5 Feldspieler + TW für flüssigen Ablauf.</p>",
+      "Ablauf": "<ol class=\"num\">\n<li>A passt zu B und läuft nach vorn. B klatscht zu A.</li>\n<li>C läuft mit A los. A passt auf den Flügel zu C und läuft in den Strafraum.</li>\n<li>B läuft mit A ein und verteidigt.</li>\n<li>C flankt auf A. A schließt ab, B verteidigt.</li>\n<li>Rotation: A wird zu B, B zu C, C zu A.</li>\n</ol>",
+      "Varianten": "<ul class=\"bul\">\n<li>Angriff über den linken Flügel.</li>\n<li>Passspiel mit dem schwachen Fuß.</li>\n<li>B klatscht auf C, A hinterläuft C und geht selbst auf den Flügel. C schickt A und geht selbst in den Strafraum zum Abschluss.</li>\n<li>Statt Passtore Dribbeltore.</li>\n<li>Jeweils 1 weiterer Verteidiger und Angreifer warten im Strafraum.</li>\n</ul>",
+      "Coaching-Punkte": "<ul class=\"bul\">\n<li>Ballmitnahme in die richtige Richtung.</li>\n<li>Mit vollem Tempo: Flügellauf und Lauf in den Strafraum.</li>\n<li>Flanke scharf und flach reinbringen.</li>\n</ul>"
+    }
+  },
+  {
+    "code": "K-01",
+    "title": "Fangen mit Ball / Versteinern",
+    "color": "#e8821e",
+    "tags": [
+      "Slot 1 · Erwärmung",
+      "K · Koordination & Athletik"
+    ],
+    "image": "/images/exercises/K-01.jpg",
+    "blocks": {
+      "Ziel": "<p>Dribbeln in Tempo und engen Räumen; Reaktion + Ballkontrolle unter Druck.</p>",
+      "Material": "<p>1 Ball pro Kind, Hütchen (Feldbegrenzung 20×20m)</p>",
+      "Aufbau": "<p>Alle Kinder mit Ball im Feld. 2 Fänger ebenfalls mit Ball (anderes Leibchen). Feld ggf. verkleinern bei wenig Kindern.</p>",
+      "Ablauf": "<ol class=\"num\"><li>Alle Ballbesitzer dribbeln frei im Feld.</li>\n<li>Fänger dribbeln und versuchen, andere Spieler mit der freien Hand abzuschlagen.</li>\n<li>Wer abgeschlagen wird, löst 5 Sekunden Technikaufgabe (Sohlenzieher, Übersteiger) und kehrt zurück.</li>\n<li>Nach 2–3 Minuten neue Fänger bestimmen.</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li><b>1v1-Variante:</b> Blaue Ballspieler suchen sich roten Störspieler und gehen ins 1v1. Störspieler ohne Ball versucht Ball abzunehmen.</li>\n<li><b>Abschirm-Variante:</b> Blaue Ballspieler schirmen Ball mit Körpereinsatz vor Störspielern ab, versuchen sich zu lösen.</li>\n<li>Trainer spielt mit als Störspieler – motiviert Kinder</li>\n<li>Hindernisse (Hütchen) im Feld als Slalomzonen</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>Ball eng halten, aber Kopf hoch – Fänger beobachten</li>\n<li>Richtungswechsel, nicht geradeaus fliehen</li>\n<li>Schutz durch Körper: Ball zur Seite, Schulter zwischen Fänger und Ball</li></ul>",
+      "Plan B (≥ 5 Kinder)": "<p>Ab 5: nur 1 Fänger, kleineres Feld.</p>"
+    }
+  },
+  {
+    "code": "K-02",
+    "title": "Koordination & Antritt – Leiter + Reaktion",
+    "color": "#e8821e",
+    "tags": [
+      "Slot 2 · Spielform/Schwerpunkt",
+      "Slot 3 · Schwerpunkt",
+      "K · Koordination & Athletik"
+    ],
+    "image": "/images/exercises/K-02.svg",
+    "blocks": {
+      "Ziel": "<p>Fußballspezifische Koordination, Antrittsschnelligkeit, Reaktion auf Signal.</p>",
+      "Material": "<p>Koordinationsleiter, 2 Minitore (90° neben Leiterende), Hütchen</p>",
+      "Aufbau": "<p>Leiter auf dem Rasen. Am Ende der Leiter je 1 Minitor links (90°) und rechts (90°) aufstellen. Kinder starten reihum.</p>",
+      "Ablauf": "<ol class=\"num\"><li>Durch die Leiter (Einbeinig oder Beidbeinig, je nach Ansage).</li>\n<li>Trainer zeigt am Ende der Leiter Hand links oder rechts → Spieler dribbelt sofort in diese Richtung.</li>\n<li>Abschluss auf das entsprechende Minitor (90° versetzt, nicht geradeaus!).</li>\n<li>Sofort zurücklaufen, nächster startet.</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li>Trainer zeigt Zahl statt Richtung – Reaktionsschnelligkeit</li>\n<li>Rückwärts durch die Leiter</li>\n<li>Nach dem Tor sofort Dribbling durch 3 Hütchen</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>Schnelle Füße in der Leiter – aktiver Zehenaufsatz</li>\n<li>Nach letzter Sprosse sofort Kopf hoch – Richtungssignal lesen</li>\n<li>Minitore stehen 90° seitlich – keine geraden Abschlüsse!</li></ul>",
+      "Plan B (≥ 5 Kinder)": "<p>Ab 5: ohne Leiter, nur Richtungswechsel + Abschluss.</p>"
+    }
+  },
+  {
+    "code": "K-03",
+    "title": "Geschicklichkeit mit Partner",
+    "color": "#e8821e",
+    "tags": [
+      "Slot 1 · Erwärmung",
+      "K · Koordination & Athletik"
+    ],
+    "image": "/images/exercises/K-03.jpg",
+    "blocks": {
+      "Ziel": "<p>Koordination + Technik gemeinsam mit Partner; Timing und gegenseitiges Abstimmen.</p>",
+      "Material": "<p>Hütchengassen (5m Abstand, 8m breit), Bälle für je eine Seite</p>",
+      "Aufbau": "<p>Zwei parallele 8m-Hütchengassen nebeneinander aufstellen. Spieler stehen sich gegenüber, eine Seite hat Bälle.</p>",
+      "Ablauf": "<ol class=\"num\"><li>Spieler mit Ball: Dribbling durch Gasse zur Mitte, umdribbeln, weiter zur anderen Seite.</li>\n<li>Spieler ohne Ball: Laufen mit Lauf-ABC (Hopserlauf, Sidesteps, Skippings) zur anderen Seite.</li>\n<li>Nach einer Weile: Positionen tauschen.</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li>Zur Mitte laufen, gegenseitig umlaufen, zur anderen Seite</li>\n<li>Aufeinander zulaufen, in die Höhe springen, über Kopf abklatschen, weiterlaufen</li>\n<li>Zur Mitte dribbeln, Finte (Schere/Übersteiger), weiterdribbeln zur anderen Seite</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>Auf Körperspannung achten bei Lauf-ABC</li>\n<li>Timing: Partnerübungen aufeinander abstimmen</li>\n<li>Blick vom Ball lösen und Mitspieler beobachten</li></ul>",
+      "Plan B (≥ 5 Kinder)": "<p>Nur 1 Gasse, Partner wechseln nach 3 Durchgängen.</p>"
+    }
+  },
+  {
+    "code": "K-04",
+    "title": "Kopfsache: Verfolgungsjagd",
+    "color": "#e8821e",
+    "tags": [
+      "Slot 3 · Schwerpunkt",
+      "K · Koordination"
+    ],
+    "image": "/images/exercises/K-04.png",
+    "blocks": {
+      "Ziel": "<p>Aufmerksamkeit und Schnelligkeit im Wettbewerb schulen.</p>",
+      "Material": "<p>8 Stangen oder Hütchen, Feld ca. 30 × 20 m</p>",
+      "Aufbau": "<p>Startlinie (1) und Ziellinie (2) für Team Rot und Blau markieren (ca. 15 m Abstand), Abstand in der Mitte ca. 3 m. Spieler stehen sich als Pärchen gegenüber und warten auf Ansage vom Trainer.</p>",
+      "Ablauf": "<ol class=\"num\"><li>Trainer ruft ein Kommando, z. B. „Blau!\" → Team Blau sprintet zur Ziellinie, Team Rot versucht zu fangen.</li><li>Nach dem Durchlauf sofort wieder auf Startposition.</li><li>Abgefangene Spieler erhalten einen Punkt für das fangende Team.</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li>Kommandos variieren: „Blau\" heißt, dass Rot flieht und Blau fängt.</li><li>Zahlen statt Farben: Team gerade und ungerade – Kombination mit Rechenaufgaben.</li><li>Start im Sitzen oder Liegen.</li><li>Mit Ball am Fuß.</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>Sehr intensiv – auf ausreichende Pausen achten.</li><li>Spieler gleicher Geschwindigkeit als Pärchen einteilen.</li></ul>"
+    }
+  },
+  {
+    "code": "K-05",
+    "title": "Passkreuz – Diagonalpässe",
+    "color": "#e8821e",
+    "tags": [
+      "Slot 1 · Erwärmung",
+      "K · Koordination & Athletik"
+    ],
+    "image": "/images/exercises/K-05.svg",
+    "blocks": {
+      "Ziel": "<p>Passsicherheit und -schärfe, erster Kontakt in Passrichtung, Konzentration; schwacher Fuß als Dauerthema.</p>",
+      "Material": "<p>Bälle (2), Hütchen (4 Ecken), 8+ Spieler</p>",
+      "Aufbau": "<p>Quadrat 15×15m markieren. Spieler stellen sich an allen 4 Ecken (A, B, C, D) auf. 2 Bälle (A+B haben je 1).</p>",
+      "Ablauf": "<ol class=\"num\"><li>A (oben links) passt diagonal zu C (unten rechts). Kurz darauf passt B (oben rechts) diagonal zu D (unten links).</li>\n<li>Passgeber laufen sofort ihrer Diagonale nach – A nach unten rechts, B nach unten links.</li>\n<li>Empfänger (C, D) nehmen den Ball in Passrichtung mit und starten von ihrer neuen Ecke.</li>\n<li>Achtung: A und B kreuzen sich in der Mitte – Konzentration und Timing!</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li><b>Variante 1 – Schwacher Fuß:</b> Gesamter Durchgang nur mit dem schwachen Fuß.</li>\n<li><b>Variante 2 – 4 Bälle + Übersteiger:</b> A, B, C, D haben je 1 Ball. A+C starten gleichzeitig, dribbeln diagonal zur Mitte, machen dort einen Übersteiger, passen dann zum jeweils anderen. Kurz danach B+D dasselbe.</li>\n<li><b>Variante 3 – Beckenbauer-Trick:</b> Wie Variante 2, aber statt Übersteiger: Beckenbauer-Trick (Schussfinte – Schussbein schwingt an den Ball heran, wird im letzten Moment abgezogen, Ball mit dem anderen Fuß in die neue Richtung mitnehmen).</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>Passschärfe: Ball flach und genau auf den Fuß</li>\n<li>Erster Kontakt in Passrichtung mitnehmen – nicht stoppen</li>\n<li>Blick heben BEVOR der Ball kommt – kreuzenden Spieler in der Mitte sehen</li></ul>",
+      "Plan B (≥ 5 Kinder)": "<p>Bei 6 Kindern: 2 Ecken besetzt + 2 Spieler als Zwischenstation.</p>"
+    }
+  },
+  {
+    "code": "K-06",
+    "title": "Feuer-Wasser-Sturm",
+    "color": "#e8821e",
+    "tags": [
+      "Slot 1 · Erwärmung",
+      "K · Koordination",
+      "🏟 Halle"
+    ],
+    "image": "/images/exercises/K-06.svg",
+    "blocks": {
+      "Ziel": "<p>Reaktionsvermögen, Wahrnehmung und Handlungsschnelligkeit auf ein Kommando hin schulen.</p>",
+      "Material": "<p>6–8 Hütchen oder Stangen (3 Zonen markieren), Bälle (1 pro Spieler), Feld ca. 20 × 20 m</p>",
+      "Aufbau": "<p>Spielfeld in 3 Zonen einteilen: links = Feuer (rote Hütchen), rechts = Wasser (blaue Hütchen), Mitte = freie Spielzone. Optional: Sturm-Zone in der Mitte markieren. Alle Spieler dribbeln frei in der Mitte.</p>",
+      "Ablauf": "<ol class=\"num\"><li>Spieler dribbeln frei durch das Feld.</li><li>Trainer ruft „Feuer!\" → alle sprinten mit Ball zur Feuer-Zone (links).</li><li>Trainer ruft „Wasser!\" → alle sprinten mit Ball zur Wasser-Zone (rechts).</li><li>Trainer ruft „Sturm!\" → alle stoppen den Ball sofort und setzen sich darauf (oder: legen sich hin).</li><li>Wer als Letzter ankommt oder falsch reagiert, scheidet aus oder macht eine Kurzaufgabe (z. B. 5 Liegestütze).</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li>Zusätzliche Kommandos: „Blitz!\" = Ball hochwerfen und fangen; „Donner!\" = Ball stoppen und um ihn herum sprinten.</li><li>Ohne Ball: reines Reaktionsspiel mit Sprintkommandos.</li><li>Tempo steigern: Trainer gibt Kommandos immer schneller.</li><li>Teamvariante: Team, das zuerst alle Spieler in der richtigen Zone hat, bekommt einen Punkt.</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>Sofortige Reaktion – nicht abwarten, bis andere loslaufen.</li><li>Ball beim Sprint unter Kontrolle halten (kurze Ballführung).</li><li>Augen auf den Trainer gerichtet halten.</li></ul>"
+    }
+  },
+  {
+    "code": "K-07",
+    "title": "Zombieball",
+    "color": "#e8821e",
+    "tags": [
+      "Slot 1 · Erwärmung",
+      "K · Koordination",
+      "🏟 Halle"
+    ],
+    "image": "/images/exercises/K-07.svg",
+    "blocks": {
+      "Ziel": "<p>Ballbehauptung, Dribbling unter Druck und räumliches Bewusstsein in einem motivierenden Spielformat trainieren.</p>",
+      "Material": "<p>1 Ball pro Feldspieler (minus 1–2 Zombies), Hütchen (Feldbegrenzung), Feld ca. 15 × 20 m (Halle)</p>",
+      "Aufbau": "<p>Alle Spieler stehen im abgesteckten Feld. 1–2 Spieler starten als Zombies (ohne Ball). Alle anderen haben je einen Ball.</p>",
+      "Ablauf": "<ol class=\"num\">\n<li>Auf Signal dribbeln alle Baller frei im Feld.</li>\n<li>Die Zombies versuchen, den Ballern den Ball aus dem Feld zu schießen oder wegzutreten.</li>\n<li>Wessen Ball das Feld verlässt, wird zum Zombie und hilft beim Fangen.</li>\n<li>Der letzte Spieler mit Ball gewinnt die Runde.</li>\n<li>Neue Runde: Gewinner darf die Zombies für die nächste Runde bestimmen.</li>\n</ol>",
+      "Varianten": "<ul class=\"bul\">\n<li>Zombies starten zu zweit (schnelleres Spiel).</li>\n<li>Baller dürfen einen abgeschossenen Ball zurückholen, wenn sie ihn innerhalb von 5 Sek. wieder ins Feld bringen.</li>\n<li>Kleineres Feld → mehr Druck, höhere Intensität.</li>\n<li>Zombies dürfen nur mit dem schwachen Fuß schießen.</li>\n</ul>",
+      "Coaching-Punkte": "<ul class=\"bul\">\n<li>Ball eng am Fuß halten – kein weites Vordribbeln.</li>\n<li>Kopf heben: Wo sind die Zombies, wo ist Raum?</li>\n<li>Körper zwischen Ball und Zombie stellen (Schutzhaltung).</li>\n</ul>"
+    }
+  },
+  {
+    "code": "K-08",
+    "title": "Die Insel",
+    "color": "#e8821e",
+    "tags": [
+      "Slot 1 · Erwärmung",
+      "K · Koordination"
+    ],
+    "image": "/images/exercises/K-08.jpg",
+    "blocks": {
+      "Ziel": "<p>Dribbling und Reaktion auf Signal verbessern.</p>",
+      "Material": "<p>1 Ball pro Spieler, Hütchen als Inseln</p>",
+      "Aufbau": "<p>Hütchen als „Inseln\" im Viereck verteilen – eine Insel weniger als Spieler (wie Reise nach Jerusalem).</p>",
+      "Ablauf": "<ol class=\"num\">\n<li>Alle Spieler dribbeln mit Ball um das Viereck.</li>\n<li>Auf ein Zeichen des Trainers dribbeln alle Spieler so schnell wie möglich auf eine der rettenden Inseln.</li>\n<li>Wer keine Insel erreicht, scheidet aus – eine Insel wird entfernt.</li>\n<li>Weiter bis ein Sieger übrig bleibt.</li>\n</ol>",
+      "Varianten": "<ul class=\"bul\">\n<li>Verschiedene Dribblingtechniken vorgeben (Innen-, Außenseite, Sohle).</li>\n<li>Schwacher Fuß.</li>\n<li>Größeres Viereck für mehr Laufweg.</li>\n</ul>",
+      "Coaching-Punkte": "<ul class=\"bul\">\n<li>Ball nah am Fuß halten – auch beim Tempo.</li>\n<li>Kopf hoch – Überblick behalten, nicht nur auf den Ball schauen.</li>\n<li>Schnelles Reagieren auf das Signal.</li>\n</ul>"
+    }
+  },
+  {
+    "code": "K-09",
+    "title": "Dribbeln mit Anspieler",
+    "color": "#e8821e",
+    "tags": [
+      "Slot 1 · Erwärmung",
+      "K · Koordination"
+    ],
+    "image": "/images/exercises/K-09.svg",
+    "blocks": {
+      "Ziel": "<p>Dribbeln in engen Räumen mit Überblick kombinieren – gelegentlich Doppelpass mit Anspieler außen spielen.</p>",
+      "Material": "<p>1 Ball pro Innenspieler, Hütchen für Feldgrenzen</p>",
+      "Aufbau": "<p>Quadrat oder Rechteck markieren (z. B. 20×20 m). 3–4 Spieler stehen ohne Ball außen am Feldrand (Anspieler, A). Restliche Spieler dribbeln mit Ball im Innenfeld.</p>",
+      "Ablauf": "<ol class=\"num\">\n<li>Innenspieler dribbeln frei im Feld und weichen einander aus.</li>\n<li>Wann immer ein Innenspieler möchte, spielt er einen Pass zu einem freien Anspieler außen.</li>\n<li>Der Anspieler gibt den Ball sofort zurück (Doppelpass / Klatsch).</li>\n<li>Der Innenspieler nimmt den Ball mit und dribbelt weiter.</li>\n<li>Nach 2–3 Minuten: Innenspieler und Anspieler tauschen die Positionen.</li>\n</ol>",
+      "Varianten": "<ul class=\"bul\">\n<li>Anspieler darf den Ball nicht direkt zurückspielen – erst kurz dribbeln, dann zurück.</li>\n<li>Innenspieler muss nach dem Doppelpass sofort den nächsten Anspieler anlaufen.</li>\n<li>Schwacher Fuß: alle Pässe nur mit dem schwachen Fuß.</li>\n<li>Auf Signal wechseln alle Innenspieler gleichzeitig die Positionen mit den Anspielern.</li>\n<li>Mit Störspieler (Trainer): Der Trainer bewegt sich im Innenfeld und versucht, die Innenspieler vom Ball zu trennen – Spieler müssen ausweichen und den Ball schützen.</li>\n<li>Auf Pfiff: alle Spieler führen sofort eine Finte mit Richtungswechsel aus oder jonglieren kurz den Ball.</li>\n</ul>",
+      "Coaching-Punkte": "<ul class=\"bul\">\n<li>Kopf hoch – Mitspieler und freie Anspieler im Blick behalten.</li>\n<li>Ball nah am Fuß halten, auch bei Richtungswechseln.</li>\n<li>Pässe scharf und präzise; Ballmitnahme in den freien Raum.</li>\n</ul>"
+    }
+  },
+  {
+    "code": "P-01",
+    "title": "Passen & Anbieten – „spielen und gehen\"",
+    "color": "#2f6fd0",
+    "tags": [
+      "Slot 1 · Erwärmung",
+      "Slot 2 · Spielform",
+      "P · Passen & Freilaufen"
+    ],
+    "image": "/images/exercises/P-01.png",
+    "blocks": {
+      "Ziel": "<p>Passen und sofortiges Freilaufen nach Ballabgabe; kein „Abschalten nach dem Pass\".</p>",
+      "Material": "<p>Bälle, Hütchen (25×25m), Leibchen, optional Leibchen für Gruppen</p>",
+      "Aufbau": "<p>4–5 Spieler im Quadrat. Einer dribbelt frei, die anderen stehen an Hütchen. Trainer erklärt Grundregel: Pass → sofort Platz wechseln.</p>",
+      "Ablauf": "<ol class=\"num\"><li>Spieler A passt zu Spieler B und läuft sofort zu dessen Position.</li>\n<li>B nimmt mit, passt zu C und läuft zu C's Position.</li>\n<li>Kein Stillstehen nach dem Pass – immer in Bewegung!</li>\n<li>Nach 3 Min: Tempo erhöhen, 2 Bälle gleichzeitig.</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li><b>Variante 1 – Klatsch:</b> 1 auf 2, 2 klatscht auf 1, 1 auf 3, 3 klatscht auf 2, 2 auf 4 usw.</li>\n<li><b>Variante 2 – Klatsch + Lauf:</b> 1 auf 2, 2 klatscht auf 1, 1 auf 2 in den Lauf, 2 auf 3, 3 klatscht auf 2, 2 auf 3 in den Lauf usw.</li>\n<li><b>Sonderregel:</b> Nur 1 Kontakt nach Ballklatsch</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>Nach dem Pass sofort los – nicht warten bis Ball ankommt</li>\n<li>Blick vor dem Empfang heben – wohin passt der Nächste?</li>\n<li>Kommunikation: \"Hier!\" rufen und Handzeichen geben</li></ul>",
+      "Plan B (≥ 5 Kinder)": "<p>Ab 5: Dreieck statt Quadrat; 1 Ball.</p>"
+    }
+  },
+  {
+    "code": "P-02",
+    "title": "Dreh-Klatsch-Felder",
+    "color": "#2f6fd0",
+    "tags": [
+      "Slot 2 · Spielform/Schwerpunkt",
+      "Slot 3 · Schwerpunkt",
+      "P · Passen & Freilaufen"
+    ],
+    "image": "/images/exercises/P-02.jpg",
+    "blocks": {
+      "Ziel": "<p>Dreh- und Klatsch-Entscheidung situativ treffen; Blickkontakt, Orientierung, Timing und Kommunikation.</p>",
+      "Material": "<p>(abhängig von Spieleranzahl) pro 2 Spieler 1 Quadrat (2×2 m), Bälle, Leibchen</p>",
+      "Aufbau": "<p>Im halben Spielfeld pro 2 Spieler 1 Quadrat markieren. Je 1 Spieler besetzt ein Quadrat. Übrige Spieler dribbeln frei mit Ball.</p>",
+      "Ablauf": "<ol class=\"num\"><li><b>Phase 1 – Dreh:</b> Freie Ballbesitzer suchen BLICKKONTAKT zu Quadratspieler, passen. Passempfänger DREHT auf, nimmt über Quadratlinie mit, dribbelt weiter. Passgeber besetzt das Quadrat.</li>\n<li><b>Phase 2 – Klatsch:</b> Ballbesitzer zeigt durch Handzeichen auf welche Seite er KLATSCH möchte. Quadratspieler läuft zur gezeigten Seite los und KLATSCHT den Doppelpass.</li>\n<li><b>Phase 3 – Entscheidung:</b> Ballbesitzer entscheidet selbst: DREH oder KLATSCH. Quadratspieler reagiert auf Körpersprache und Kommando.</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li>Nur schwacher Fuß beim Annehmen</li>\n<li>Quadrat verkleinern auf 1×1m (höhere Genauigkeit nötig)</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>BLICKKONTAKT erzwingen – erst schauen, dann passen</li>\n<li>Kommando VOR dem Pass (nicht danach): \"Dreh!\" oder \"Klatsch!\"</li>\n<li>LANGSAM aufbauen – Kinder brauchen Zeit sich an die Entscheidungsform zu gewöhnen</li></ul>",
+      "Plan B (≥ 5 Kinder)": "<p>Ab 6 Kindern gut spielbar; bei 5 nur 3 Quadrate.</p>"
+    }
+  },
+  {
+    "code": "P-03",
+    "title": "Passen und Annehmen – Hexagon",
+    "color": "#2f6fd0",
+    "tags": [
+      "Slot 2 · Spielform/Schwerpunkt",
+      "Slot 3 · Schwerpunkt",
+      "P · Passen & Freilaufen"
+    ],
+    "image": "/images/exercises/P-03.jpg",
+    "blocks": {
+      "Ziel": "<p>Passsicherheit + erster Kontakt in Spielrichtung in einer komplexen Passstruktur.</p>",
+      "Material": "<p>Hütchensechseck (zwischen Mittelkreis und Strafraum), 2 Bälle</p>",
+      "Aufbau": "<p>Hütchensechseck markieren. Spieler an allen 6 Positionen aufstellen. A und D haben je 1 Ball.</p>",
+      "Ablauf": "<ol class=\"num\"><li>A und D passen gleichzeitig zu B bzw. E.</li>\n<li>B und E leiten weiter auf C bzw. F.</li>\n<li>C und F passen zu den nächsten Spielern bei D bzw. A.</li>\n<li>Alle Passgeber laufen ihrer Abspiellinie nach zur nächsten Position.</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li>Nur rechts/links passen</li>\n<li>Mit rechtem Fuß annehmen, mit linkem weiterspielen (und umgekehrt)</li>\n<li>3 Bälle gleichzeitig</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>Pässe flach und scharf auf den Fuß</li>\n<li>Als Passempfänger: sofort in neue Spielrichtung mitnehmen</li>\n<li>Nachlaufen – nicht stehen bleiben nach dem Pass</li></ul>",
+      "Plan B (≥ 5 Kinder)": "<p>Bei wenig Spielern: Quadrat statt Hexagon (4 Positionen), 1 Ball.</p>"
+    }
+  },
+  {
+    "code": "P-04",
+    "title": "3-gegen-1 Quadrat-Rondo",
+    "color": "#2f6fd0",
+    "tags": [
+      "Slot 1 · Erwärmung",
+      "Slot 2 · Spielform/Schwerpunkt",
+      "P · Passen & Freilaufen"
+    ],
+    "image": "/images/exercises/P-04.svg",
+    "blocks": {
+      "Ziel": "<p>Ball in 3-gegen-1 halten: Passqualität, sofortiges Freilaufen ins freie Feld, Kommunikation.</p>",
+      "Material": "<p>Hütchen (Quadrat 15×15m in 4 Felder → 4 Zonen nummeriert 1–4), Bälle, Leibchen</p>",
+      "Aufbau": "<p>Quadrat 15×15m abstecken, in 4 gleiche Felder nummerieren (1=links oben, 2=rechts oben, 3=rechts unten, 4=links unten). A startet in 1, B in 2, C in 3, Zone 4 ist zunächst leer.</p>",
+      "Ablauf": "<ol class=\"num\"><li>A (Zone 1) passt zu B (Zone 2). Gleichzeitig: C muss aus Zone 3 in Zone 4 (das leere Feld) laufen. A bleibt in 1.</li>\n<li>B (Zone 2) passt zu C (Zone 4). Gleichzeitig: A läuft von Zone 1 nach Zone 3 (das jetzt leere Feld).</li>\n<li>Regel: das freie Feld muss immer sofort vom Nicht-Ballbesitzer besetzt werden!</li>\n<li>Störspieler (rot) startet in Zone 2 oder 4 und versucht Ball zu gewinnen.</li>\n<li>Bei Ballgewinn durch Störer: Rollentausch.</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li>Nur 2 Kontakte pro Spieler</li>\n<li>Störspieler darf nur in 2 Feldern agieren (nicht alle 4)</li>\n<li>4 gegen 1: ein Spieler je Zone, Störer in der Mitte</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>Dreieck bilden – vor dem Pass schon den nächsten Schritt planen</li>\n<li>Kommunizieren: \"Hier!\" oder Zeichen geben</li>\n<li>Anbieten vor dem Empfang – nicht auf Ball warten</li></ul>",
+      "Plan B (≥ 5 Kinder)": "<p>Bei nur 5 Kindern: 2v1 auf kleinerem Feld (6×6m).</p>"
+    }
+  },
+  {
+    "code": "P-05",
+    "title": "Pass vs. Dribbling",
+    "color": "#2f6fd0",
+    "tags": [
+      "Slot 1 · Erwärmung",
+      "Slot 2 · Spielform",
+      "P · Passen"
+    ],
+    "image": "/images/exercises/P-05.png",
+    "blocks": {
+      "Ziel": "<p>Direktpässe und Dribbling unter Zeitdruck im Wettbewerb.</p>",
+      "Material": "<p>Bälle, 4 Stangen, 6 Flachmarker, Feld ca. 15 × 15 m</p>",
+      "Aufbau": "<p>Idealerweise 6 vs. 6 Spieler, geht aber auch mit weniger. Stangen als Quadrat 15 × 15 m aufbauen, Hütchen versetzt, Abstand ca. 10 m.</p>",
+      "Ablauf": "<ol class=\"num\"><li>Blaue Spieler dribbeln um das Stangen-Quadrat; kurz vor der zweiten Stange Laufpass auf den nächsten Spieler.</li><li>Rote Spieler passen inzwischen im Zickzack und zählen die Pässe mit.</li><li>Stopp, wenn alle blauen Spieler einmal um das Feld am Ausgangspunkt zurück sind. Wie viele Pässe hat Rot gespielt?</li><li>Danach Wechsel Team Blau und Rot.</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li>Dribbling mit schwachem Fuß, Richtungswechsel.</li><li>Pässe mit schwachem Fuß oder nur Direktpässe.</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>Dribbling: Ball kurz führen, Tempo anfeuern, Ballmitnahme in die richtige Richtung.</li><li>Passen: auf präzise und straffe Pässe achten.</li></ul>"
+    }
+  },
+  {
+    "code": "P-06",
+    "title": "Doppelpass zu viert",
+    "color": "#2f6fd0",
+    "tags": [
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "P · Passen",
+      "🏟 Halle"
+    ],
+    "image": "/images/exercises/P-06.jpg",
+    "blocks": {
+      "Ziel": "<p>Doppelpass, Freilaufen und Passgenauigkeit in Bewegung schulen.</p>",
+      "Material": "<p>4 Flachmarker, Spielfläche 8 × 8 m (Halle) bis 15 × 15 m (draußen)</p>",
+      "Aufbau": "<p>Grundstellung: 4 Spieler in Raute, je nach Platz 5–10 m auseinander. Flachmarker um Startpositionen markieren.</p>",
+      "Ablauf": "<ol class=\"num\">\n<li>A passt zu C, während B seitlich angreift.</li>\n<li>A hinterläuft B auf die Startposition von B; C spielt Doppelpass auf A. B läuft auf Startposition von A.</li>\n<li>A passt zu D.</li>\n<li>D klatscht zu A, während C seitlich angreift.</li>\n<li>D hinterläuft C auf die Startposition von C; A spielt Doppelpass auf D. C läuft auf Startposition von D.</li>\n<li>D passt zu B – danach von vorn.</li>\n</ol>",
+      "Varianten": "<ul class=\"bul\">\n<li>Nur Direktpässe (1 Kontakt) für alle Spieler.</li>\n<li>Mit schwachem Fuß passen.</li>\n</ul>",
+      "Coaching-Punkte": "<ul class=\"bul\">\n<li>Angreifer soll nur leicht stören, nicht Ball erobern.</li>\n<li>Pass flach und scharf auf den Fuß des Mitspielers.</li>\n<li>Kommunikation: „Hepp!\" beim Anfordern des Balls.</li>\n<li>Nach Pass sofort auf neue Position freilaufen.</li>\n<li>Direktpass einfordern, aber Ballannahme auch zulässig.</li>\n</ul>"
+    }
+  },
+  {
+    "code": "P-07",
+    "title": "Passtore",
+    "color": "#2f6fd0",
+    "tags": [
+      "Slot 2 · Spielform",
+      "P · Passen"
+    ],
+    "image": "/images/exercises/P-07.jpg",
+    "blocks": {
+      "Ziel": "<p>Passgenauigkeit und Laufwege im Spielform-Kontext trainieren; Tore nur durch gezielten Pass – keine Torschüsse.</p>",
+      "Material": "<p>Bälle, je Spieler 1 Hütchen (als Passtor), 4 Stangen (Feldbegrenzung), Leibchen</p>",
+      "Aufbau": "<p>Spielfeld je nach Spieleranzahl: 10 × 15 m (3 vs. 3) bis 15 × 20 m (4 vs. 4) abstecken. Im Feld 3 (bei 3 vs. 3) oder 4 (bei 4 vs. 4) Hütchentore frei verteilen. 2 Teams einteilen.</p>",
+      "Ablauf": "<ol class=\"num\"><li>Freies Spiel auf die Hütchentore. Tore zählen nur, wenn der Ball hindurch gepasst wird (kein Dribbling durch das Tor).</li><li>Ein Mitspieler muss auf der anderen Seite des Hütchentors stehen, um den Pass zu empfangen.</li><li>Nach Tor: Ball zurückspielen, sofort weiterspielen.</li><li>Bei vielen Spielern: 2 Parallelfelder einrichten.</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li>Pass nur mit schwachem Fuß.</li><li>Statt Passtore Dribbeltore (Dribbling durch das Hütchentor zählt als Tor).</li><li>Tore ab und zu versetzen (kürzere Pausen, höherer Überraschungseffekt).</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>Teams gleichstark besetzen.</li><li>Position und Laufwege als Anspieler finden – wann biete ich mich für einen Pass ans Tor an?</li><li>Dribbeln, um Tore zu öffnen – Pass im richtigen Moment.</li></ul>"
+    }
+  },
+  {
+    "code": "P-08",
+    "title": "Pass-Wettkampf",
+    "color": "#2f6fd0",
+    "tags": [
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "P · Passen"
+    ],
+    "image": "/images/exercises/P-08.jpg",
+    "blocks": {
+      "Ziel": "<p>Passspiel unter Wettkampfdruck und Entscheidungsschnelligkeit verbessern.</p>",
+      "Material": "<p>Hütchen in verschiedenen Farben, Bälle, 1 Minitor, Leibchen</p>",
+      "Aufbau": "<p>Mehrere farbige Hütchen werden auf dem Feld verteilt. Je ein Team steht in einer Reihe gegenüber dem Minitor.</p>",
+      "Ablauf": "<ol class=\"num\">\n<li>Der Trainer ruft eine Hütchenfarbe auf.</li>\n<li>Der erste Spieler jedes Teams umläuft das aufgerufene Hütchen.</li>\n<li>Nach dem Umlaufen erhält er ein Zuspiel vom nächsten Spieler seiner Reihe.</li>\n<li>Der Pass erfolgt erst, wenn der Spieler das Hütchen vollständig umlaufen hat.</li>\n<li>Der Passempfänger nimmt den Ball an, nimmt ihn mit und schließt auf das Minitor ab.</li>\n<li>Der Spieler, der zuerst trifft, erhält einen Punkt für sein Team.</li>\n<li>Welches Team hat zuerst 10 Punkte?</li>\n</ol>",
+      "Varianten": "<ul class=\"bul\">\n<li>Trainer ruft zwei Farben nacheinander – Spieler muss beide Hütchen umlaufen.</li>\n<li>Abschluss nur mit schwachem Fuß.</li>\n<li>Direktabnahme nach dem Zuspiel.</li>\n</ul>",
+      "Coaching-Punkte": "<ul class=\"bul\">\n<li>Zuspiel präzise und zum richtigen Zeitpunkt – nicht zu früh, nicht zu spät.</li>\n<li>Ballmitnahme in Torichtung beim ersten Kontakt.</li>\n<li>Schnell entscheiden und abschließen.</li>\n</ul>"
+    }
+  },
+  {
+    "code": "P-09",
+    "title": "Quer+Stichpass Gegnerdruck",
+    "color": "#2f6fd0",
+    "tags": [
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "P · Passen"
+    ],
+    "image": "/images/exercises/P-09.jpg",
+    "blocks": {
+      "Ziel": "<p>Quer- und Stichpass unter maximalem Gegnerdruck sauber spielen und mit Torabschluss abschließen.</p>",
+      "Material": "<p>Bälle, 4 Hütchen, Jugendtor, halbes Halbfeld</p>",
+      "Aufbau": "<p>Halbes Halbfeld mit Jugendtor. 4 Hütchen markieren Startpositionen A, B, C und V. Mindestens 5 Feldspieler + TW, 7 für flüssigen Ablauf. Abstand A–B und B–C ca. 7 m (länger für Anfänger).</p>",
+      "Ablauf": "<ol class=\"num\">\n<li>T1 passt zu A. V läuft mit vollem Tempo auf A an.</li>\n<li>A passt quer zu B. V läuft mit vollem Tempo auf B an.</li>\n<li>B spielt Stichpass auf C. C nimmt in offener Stellung an.</li>\n<li>V verfolgt C. C schließt aufs Tor ab.</li>\n<li>Rotation: B wird zu V, V wird zu C, C stellt sich hinten an.</li>\n<li>Danach spiegelverkehrt: T2 spielt auf B usw.</li>\n</ol>",
+      "Varianten": "<ul class=\"bul\">\n<li>A und B suchen selbstständig die Lösung: Querpass oder Stichpass direkt.</li>\n<li>Nur mit schwachem Fuß (anspruchsvoll).</li>\n</ul>",
+      "Coaching-Punkte": "<ul class=\"bul\">\n<li>V maximalen Druck auf Ballbesitzer und Torschützen.</li>\n<li>Pässe schnell und scharf spielen.</li>\n<li>C anspielbar sein, Ballmitnahme weg vom Gegner, hin zum Tor.</li>\n</ul>"
+    }
+  },
+  {
+    "code": "S-01",
+    "title": "2v2 Shot-Clock",
+    "color": "#1f9d57",
+    "tags": [
+      "Slot 2 · Spielform/Schwerpunkt",
+      "S · Spielformen & Umschalten"
+    ],
+    "image": "/images/exercises/S-01.jpg",
+    "blocks": {
+      "Ziel": "<p>Schnelles Umschalten Angriff ↔ Abwehr; Entscheidungstempo und Abschluss unter Zeitdruck – 2+TW gegen 2+TW.</p>",
+      "Material": "<p>1 Spielfeld (30×20m), 2 Jugendtore, Leibchen, Stoppuhr / Signal, mehrere Bälle</p>",
+      "Aufbau": "<p>1 Feld mit 2 Jugendtoren. Teams: 2+TW gegen 2+TW. Bei mehr als 12 Kindern: 2 Felder parallel aufbauen.</p>",
+      "Ablauf": "<ol class=\"num\"><li>Angreifendes Team hat 12 Sekunden für einen Abschluss – sonst wechselt Ballbesitz sofort.</li>\n<li>TW eröffnet durch kurzen Pass hinter der eigenen Linie.</li>\n<li>Nach Abschluss oder Ballgewinn: neuer Ball sofort rein, TW eröffnet wieder.</li>\n<li>Punkte: Tor = 1 Punkt. Abschluss im Zeitfenster ohne Tor = ½ Punkt (Lernvariante).</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li><b>Gold:</b> 8 Sek., Abschluss nach max. 1 Kontakt</li>\n<li><b>Bronze:</b> 15 Sek., beliebige Kontaktzahl</li>\n<li>3v3 ohne TW auf Minitore bei Gruppe &gt;12</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>Direkter Abschluss – nicht zu lange dribbeln!</li>\n<li>Stürmer: in die Lücke laufen, nicht auf Ball warten.</li>\n<li>TW: sofort aktiv nach Ballgewinn – schnell und präzise eröffnen.</li></ul>",
+      "Plan B (≥ 5 Kinder)": "<p>TW spielt für beide Teams; Punkte nur per Direktschuss.</p>"
+    }
+  },
+  {
+    "code": "S-02",
+    "title": "Abschlussspiel mit Sonderregel",
+    "color": "#1f9d57",
+    "tags": [
+      "Slot 4 · Abschlussspiel",
+      "S · Spielformen & Umschalten"
+    ],
+    "image": "/images/exercises/S-02.svg",
+    "blocks": {
+      "Ziel": "<p>Freies Spielen mit Provokationsregel; Spielintelligenz und Freude am Spiel.</p>",
+      "Material": "<p>Bälle, 2 Jugendtore, Leibchen</p>",
+      "Aufbau": "<p>Normales Halbfeld 6+1 vs 6+1 oder reduziert. Sonderregel je nach Wochen-Schwerpunkt.</p>",
+      "Ablauf": "<ol class=\"num\"><li>Freies Spiel mit einer Sonderregel (Auswahl unten).</li>\n<li>Trainer beobachtet und gibt minimalste Hinweise – Spiel fließen lassen.</li>\n<li>Wechsel: gleichmäßig, alle spielen.</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li>Nur Tore nach maximal 3 Pässen</li>\n<li>Jeder Spieler muss Ball berührt haben vor Tor</li>\n<li>\"Drehendes Angriffsrecht\": Angreifer bei Ballgewinn außen → anderes Team darf sofort kontern</li>\n<li>Torwart spielt mit auf (immer anspielbar = freier Mann)</li>\n<li><strong>Sofortiges Gegenpressing:</strong> Nach Ballverlust muss das Team innerhalb von 5 Sekunden den Ball zurückgewinnen – gelingt es, gibt es einen Bonuspunkt. So wird aktives Umschalten nach Ballverlust trainiert.</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>Spielen lassen – beobachten und notieren für Feedback</li>\n<li>Lob für Teamplay und Torabschluss</li></ul>",
+      "Plan B (≥ 5 Kinder)": "<p>Bei ≥5: 3v3 + TW auf verkleinertem Feld.</p>"
+    }
+  },
+  {
+    "code": "S-03",
+    "title": "Funino 3 gegen 3 (ohne Torwart)",
+    "color": "#1f9d57",
+    "tags": [
+      "Slot 2 · Spielform/Schwerpunkt",
+      "Slot 4 · Abschlussspiel",
+      "S · Spielformen & Umschalten"
+    ],
+    "image": "/images/exercises/S-03.svg",
+    "blocks": {
+      "Ziel": "<p>Maximale Spielzeit, viele Torchancen, Verantwortung für alle Positionen.</p>",
+      "Material": "<p>Bälle, 4 Minitore (2 Felder), Leibchen</p>",
+      "Aufbau": "<p>2 Felder mit je 4 Minitoren (je 1 pro Ecke). 3v3 ohne TW.</p>",
+      "Ablauf": "<ol class=\"num\"><li>3 gegen 3 auf 4 Minitore (je 2 Tore pro Team, vorne und hinten).</li>\n<li>Alle Spieler müssen verteidigen UND angreifen.</li>\n<li>Champions-League-Modus: Sieger bleibt, Verlierer tauscht – aber bei max. 6 Kindern: Wechsel nach 5 Minuten.</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li>Tore nur nach Dribbling durch Mittelzone</li>\n<li>Tor zählt nur mit schwachem Fuß</li>\n<li>Jedes Tor = 1 Punkt; nach 10 Punkten Rotation</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>Jeder trägt Verantwortung für Abwehr UND Angriff</li>\n<li>Schnelles Umschalten: Ballgewinn sofort nach vorne</li>\n<li>Kommunizieren: Position ansagen</li></ul>",
+      "Plan B (≥ 5 Kinder)": "<p>Bei 5: 2v2 + 1 freier Mitspieler (immer mit Ballbesitz).</p>"
+    }
+  },
+  {
+    "code": "S-04",
+    "title": "4+TW+2 gegen 4+TW+2 mit diagonalen Anspielern",
+    "color": "#1f9d57",
+    "tags": [
+      "Slot 2 · Spielform",
+      "Slot 4 · Abschlussspiel",
+      "S · Spielform"
+    ],
+    "image": "/images/exercises/S-04.jpg",
+    "blocks": {
+      "Ziel": "<p>Spielform mit Anspielern: Überzahl nutzen, Spielgeschwindigkeit erhöhen, Entscheidungsfindung und Positionsspiel schulen.</p>",
+      "Material": "<p>2 Tore mit Torhütern, Leibchen, Bälle (in den Toren bereitlegen), Hütchen für Sechseck, Feld 20 × 30 m</p>",
+      "Aufbau": "<p>Ein 20 × 30 Meter großes Sechseck mit 2 Toren und Torhütern markieren. 2 Teams à 6 Spieler bilden. Je 2 Spieler an die Diagonalen in der gegnerischen Hälfte stellen. Bälle in den Toren bereitlegen.</p>",
+      "Ablauf": "<ol class=\"num\"><li>Die Anspieler (an den Diagonalen) agieren mit maximal 2 Kontakten.</li><li>Treffer können, müssen aber nicht über die Anspieler vorbereitet werden.</li><li>Nach einiger Zeit die Anspieler tauschen.</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li>Treffer nach Vorbereitung über die Anspieler zählen doppelt.</li><li>Direktspiel für die Anspieler.</li><li>Mit Mittellinie und ab dort mit Abseits (auch für die Anspieler) spielen.</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>Anspieler aktiv anspielen – Überzahlsituation konsequent nutzen.</li><li>Positionierung und Wahrnehmung: Wo stehen die Anspieler, wo ist Raum?</li><li>Verteidiger: Blickverhalten zwischen Ball und Anspieler koordinieren.</li><li>Hohes Handlungstempo – schnell abschließen.</li></ul>"
+    }
+  },
+  {
+    "code": "S-05",
+    "title": "3+TW+2 gegen 3+TW+2 mit Anspielern neben dem Tor",
+    "color": "#1f9d57",
+    "tags": [
+      "Slot 2 · Spielform",
+      "Slot 4 · Abschlussspiel",
+      "S · Spielform"
+    ],
+    "image": "/images/exercises/S-05.jpg",
+    "blocks": {
+      "Ziel": "<p>Spielform mit tornahen Anspielern: Tiefenpass und Abschlussaktion schulen, Verteidiger in Zweikampf- und Orientierungssituationen fordern.</p>",
+      "Material": "<p>2 Tore mit Torhütern, Leibchen, Bälle (in den Toren bereitlegen), Hütchen für Sechseck, Feld 20 × 30 m</p>",
+      "Aufbau": "<p>Ein 20 × 30 Meter großes Sechseck mit 2 Toren und Torhütern markieren. 2 Teams à 5 Spieler bilden. Je 2 Spieler neben das gegnerische Tor stellen. Bälle in den Toren bereitlegen.</p>",
+      "Ablauf": "<ol class=\"num\"><li>Die Anspieler (neben dem Tor) agieren mit maximal 2 Kontakten.</li><li>Treffer können, müssen aber nicht über die Anspieler vorbereitet werden.</li><li>Nach einiger Zeit die Anspieler tauschen.</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li>Treffer nach Vorbereitung über die Anspieler zählen doppelt.</li><li>Den „Korridor\" neben den Toren vergrößern.</li><li>In einem Rechteck spielen.</li><li>Direktspiel für die Anspieler.</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>Tiefenpass zum Anspieler: Pässe flach und präzise, richtiges Timing.</li><li>Anspieler: Drehbewegungen und Positionierung zum Ball beachten.</li><li>Verteidiger: Gegenspieler im Feld und Anspieler gleichzeitig im Blick behalten.</li><li>Anschlussaktionen ohne Ball aufrechterhalten – kein Abschalten.</li></ul>"
+    }
+  },
+  {
+    "code": "T-01",
+    "title": "Ballführungs-ABC & Finten",
+    "color": "#0f9488",
+    "tags": [
+      "Slot 3 · Schwerpunkt",
+      "T · Technik & Ballbeherrschung"
+    ],
+    "image": "/images/exercises/T-01.svg",
+    "blocks": {
+      "Ziel": "<p>Finte am Hütchen sauber ausführen, danach Tempo aufnehmen und auf Minitor abschließen.</p>",
+      "Material": "<p>1 Ball pro Spieler, Hütchen, 1 Minitor</p>",
+      "Aufbau": "<p>Hütchen als Wendemarke aufstellen, Minitor dahinter. Spieler starten reihum an der Startlinie.</p>",
+      "Ablauf": "<ol class=\"num\">\n<li>Spieler dribbelt mit Ball auf das Hütchen zu.</li>\n<li>Am Hütchen Finte ausführen (z. B. Übersteiger, Schwalbe, V-Zug).</li>\n<li>Danach sofort Tempo aufnehmen und auf das Minitor abschließen.</li>\n<li>Nächster Spieler startet, wenn der Ball weg ist.</li>\n</ol>",
+      "Varianten": "<ul class=\"bul\">\n<li>Finte mit schwachem Fuß ausführen.</li>\n<li>Verschiedene Finten im Wechsel vorgeben (Übersteiger, Schere, Bodenschippe).</li>\n<li>Mit Störspieler: Ein passiver Verteidiger steht am Hütchen und übt leichten Druck aus – Spieler muss sich dennoch durchsetzen und abschließen.</li>\n</ul>",
+      "Coaching-Punkte": "<ul class=\"bul\">\n<li>Finte überzeugend ausführen – Körpertäuschung, nicht nur Ballbewegung.</li>\n<li>Nach der Finte sofort Tempo aufnehmen – Gas geben!</li>\n<li>Abschluss früh suchen, nicht zu viele Kontakte.</li>\n</ul>"
+    }
+  },
+  {
+    "code": "T-02",
+    "title": "Parcours mit Herausforderungen",
+    "color": "#0f9488",
+    "tags": [
+      "Slot 1 · Erwärmung",
+      "T · Technik & Ballbeherrschung"
+    ],
+    "image": "/images/exercises/T-02.svg",
+    "blocks": {
+      "Ziel": "<p>Ballführung mit Richtungswechseln, Reaktion, Finten und Tempowechseln – abwechslungsreich statt monoton.</p>",
+      "Material": "<p>1 Ball pro Kind, 6–8 Hütchen, 2 Minitore, optional Koordinationsleiter/Stangen</p>",
+      "Aufbau": "<p>Drei wechselnde Stationen nebeneinander: (A) Slalom mit Finte am Ende, (B) Koordinationsleiter + Dribbling, (C) Richtungswechsel durch 4 Winkel-Hütchen. Am Ende: Miniturchen-Abschluss.</p>",
+      "Ablauf": "<ol class=\"num\"><li>Reihum durch alle 3 Stationen dribbeln (eng, kleine Kontakte).</li>\n<li>Station A: Slalom mit erzwungenem Richtungswechsel am Wendehütchen (90° links oder rechts frei wählen).</li>\n<li>Station B: Leiter (Einbeinig/Beidbeinig) + sofort Dribbling nach rechts oder links (Trainer zeigt Richtung mit Hand).</li>\n<li>Station C: Dribbling durch Hütchenquadrat mit 3 Richtungswechseln; am Ende Finte vor dem Abschluss.</li>\n<li>Abschluss aufs Minitor, außen zurück zum Start.</li>\n<li>Signal-Wettbewerb: Wer schafft 3 Runden zuerst?</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li>Nur schwacher Fuß</li>\n<li>2 Parcours nebeneinander als Zeitrennen</li>\n<li>Trainer ruft Finte vor Station C (Übersteiger/Schwalbe)</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>Enge Ballführung – nicht wegstoßen</li>\n<li>Nach Richtungswechsel sofort Tempo aufnehmen</li>\n<li>Blick hoch nach der Leiter – sofort auf Trainersignal reagieren</li></ul>",
+      "Plan B (≥ 5 Kinder)": "<p>Ab 5: 2 Stationen zusammenlegen, kein Wettbewerb-Modus.</p>"
+    }
+  },
+  {
+    "code": "T-03",
+    "title": "Ballannahme-Kreis",
+    "color": "#0f9488",
+    "tags": [
+      "Slot 1 · Erwärmung",
+      "Slot 3 · Schwerpunkt",
+      "T · Technik"
+    ],
+    "image": "/images/exercises/T-03.jpg",
+    "blocks": {
+      "Ziel": "<p>Annahme aus der Luft und direktes Rückspiel beherrschen; Kommunikation zwischen Spielern fördern.</p>",
+      "Material": "<p>Bälle, 4–6 Flachmarker, Feld ca. 10 × 10 m</p>",
+      "Aufbau": "<p>Feld als Viereck oder Sechseck mit Flachmarkern markieren. Hälfte der Spieler im Feld (Rot), andere Hälfte an den Außenlinien (Blau).</p>",
+      "Ablauf": "<ol class=\"num\"><li>Rote Spieler bewegen sich frei im Feld und fordern Bälle von Blau per Kommando ein.</li><li>Blaue Spieler werfen den Ball hoch zu; rote Spieler nehmen mit Brust, Kopf oder Fuß an und spielen zurück.</li><li>Rote Spieler bewegen sich danach zu einem anderen Spieler.</li><li>Nach einer Weile wechseln Team Blau und Rot.</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li>Regelgerechter Einwurf statt Zuwurf von außen.</li><li>Rückpass mit Kopf oder Fuß direkt volley zurück.</li><li>Störspieler einbauen (evtl. Trainer).</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>Saubere Ballannahme beachten.</li><li>Immer wieder neuen Mitspieler suchen.</li><li>Timing von Kommando, Bewegung und Zuwurf korrigieren.</li></ul>"
+    }
+  },
+  {
+    "code": "T-04",
+    "title": "Pass-Drehung-Gegnerdruck",
+    "color": "#0f9488",
+    "tags": [
+      "Slot 1 · Erwärmung",
+      "Slot 3 · Schwerpunkt",
+      "T · Technik",
+      "🏟 Halle"
+    ],
+    "image": "/images/exercises/T-04.jpg",
+    "blocks": {
+      "Ziel": "<p>Ballannahme in offener und geschlossener Stellung, Drehung unter Gegnerdruck und Passgenauigkeit in Bewegung schulen.</p>",
+      "Material": "<p>Pro 3er-Team: 4 Flachmarker, 2 Dummies (alternativ gekreuzte Stangen), Feld ca. 20 × 8 m</p>",
+      "Aufbau": "<p>Pro 3er-Team mittig 2 Dummies leicht versetzt (Abstand ca. 2 m). In Linie jeweils 10 m entfernt 2 Flachmarker. Seitlich jeweils 3 m entfernt 2 Flachmarker.</p>",
+      "Ablauf": "<ol class=\"num\">\n<li><strong>Variante 1:</strong> A spielt zu B. B nimmt in geschlossener Stellung an, dreht auf und spielt auf C. C spielt zu B. B nimmt in geschlossener Stellung an, dreht auf und spielt auf A. Von vorn. Durchwechseln nach ca. 2 min.</li>\n<li><strong>Variante 2:</strong> A spielt zu B, B klatscht auf A. B läuft nach links, A spielt zu B, B nimmt in offener Stellung an. B spielt zu C und läuft zur Mitte. C spielt zu B, B klatscht auf C. B läuft nach rechts, C spielt zu B, B nimmt in offener Stellung an. B spielt zu A und läuft zur Mitte. Von vorn. Durchwechseln nach ca. 2 min.</li>\n<li><strong>Variante 3:</strong> A spielt zu B, B klatscht auf A. C gibt Druck links oder rechts. B läuft weg von C (links oder rechts), A spielt zu B. B nimmt geschlossen an und passt zu A. B läuft zurück zur Mitte. Von vorn. Durchwechseln nach ca. 2 min.</li>\n</ol>",
+      "Varianten": "<ul class=\"bul\">\n<li>Variante 1 → 2 → 3 in Steigerung hintereinander.</li>\n<li>Nur Direktpässe (1 Kontakt).</li>\n<li>Mit schwachem Fuß passen.</li>\n</ul>",
+      "Coaching-Punkte": "<ul class=\"bul\">\n<li>Offene und geschlossene Stellung verdeutlichen.</li>\n<li>Ball vor den Dummies / Gegner abschirmen.</li>\n<li>Beim Passen Körpergewicht nach vorn, in die Knie gehen.</li>\n<li>B volles Tempo, auspowern – danach als A oder C ausruhen.</li>\n</ul>"
+    }
+  },
+  {
+    "code": "Z-01",
+    "title": "1-gegen-1 mit Eröffnung aufs Tor",
+    "color": "#d23b3b",
+    "tags": [
+      "Slot 2 · Spielform/Schwerpunkt",
+      "Slot 3 · Schwerpunkt",
+      "Z · Zweikampf & 1-gegen-1"
+    ],
+    "image": "/images/exercises/Z-01.svg",
+    "blocks": {
+      "Ziel": "<p>Dribbling in der Angriffssituation; Verteidiger seitlich stellen; Torabschluss unter Druck.</p>",
+      "Material": "<p>1 Jugendtor (mit TW), 2 Minitore auf der anderen Seite als Konter-Ziel, Hütchen für Startlinien</p>",
+      "Aufbau": "<p>Klare Startpositionen: Angreifer A (markiert mit Hütchen, ~15m vor Tor), Verteidiger V (markiert, ~3m hinter A). Ball kommt von Mitspieler B seitlich außerhalb des Duells.</p>",
+      "Ablauf": "<ol class=\"num\"><li>B passt auf A. A geht dem Ball entgegen, nimmt mit und dribbelt Richtung Jugendtor.</li>\n<li>A entscheidet: aufdrehen oder Finte und dann antreten.</li>\n<li>V startet beim Abspiel von B und versucht A zu stoppen.</li>\n<li>A schließt aufs Jugendtor mit TW ab.</li>\n<li><b>Konterregel:</b> Gewinnt V den Ball, darf V sofort auf die 2 Minitore kontern! A wird dann Verteidiger.</li>\n<li>Wechsel: A→V, V→B, B→A. 2 Parcours parallel.</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li>A muss vor Abschluss ein Wendehütchen umdribbeln</li>\n<li>V startet gleichzeitig mit Ballabspiel (weniger Vorsprung für A)</li>\n<li>Pass von B als Flanke – Abschluss per Direktschuss</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>A: dem Pass entgegengehen – nicht stehen bleiben und warten</li>\n<li>Finte oder Aufdrehen – nicht geradeaus in den Verteidiger laufen</li>\n<li>V: seitlich stellen, nicht frontal – Schusswinkel nehmen</li></ul>",
+      "Plan B (≥ 5 Kinder)": "<p>Bei wenig Spielern: 1 Parcours; B kann vom Trainer besetzt werden.</p>"
+    }
+  },
+  {
+    "code": "Z-02",
+    "title": "Konter + Überzahl: 1v0 → 2v1 → 3v2",
+    "color": "#d23b3b",
+    "tags": [
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "Z · Zweikampf / Spiel"
+    ],
+    "image": "/images/exercises/Z-02.jpg",
+    "blocks": {
+      "Ziel": "<p>Schnelles Umschalten, Konterverhalten und das Nutzen von Überzahlsituationen trainieren; Handlungstempo und Entscheidungsschnelligkeit schulen.</p>",
+      "Material": "<p>2 Tore mit Torhütern, Leibchen für 2 Teams, Bälle, Feld 35 × 20 m mit zwei Sechzehnmeterräumen</p>",
+      "Aufbau": "<p>2 Mannschaften à 3 Feldspieler (Team A: A, B, C; Team B: D, E, F) und je 1 Torwart. Torwart Blau im linken Tor, Torwart Rot im rechten Tor.</p>",
+      "Ablauf": "<ol class=\"num\"><li>① Torwart Blau eröffnet mit einem Pass zu A, der im 1 gegen 0 vor der Sechzehnmeterlinie aufs gegnerische Tor abschließt.</li><li>② Danach spielen D und E gegen A im 2 gegen 1 auf das Tor von Blau.</li><li>③ Bei Treffer oder Ausball greifen A, B und C gegen D und E im 3 gegen 2 an.</li><li>④ Danach beginnt F im 1 gegen 0 – der Ablauf wiederholt sich.</li><li>Tore in Unterzahl (2v1) zählen doppelt.</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li>2v1 → 3v2 → 4v3 (mehr Spieler einbeziehen).</li><li>Zeitdruck: maximale Konterzeit von 8 Sekunden vorgeben.</li><li>Angreifen in Überzahl / Verteidigen in Unterzahl als Schwerpunkt setzen.</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>① 1v0: maximales Tempo, sofortiger Abschluss.</li><li>② 2v1: Überzahl früh erkennen – einer schlägt an, einer bleibt Anspielstation.</li><li>③ 3v2: Breite suchen, Verteidiger binden.</li><li>Umschalten sofort nach Ballgewinn/-verlust: Dynamik und hohes Handlungstempo.</li><li>Unterzahl in der Abwehr: Spieler sollten sich bis zu einem gewissen Punkt fallen lassen.</li></ul>"
+    }
+  },
+  {
+    "code": "Z-03",
+    "title": "1 gegen 1 auf 4 Minitore",
+    "color": "#d23b3b",
+    "tags": [
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "Z · Zweikampf / Spiel"
+    ],
+    "image": "/images/exercises/Z-03.jpg",
+    "blocks": {
+      "Ziel": "<p>Zweikampfstärke, Dribblingdurchsetzung und Torbewusstsein auf kleinstem Raum schulen.</p>",
+      "Material": "<p>4 Minitore, 8 Hütchen (Hütchentore), Bälle, Leibchen, Feld 15 × 15 m</p>",
+      "Aufbau": "<p>Feld 15 × 15 m mit je 1 Minitor pro Seite (4 Tore gesamt). Jeweils 1 m vor den Minitoren ein Hütchentor (Breite: 1 m) errichten. 2 Teams an gegenüberliegende Ecken verteilen. Die Verteidiger (Rot) haben je 1 Ball.</p>",
+      "Ablauf": "<ol class=\"num\"><li>Nach einem kurzen Andribbeln passt der Verteidiger zum Angreifer.</li><li>1 gegen 1 auf die Minitore: Treffer dürfen erst nach einem Dribbling durch das Hütchentor erzielt werden.</li><li>Nach einem Ballgewinn wechseln die Aufgaben – bis der Ball im Aus, im Tor ist oder ein Foul gespielt wurde.</li><li>Angreifer und Verteidiger wechseln nach jedem Durchgang die Aufgaben.</li></ol>",
+      "Varianten": "<ul class=\"bul\"><li>Der Angreifer muss durch 2 Minitore dribbeln, bevor er einen Treffer erzielen darf.</li><li>Treffer auf die beiden entfernten Tore zählen doppelt, auf die nahen einfach.</li></ul>",
+      "Coaching-Punkte": "<ul class=\"bul\"><li>Angreifer: Bei weitem Abstand zum Verteidiger mit Tempo agieren; bei geringem Abstand mit Finten.</li><li>Verteidiger: Abstand verkürzen und eine seitliche Stellung einnehmen.</li><li>Verteidiger: Körperschwerpunkt senken, auf den Fußballen bewegen und auf den Ball fokussieren.</li><li>Verteidiger: Versucht der Angreifer die angebotene Seite zu nutzen, den Körper zwischen Ball und Gegner schieben.</li></ul>"
+    }
+  },
+  {
+    "code": "Z-04",
+    "title": "Ballsprint",
+    "color": "#d23b3b",
+    "tags": [
+      "Slot 3 · Schwerpunkt",
+      "Z · Zweikampf / Spiel",
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "Z · Zweikampf / Spiel"
+    ],
+    "image": "/images/exercises/Z-04.jpg",
+    "blocks": {
+      "Ziel": "<p>Zweikampfstärke und Dribblingdurchsetzung im 1v1 schulen.</p>",
+      "Material": "<p>2 Hütchentore, 1 Ball, Leibchen</p>",
+      "Aufbau": "<p>Zwei Hütchentore aufstellen. Spieler 1 startet mit Ball, Spieler 2 als Gegner gegenüber.</p>",
+      "Ablauf": "<ol class=\"num\">\n<li>Spieler 1 versucht mit Ball durch eines der beiden Hütchentore zu dribbeln.</li>\n<li>Spieler 2 versucht ihn daran zu hindern.</li>\n<li>Wenn Spieler 2 den Ball erobert, startet er einen Gegenangriff auf das andere Tor.</li>\n</ol>",
+      "Varianten": "<ul class=\"bul\">\n<li>Gegenangriff-Regel direkt ab Balleroberung: schnelles Umschalten trainieren.</li>\n<li>3 Hütchentore – mehr Entscheidungsoptionen für Spieler 1.</li>\n</ul>",
+      "Coaching-Punkte": "<ul class=\"bul\">\n<li>Blick heben – beide Tore im Blick behalten, Entscheidung spät treffen.</li>\n<li>Körpertäuschung einsetzen, um den Gegner zu binden.</li>\n<li>Verteidiger: Geduld, tief bleiben – nicht zu früh ins Bein gehen.</li>\n</ul>"
+    }
+  },
+  {
+    "code": "Z-05",
+    "title": "1 gegen 1 – auf welches Tor?",
+    "color": "#d23b3b",
+    "tags": [
+      "Slot 2 · Spielform",
+      "Slot 3 · Schwerpunkt",
+      "Z · Zweikampf / Spiel"
+    ],
+    "image": "/images/exercises/Z-05.jpg",
+    "blocks": {
+      "Ziel": "<p>Zweikampfstärke und Dribblingdurchsetzung im 1v1 schulen.</p>",
+      "Material": "<p>2 Hütchentore, 1 Ball, Leibchen</p>",
+      "Aufbau": "<p>Zwei Hütchentore aufstellen. Spieler 1 startet mit Ball, Spieler 2 als Gegner gegenüber.</p>",
+      "Ablauf": "<ol class=\"num\">\n<li>Spieler 1 versucht mit Ball durch eines der beiden Hütchentore zu dribbeln.</li>\n<li>Spieler 2 versucht ihn daran zu hindern.</li>\n<li>Wenn Spieler 2 den Ball erobert, startet er einen Gegenangriff auf das andere Tor.</li>\n</ol>",
+      "Varianten": "<ul class=\"bul\">\n<li>Gegenangriff-Regel direkt ab Balleroberung: schnelles Umschalten trainieren.</li>\n<li>3 Hütchentore – mehr Entscheidungsoptionen für Spieler 1.</li>\n</ul>",
+      "Coaching-Punkte": "<ul class=\"bul\">\n<li>Blick heben – beide Tore im Blick behalten, Entscheidung spät treffen.</li>\n<li>Körpertäuschung einsetzen, um den Gegner zu binden.</li>\n<li>Verteidiger: Geduld, tief bleiben – nicht zu früh ins Bein gehen.</li>\n</ul>"
+    }
+  }
+]

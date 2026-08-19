@@ -1,0 +1,17 @@
+---
+import { faden } from '../data/faden';
+---
+<section id="faden">
+  <div class="seclabel">02</div>
+  <h2>Roter Faden</h2>
+  <p class="lead">Die Entwicklungslogik über die fünf Saisonphasen hinweg.</p>
+  {faden.map((f) => (
+    <div class="fadenrow">
+      <div class="fadennum">{f.num}</div>
+      <div>
+        <b>{f.title}</b>
+        <p>{f.text}</p>
+      </div>
+    </div>
+  ))}
+</section>

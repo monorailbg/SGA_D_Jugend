@@ -8,6 +8,7 @@ import TabNav from './TabNav';
 import Ueberblick from './sections/Ueberblick';
 import RoterFaden from './sections/RoterFaden';
 import Wochenplan from './sections/Wochenplan';
+import SessionBuilder from './sections/SessionBuilder';
 import Finder from './sections/Finder';
 import Camp from './sections/Camp';
 import Katalog from './sections/Katalog';
@@ -17,6 +18,7 @@ const SECTIONS: Record<TabId, React.ComponentType> = {
   ueberblick: Ueberblick,
   faden: RoterFaden,
   wochen: Wochenplan,
+  builder: SessionBuilder,
   finder: Finder,
   camp: Camp,
   katalog: Katalog,

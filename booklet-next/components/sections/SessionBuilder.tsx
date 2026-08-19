@@ -2,10 +2,10 @@
 
 import { useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Shuffle, Sparkles, CloudRain, Sun, CloudSun, Users, Maximize, Info } from 'lucide-react';
+import { Shuffle, Sparkles, CloudRain, Sun, CloudSun, Users, Maximize, Info, Target } from 'lucide-react';
 import { exercisesForSlot, exerciseByCode } from '@/lib/data/exercises';
 import { slots } from '@/lib/data/slots';
-import { categoryByCode } from '@/lib/data/categories';
+import { categories, categoryByCode } from '@/lib/data/categories';
 import { phases } from '@/lib/data/phases';
 import {
   PLAYER_TIERS,
@@ -20,22 +20,44 @@ import {
   type FieldSize,
 } from '@/lib/data/conditions';
 import { useAppContext } from '@/lib/AppContext';
-import type { Exercise, SlotNumber } from '@/lib/data/types';
+import type { CategoryCode, Exercise, SlotNumber } from '@/lib/data/types';
 
 const WEATHER_ICON = { normal: CloudSun, rain: CloudRain, heat: Sun } as const;
 
-function poolForSlot(slotNum: SlotNumber, tier: PlayerTier, field: FieldSize, phaseId: number): Exercise[] {
+type CategoryFocus = CategoryCode | 'all';
+
+function poolForSlot(
+  slotNum: SlotNumber,
+  tier: PlayerTier,
+  field: FieldSize,
+  phaseId: number,
+  focusCategory: CategoryFocus
+): Exercise[] {
   const base = exercisesForSlot(slotNum).filter((e) => allowedInPhase(e, phaseId));
   let pool = base.filter((e) => matchesPlayerTier(e, tier) && matchesFieldSize(e, field));
   if (pool.length === 0) pool = base.filter((e) => matchesPlayerTier(e, tier));
   if (pool.length === 0) pool = base;
+
+  // Schwerpunkt is an explicit ask from the coach, so it filters hard - but still
+  // falls back to the unfiltered pool rather than leaving a slot empty if nothing
+  // in that category happens to fit this slot.
+  if (focusCategory !== 'all') {
+    const byCategory = pool.filter((e) => e.category === focusCategory);
+    if (byCategory.length > 0) return byCategory;
+  }
   return pool;
 }
 
-function pickWeighted(pool: Exercise[], phaseId: number, avoid: Set<string>): Exercise {
-  const focusCategories = PHASE_FOCUS_CATEGORIES[phaseId] ?? [];
+function pickWeighted(pool: Exercise[], phaseId: number, focusCategory: CategoryFocus, avoid: Set<string>): Exercise {
   const fresh = pool.filter((e) => !avoid.has(e.code));
   const candidates = fresh.length > 0 ? fresh : pool;
+
+  // An explicit Schwerpunkt already narrowed the pool in poolForSlot, so no need to
+  // weight further; otherwise fall back to the phase's soft category bias.
+  if (focusCategory !== 'all') {
+    return candidates[Math.floor(Math.random() * candidates.length)];
+  }
+  const focusCategories = PHASE_FOCUS_CATEGORIES[phaseId] ?? [];
   const focused = candidates.filter((e) => focusCategories.includes(e.category));
   const from = focused.length > 0 ? focused : candidates;
   return from[Math.floor(Math.random() * from.length)];
@@ -47,22 +69,23 @@ export default function SessionBuilder() {
   const [weather, setWeather] = useState<Weather>('normal');
   const [field, setField] = useState<FieldSize>('half');
   const [phaseId, setPhaseId] = useState(1);
+  const [focusCategory, setFocusCategory] = useState<CategoryFocus>('all');
   const [session, setSession] = useState<Partial<Record<SlotNumber, string>>>({});
   const [planBOpen, setPlanBOpen] = useState<Record<string, boolean>>({});
 
   const pools = useMemo(
     () =>
       Object.fromEntries(
-        slots.map((s) => [s.number, poolForSlot(s.number, tier, field, phaseId)])
+        slots.map((s) => [s.number, poolForSlot(s.number, tier, field, phaseId, focusCategory)])
       ) as Record<SlotNumber, Exercise[]>,
-    [tier, field, phaseId]
+    [tier, field, phaseId, focusCategory]
   );
 
   function generateSession() {
     const used = new Set<string>();
     const next: Partial<Record<SlotNumber, string>> = {};
     for (const s of slots) {
-      const pick = pickWeighted(pools[s.number], phaseId, used);
+      const pick = pickWeighted(pools[s.number], phaseId, focusCategory, used);
       next[s.number] = pick.code;
       used.add(pick.code);
     }
@@ -72,7 +95,7 @@ export default function SessionBuilder() {
   function swapSlot(slotNum: SlotNumber) {
     const current = session[slotNum];
     const avoid = new Set(current ? [current] : []);
-    const pick = pickWeighted(pools[slotNum], phaseId, avoid);
+    const pick = pickWeighted(pools[slotNum], phaseId, focusCategory, avoid);
     setSession((prev) => ({ ...prev, [slotNum]: pick.code }));
   }
 
@@ -88,7 +111,7 @@ export default function SessionBuilder() {
 
       {/* Feldbedingungen control bar */}
       <div className="sticky top-0 z-10 mb-5 rounded-2xl border border-line bg-white/85 p-4 shadow-sm backdrop-blur-md">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           <ControlGroup icon={Users} label="Spieleranzahl">
             {PLAYER_TIERS.map((t) => (
               <SegButton key={t.id} active={tier === t.id} onClick={() => setTier(t.id)}>
@@ -124,7 +147,31 @@ export default function SessionBuilder() {
               </SegButton>
             ))}
           </ControlGroup>
+
+          <ControlGroup icon={Target} label="Schwerpunkt">
+            <SegButton active={focusCategory === 'all'} onClick={() => setFocusCategory('all')}>
+              Alle
+            </SegButton>
+            {categories.map((c) => (
+              <SegButton
+                key={c.code}
+                active={focusCategory === c.code}
+                onClick={() => setFocusCategory(c.code)}
+                accent={focusCategory === c.code ? c.color : undefined}
+              >
+                {c.code}
+              </SegButton>
+            ))}
+          </ControlGroup>
         </div>
+
+        {focusCategory !== 'all' && (
+          <div className="mt-3 text-[12px] text-muted">
+            Schwerpunkt: <span className="font-bold text-ink">{categoryByCode[focusCategory].name}</span> – Pools
+            werden pro Slot auf diese Kategorie eingeschränkt (mit Rückfalloption, falls ein Slot dafür keine
+            Übung hat).
+          </div>
+        )}
 
         <AnimatePresence>
           {weather !== 'normal' && (
@@ -277,18 +324,21 @@ function ControlGroup({
 function SegButton({
   active,
   onClick,
+  accent,
   children,
 }: {
   active: boolean;
   onClick: () => void;
+  accent?: string;
   children: React.ReactNode;
 }) {
   return (
     <button
       type="button"
       onClick={onClick}
+      style={active && accent ? { background: accent } : undefined}
       className={`rounded-full px-2.5 py-1.5 text-[12px] font-bold transition-colors ${
-        active ? 'bg-green-d text-white' : 'bg-soft text-ink hover:bg-line/60'
+        active ? (accent ? 'text-white' : 'bg-green-d text-white') : 'bg-soft text-ink hover:bg-line/60'
       }`}
     >
       {children}

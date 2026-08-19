@@ -30,7 +30,9 @@ const uid = `acc-${Math.random().toString(36).slice(2, 9)}`;
   </h3>
   <div class:list={['accordion-panel', { 'is-open': open }]} id={uid}>
     <div class="accordion-inner">
-      <slot />
+      <div class="accordion-content">
+        <slot />
+      </div>
     </div>
   </div>
 </div>

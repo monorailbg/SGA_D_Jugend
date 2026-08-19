@@ -1,0 +1,4 @@
+{
+  "buildCommand": "cd trainingsbooklet && npm install && npm run build",
+  "outputDirectory": "trainingsbooklet/dist"
+}

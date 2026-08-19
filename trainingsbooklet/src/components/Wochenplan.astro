@@ -1,0 +1,37 @@
+---
+import { weekPlans } from '../data/weekplan';
+---
+<section id="wochen">
+  <div class="seclabel">03</div>
+  <h2>Wochenplan – Phase 1 &amp; Phase 2</h2>
+  <p class="lead">6 Wochen im Detail: Vorbereitung Hinrunde (VB) und die ersten Wochen der Hinrunde (HR).</p>
+  <div class="weekgrid">
+    {weekPlans.map((week) => (
+      <div class="card">
+        <div class="weekhead">
+          <div><span class="wknr">{week.wknr}</span><span class="wkdate">{week.wkdate}</span></div>
+          <span class="wkfokus">{week.wkfokus}</span>
+        </div>
+        <div class="pad">
+          <div class="daygrid">
+            {week.days.map((day) => (
+              <div>
+                <span class="dlabel" style={day.color ? `background:${day.color};color:#fff` : ''}>{day.label}</span>
+                <div class="codes">
+                  {day.entries.map((entry) => (
+                    <div class="code-row">
+                      <a href={`#ex-${entry.code}`} class="ccode" style="text-decoration:none">{entry.code}</a>
+                      <span class="cctitle">{entry.title}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+          {week.homeworkHtml && <Fragment set:html={week.homeworkHtml} />}
+          {week.planBHtml && <Fragment set:html={week.planBHtml} />}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

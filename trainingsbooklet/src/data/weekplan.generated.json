@@ -1,0 +1,320 @@
+[
+  {
+    "wknr": "VB 1",
+    "wkdate": "10.–16.08.",
+    "wkfokus": "Wiedereinstieg · 1v1 Zweikampf · Torschuss",
+    "days": [
+      {
+        "label": "Di 11.08.",
+        "color": "#e8821e",
+        "entries": [
+          {
+            "code": "K-01",
+            "title": "Fangen mit Ball"
+          },
+          {
+            "code": "Z-03",
+            "title": "1v1 auf 4 Tore"
+          },
+          {
+            "code": "P-04",
+            "title": "3v1 Rondo"
+          },
+          {
+            "code": "S-02",
+            "title": "Abschlussspiel mit Sonderregel"
+          }
+        ]
+      },
+      {
+        "label": "Do 13.08.",
+        "color": "#2f6fd0",
+        "entries": [
+          {
+            "code": "K-05",
+            "title": "Passkreuz"
+          },
+          {
+            "code": "F-01",
+            "title": "Torschuss-Challenge"
+          },
+          {
+            "code": "K-04",
+            "title": "Kopfsache"
+          },
+          {
+            "code": "S-02",
+            "title": "Abschlussspiel mit Sonderregel"
+          }
+        ]
+      }
+    ],
+    "homework_html": "<div class=\"note ha\">📚 Hausaufgabe: Ball hochhalten / Innenseiten – 10 min täglich. <a href=\"https://www.youtube.com/watch?v=9vPeibubtUU\" target=\"_blank\">▶ Tutorial</a></div>",
+    "planb_html": "<div class=\"note pb\">🔄 Plan B: 2v2 statt 4v4; Funino 1 Feld</div>"
+  },
+  {
+    "wknr": "VB 2",
+    "wkdate": "17.–23.08.",
+    "wkfokus": "1v1 Zweikampf · Pässe & Annehmen · Spielaufbau 2-1-2-1",
+    "days": [
+      {
+        "label": "Di 19.08.",
+        "color": "#e8821e",
+        "entries": [
+          {
+            "code": "K-08",
+            "title": "Die Insel"
+          },
+          {
+            "code": "Z-01",
+            "title": "1v1 mit Eröffnung"
+          },
+          {
+            "code": "A-01",
+            "title": "Spielaufbau 2-1-2-1"
+          },
+          {
+            "code": "S-04",
+            "title": "4v4 mit Anspielern"
+          }
+        ]
+      },
+      {
+        "label": "Do 21.08.",
+        "color": "#2f6fd0",
+        "entries": [
+          {
+            "code": "K-05",
+            "title": "Passkreuz"
+          },
+          {
+            "code": "P-03",
+            "title": "Hexagon"
+          },
+          {
+            "code": "A-02",
+            "title": "Langer Ball"
+          },
+          {
+            "code": "S-05",
+            "title": "3v3 mit Anspielern"
+          }
+        ]
+      }
+    ],
+    "homework_html": "<div class=\"note ha\">📚 Hausaufgabe: Übersteiger 20× rechts/links – langsam, dann mit Tempo. <a href=\"https://www.youtube.com/watch?v=CKohntCvhmQ\" target=\"_blank\">▶ Tutorial</a></div>",
+    "planb_html": "<div class=\"note pb\">🔄 Plan B: 1v1-Dauerturnier; Aufbau 3v3 vereinfacht</div>"
+  },
+  {
+    "wknr": "VB 3",
+    "wkdate": "25.–28.08.",
+    "wkfokus": "Torschuss · Kombinationsspiel · Spielvorbereitung (29.08.)",
+    "days": [
+      {
+        "label": "Di 25.08.",
+        "color": "#e8821e",
+        "entries": [
+          {
+            "code": "K-09",
+            "title": "Dribbeln mit Anspieler"
+          },
+          {
+            "code": "F-01",
+            "title": "Torschuss-Challenge"
+          },
+          {
+            "code": "F-02",
+            "title": "3 Angriffe"
+          },
+          {
+            "code": "S-04",
+            "title": "4v4 mit Anspielern"
+          }
+        ]
+      },
+      {
+        "label": "Do 27.08.",
+        "color": "#2f6fd0",
+        "entries": [
+          {
+            "code": "K-08",
+            "title": "Die Insel"
+          },
+          {
+            "code": "F-03",
+            "title": "Sprint & Torschuss"
+          },
+          {
+            "code": "F-04",
+            "title": "Doppelpass & Torschuss"
+          },
+          {
+            "code": "S-05",
+            "title": "3v3 mit Anspielern"
+          }
+        ]
+      }
+    ],
+    "homework_html": "<div class=\"note ha\">📚 Hausaufgabe: 20× beidfüßig gegen Wand passen und sauber annehmen. <a href=\"https://www.youtube.com/watch?v=s27nyxWCgus\" target=\"_blank\">▶ Passtechnik Tutorial</a></div>",
+    "planb_html": "<div class=\"note pb\">🔄 Plan B: Torschuss aus der Hand; Abschlussspiel 3v3</div>"
+  },
+  {
+    "wknr": "HR 1",
+    "wkdate": "01.–05.09.",
+    "wkfokus": "Doppelpass · Pässe unter Druck · Konter & Überzahl",
+    "days": [
+      {
+        "label": "Di 01.09.",
+        "color": "#e8821e",
+        "entries": [
+          {
+            "code": "K-09",
+            "title": "Dribbeln mit Anspieler"
+          },
+          {
+            "code": "P-06",
+            "title": "Doppelpass zu viert"
+          },
+          {
+            "code": "P-09",
+            "title": "Stichpass unter Druck"
+          },
+          {
+            "code": "S-05",
+            "title": "3v3 mit Anspielern"
+          }
+        ]
+      },
+      {
+        "label": "Do 03.09.",
+        "color": "#2f6fd0",
+        "entries": [
+          {
+            "code": "T-03",
+            "title": "Ballannahme-Kreis"
+          },
+          {
+            "code": "S-01",
+            "title": "2v2 Shot-Clock"
+          },
+          {
+            "code": "Z-02",
+            "title": "Konter & Überzahl"
+          },
+          {
+            "code": "S-04",
+            "title": "4v4 mit Anspielern"
+          }
+        ]
+      }
+    ],
+    "homework_html": "<div class=\"note ha\">📚 Hausaufgabe: Ballfeeling, Kontrolle, Technik. <a href=\"https://www.youtube.com/watch?v=FKucjmF6fWE\" target=\"_blank\">▶ Video</a></div>",
+    "planb_html": "<div class=\"note pb\">🔄 Plan B: Passspiel 3v1 statt Kombination; Funino klein</div>"
+  },
+  {
+    "wknr": "HR 2",
+    "wkdate": "08.–11.09.",
+    "wkfokus": "Pässe & Drehung unter Druck · Angriffszüge · Torschuss",
+    "days": [
+      {
+        "label": "Di 08.09.",
+        "color": "#e8821e",
+        "entries": [
+          {
+            "code": "T-04",
+            "title": "Drehung unter Druck"
+          },
+          {
+            "code": "S-01",
+            "title": "2v2 Shot-Clock"
+          },
+          {
+            "code": "F-02",
+            "title": "3 Angriffe"
+          },
+          {
+            "code": "S-04",
+            "title": "4v4 mit Anspielern"
+          }
+        ]
+      },
+      {
+        "label": "Do 10.09.",
+        "color": "#2f6fd0",
+        "entries": [
+          {
+            "code": "K-03",
+            "title": "Geschicklichkeit"
+          },
+          {
+            "code": "Z-03",
+            "title": "1v1 auf 4 Tore"
+          },
+          {
+            "code": "F-05",
+            "title": "Ballkontrolle & Torschuss"
+          },
+          {
+            "code": "S-04",
+            "title": "4v4 mit Anspielern"
+          }
+        ]
+      }
+    ],
+    "homework_html": "<div class=\"note ha\">📚 Hausaufgabe: Dribbling mit schwachem Fuß – 5 min täglich.</div>",
+    "planb_html": "<div class=\"note pb\">🔄 Plan B: 2v1 ohne Taktik-Vorgabe; Torschuss-Wettbewerb</div>"
+  },
+  {
+    "wknr": "HR 3",
+    "wkdate": "15.–18.09.",
+    "wkfokus": "Flügelspiel · Doppelpass & Verlagerung · Spielaufbau",
+    "days": [
+      {
+        "label": "Di 15.09.",
+        "color": "#e8821e",
+        "entries": [
+          {
+            "code": "K-09",
+            "title": "Dribbeln mit Anspieler"
+          },
+          {
+            "code": "F-07",
+            "title": "Flügelspiel"
+          },
+          {
+            "code": "F-06",
+            "title": "Doppelpass + Verlagerung"
+          },
+          {
+            "code": "S-05",
+            "title": "3v3 mit Anspielern"
+          }
+        ]
+      },
+      {
+        "label": "Do 17.09.",
+        "color": "#2f6fd0",
+        "entries": [
+          {
+            "code": "P-01",
+            "title": "Passen & Anbieten"
+          },
+          {
+            "code": "P-07",
+            "title": "Passtore"
+          },
+          {
+            "code": "A-01",
+            "title": "Spielaufbau 2-1-2-1"
+          },
+          {
+            "code": "S-04",
+            "title": "4v4 mit Anspielern"
+          }
+        ]
+      }
+    ],
+    "homework_html": "<div class=\"note ha\">📚 Hausaufgabe: Passspiel zu zweit – 30 Pässe mit schwachem Fuß.</div>",
+    "planb_html": "<div class=\"note pb\">🔄 Plan B: Aufbau vereinfachen; 3v3 ohne Taktik-Vorgabe</div>"
+  }
+]

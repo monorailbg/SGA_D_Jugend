@@ -1,0 +1,53 @@
+---
+import type { Exercise } from '../data/types';
+import { categoryByCode } from '../data/categories';
+import { slots as allSlots } from '../data/slots';
+import { withBase } from '../lib/base';
+
+interface Props {
+  exercise: Exercise;
+}
+const { exercise } = Astro.props;
+const category = categoryByCode[exercise.category];
+const isSvg = exercise.image?.endsWith('.svg');
+const imageSrc = exercise.image ? withBase(exercise.image) : null;
+
+const blockOrder = ['Ziel', 'Material', 'Aufbau', 'Ablauf', 'Varianten', 'Coaching-Punkte'] as const;
+const planBKey = Object.keys(exercise.blocks).find((k) => k.startsWith('Plan B'));
+---
+<article class="excard card" id={`ex-${exercise.code}`}>
+  <header class="exhead" style={`border-color:${exercise.color ?? category.color}`}>
+    <div class="exhl">
+      <span class="ccode big" style={`border-color:${exercise.color ?? category.color}`}>{exercise.code}</span>
+      <h3>{exercise.title}</h3>
+    </div>
+    <div class="extags">
+      {exercise.slots.map((slotNum) => {
+        const slot = allSlots.find((s) => s.number === slotNum);
+        return <span class="chip" style={`background:${slot?.color}`}>Slot {slotNum} · {slot?.name}</span>;
+      })}
+      <span class="chip" style={`background:${category.color}`}>{category.code} · {category.name}</span>
+    </div>
+  </header>
+  <div class="exbody">
+    <div class="exfig">
+      {imageSrc && (isSvg
+        ? <img src={imageSrc} alt={`Skizze ${exercise.code}`} style="width:100%;display:block" />
+        : <img src={imageSrc} style="width:100%;border-radius:8px;display:block" alt={exercise.title} />)}
+    </div>
+    <div class="exblocks">
+      {blockOrder.map((key) => exercise.blocks[key] && (
+        <div class="exb">
+          <h4>{key}</h4>
+          <Fragment set:html={exercise.blocks[key]} />
+        </div>
+      ))}
+      {planBKey && (
+        <div class="exb pbb">
+          <h4>{planBKey}</h4>
+          <Fragment set:html={exercise.blocks[planBKey]} />
+        </div>
+      )}
+    </div>
+  </div>
+</article>

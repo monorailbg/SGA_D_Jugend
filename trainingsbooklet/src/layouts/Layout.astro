@@ -1,0 +1,38 @@
+---
+import '../styles/main.css';
+import '../styles/password-gate.css';
+import PasswordGate from '../components/PasswordGate.astro';
+import Hero from '../components/Hero.astro';
+import Nav from '../components/Nav.astro';
+
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <PasswordGate />
+  <Hero />
+  <Nav />
+  <slot />
+  <footer>
+    Dieses Trainingsbooklet ist ausschließlich für den internen Gebrauch von Trainern und Eltern der D-Jugend
+    der SG Kleinolbersdorf-Altenhain e.V. bestimmt. Weitergabe, Veröffentlichung oder Vervielfältigung
+    der Inhalte – insbesondere der enthaltenen Grafiken – sind ohne ausdrückliche Genehmigung nicht gestattet.<br />
+    <span style="margin-top:6px;display:inline-block">© 2026 SG Kleinolbersdorf-Altenhain e.V. · Nur für interne Vereinsnutzung</span>
+  </footer>
+  <script>
+    import { initPasswordGate } from '../scripts/password-gate';
+    initPasswordGate();
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+---
+import { phases, phaseColors } from '../data/phases';
+---
+<section id="ueberblick">
+  <div class="seclabel">01</div>
+  <h2>Saison-Überblick</h2>
+  <p class="lead">
+    Fünf Phasen über die Saison 2026/27. Phase&nbsp;1 ist im Muster komplett ausgearbeitet,
+    die übrigen Phasen sind als Rahmen skizziert und folgen nach deiner Freigabe.
+  </p>
+  <div class="tablewrap">
+    <table class="overview">
+      <thead>
+        <tr>
+          <th>Phase</th>
+          <th>Zeitraum</th>
+          <th>Schwerpunkt</th>
+        </tr>
+      </thead>
+      <tbody>
+        {phases.map((p) => (
+          <tr>
+            <td class="ph">
+              <span class="phnum" style={`background:${phaseColors[p.id]}`}>{p.id}</span>
+              <b>{p.name}</b>
+            </td>
+            <td>{p.zeitraum}</td>
+            <td>{p.schwerpunkt}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</section>

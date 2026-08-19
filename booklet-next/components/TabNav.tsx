@@ -27,7 +27,7 @@ export default function TabNav() {
   const { activeTab, setActiveTab, requestPhase } = useAppContext();
 
   return (
-    <nav className="sticky top-0 z-30 border-b border-line/70 bg-white/70 shadow-[0_1px_0_rgba(255,255,255,.6)_inset,0_4px_16px_rgba(10,25,41,.05)] backdrop-blur-xl backdrop-saturate-150 max-[600px]:fixed max-[600px]:bottom-0 max-[600px]:top-auto max-[600px]:border-b-0 max-[600px]:border-t">
+    <nav className="sticky top-0 z-30 border-b border-line/70 bg-white/70 shadow-[0_1px_0_rgba(255,255,255,.6)_inset,0_4px_16px_rgba(10,25,41,.05)] backdrop-blur-xl backdrop-saturate-150 max-[600px]:fixed max-[600px]:inset-x-0 max-[600px]:bottom-0 max-[600px]:top-auto max-[600px]:w-full max-[600px]:border-b-0 max-[600px]:border-t">
       <div className="mx-auto flex max-w-[1080px] items-center gap-2.5 px-4 py-2">
         <button
           type="button"

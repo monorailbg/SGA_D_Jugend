@@ -8,6 +8,7 @@ import {
   Tent,
   BookOpen,
   Info,
+  SlidersHorizontal,
   type LucideIcon,
 } from 'lucide-react';
 import { TABS, useAppContext, type TabId } from '@/lib/AppContext';
@@ -17,6 +18,7 @@ const ICONS: Record<TabId, LucideIcon> = {
   ueberblick: LayoutGrid,
   faden: GitBranch,
   wochen: CalendarDays,
+  builder: SlidersHorizontal,
   finder: Search,
   camp: Tent,
   katalog: BookOpen,

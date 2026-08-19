@@ -6,6 +6,7 @@ export const TABS = [
   { id: 'ueberblick', label: 'Überblick' },
   { id: 'faden', label: 'Roter Faden' },
   { id: 'wochen', label: 'Wochenplan' },
+  { id: 'builder', label: 'Session-Builder' },
   { id: 'finder', label: 'Finder' },
   { id: 'camp', label: 'Trainingslager' },
   { id: 'katalog', label: 'Katalog' },

@@ -1,18 +1,19 @@
 ---
 import { weekPlans } from '../data/weekplan';
+import Accordion from './Accordion.astro';
 ---
 <section id="wochen">
   <div class="seclabel">03</div>
   <h2>Wochenplan – Phase 1 &amp; Phase 2</h2>
-  <p class="lead">6 Wochen im Detail: Vorbereitung Hinrunde (VB) und die ersten Wochen der Hinrunde (HR).</p>
+  <p class="lead">6 Wochen im Detail: Vorbereitung Hinrunde (VB) und die ersten Wochen der Hinrunde (HR). Woche antippen zum Auf-/Zuklappen.</p>
   <div class="weekgrid">
-    {weekPlans.map((week) => (
-      <div class="card">
-        <div class="weekhead">
-          <div><span class="wknr">{week.wknr}</span><span class="wkdate">{week.wkdate}</span></div>
-          <span class="wkfokus">{week.wkfokus}</span>
-        </div>
-        <div class="pad">
+    {weekPlans.map((week, i) => (
+      <div class="card week-card">
+        <Accordion
+          title={`${week.wknr} · ${week.wkdate}`}
+          subtitle={week.wkfokus}
+          open={i === 0}
+        >
           <div class="daygrid">
             {week.days.map((day) => (
               <div>
@@ -30,7 +31,7 @@ import { weekPlans } from '../data/weekplan';
           </div>
           {week.homeworkHtml && <Fragment set:html={week.homeworkHtml} />}
           {week.planBHtml && <Fragment set:html={week.planBHtml} />}
-        </div>
+        </Accordion>
       </div>
     ))}
   </div>

@@ -19,7 +19,7 @@ import { phases, phaseColors } from '../data/phases';
       </thead>
       <tbody>
         {phases.map((p) => (
-          <tr>
+          <tr data-phase-row={p.id}>
             <td class="ph">
               <span class="phnum" style={`background:${phaseColors[p.id]}`}>{p.id}</span>
               <b>{p.name}</b>

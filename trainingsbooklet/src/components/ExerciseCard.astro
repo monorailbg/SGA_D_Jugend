@@ -3,6 +3,7 @@ import type { Exercise } from '../data/types';
 import { categoryByCode } from '../data/categories';
 import { slots as allSlots } from '../data/slots';
 import { withBase } from '../lib/base';
+import Accordion from './Accordion.astro';
 
 interface Props {
   exercise: Exercise;
@@ -15,7 +16,7 @@ const imageSrc = exercise.image ? withBase(exercise.image) : null;
 const blockOrder = ['Ziel', 'Material', 'Aufbau', 'Ablauf', 'Varianten', 'Coaching-Punkte'] as const;
 const planBKey = Object.keys(exercise.blocks).find((k) => k.startsWith('Plan B'));
 ---
-<article class="excard card" id={`ex-${exercise.code}`}>
+<article class="excard card interactive-card" id={`ex-${exercise.code}`}>
   <header class="exhead" style={`border-color:${exercise.color ?? category.color}`}>
     <div class="exhl">
       <span class="ccode big" style={`border-color:${exercise.color ?? category.color}`}>{exercise.code}</span>
@@ -30,10 +31,13 @@ const planBKey = Object.keys(exercise.blocks).find((k) => k.startsWith('Plan B')
     </div>
   </header>
   <div class="exbody">
-    <div class="exfig">
+    <div class:list={['exfig', { 'img-fallback': !imageSrc }]}>
       {imageSrc && (isSvg
-        ? <img src={imageSrc} alt={`Skizze ${exercise.code}`} style="width:100%;display:block" />
-        : <img src={imageSrc} style="width:100%;border-radius:8px;display:block" alt={exercise.title} />)}
+        ? <img src={imageSrc} alt={`Skizze ${exercise.code}`} style="width:100%;display:block" loading="lazy" onerror="this.closest('.exfig')?.classList.add('img-fallback')" />
+        : <img src={imageSrc} style="width:100%;border-radius:8px;display:block" alt={exercise.title} loading="lazy" onerror="this.closest('.exfig')?.classList.add('img-fallback')" />)}
+      <div class="exfig-fallback" style={`background:${category.color}`} aria-hidden="true">
+        <span>{category.code}</span>
+      </div>
     </div>
     <div class="exblocks">
       {blockOrder.map((key) => exercise.blocks[key] && (
@@ -43,9 +47,10 @@ const planBKey = Object.keys(exercise.blocks).find((k) => k.startsWith('Plan B')
         </div>
       ))}
       {planBKey && (
-        <div class="exb pbb">
-          <h4>{planBKey}</h4>
-          <Fragment set:html={exercise.blocks[planBKey]} />
+        <div class="exb pbb-wrap">
+          <Accordion title={planBKey} accent={category.color}>
+            <Fragment set:html={exercise.blocks[planBKey]} />
+          </Accordion>
         </div>
       )}
     </div>

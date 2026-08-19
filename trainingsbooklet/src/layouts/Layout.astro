@@ -4,6 +4,7 @@ import '../styles/password-gate.css';
 import PasswordGate from '../components/PasswordGate.astro';
 import Hero from '../components/Hero.astro';
 import Nav from '../components/Nav.astro';
+import { withBase } from '../lib/base';
 
 interface Props {
   title: string;
@@ -16,10 +17,16 @@ const { title } = Astro.props;
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title}</title>
+  <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,600&family=JetBrains+Mono:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
 </head>
 <body>
+  <div id="top"></div>
   <PasswordGate />
   <Hero />
   <Nav />
@@ -30,9 +37,16 @@ const { title } = Astro.props;
     der Inhalte – insbesondere der enthaltenen Grafiken – sind ohne ausdrückliche Genehmigung nicht gestattet.<br />
     <span style="margin-top:6px;display:inline-block">© 2026 SG Kleinolbersdorf-Altenhain e.V. · Nur für interne Vereinsnutzung</span>
   </footer>
+  <button id="back-to-top" type="button" aria-label="Nach oben">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
   <script>
     import { initPasswordGate } from '../scripts/password-gate';
+    import { initAccordions } from '../scripts/accordion';
+    import { initBackToTop } from '../scripts/back-to-top';
     initPasswordGate();
+    initAccordions();
+    initBackToTop();
   </script>
 </body>
 </html>

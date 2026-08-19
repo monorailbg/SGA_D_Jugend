@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Shuffle, Sparkles, CloudRain, Sun, CloudSun, Users, Maximize, Info, Target } from 'lucide-react';
+import { Shuffle, Sparkles, CloudRain, Sun, CloudSun, Users, Maximize, Info, Target, Zap, RotateCcw } from 'lucide-react';
 import { exercisesForSlot, exerciseByCode } from '@/lib/data/exercises';
 import { slots } from '@/lib/data/slots';
 import { categories, categoryByCode } from '@/lib/data/categories';
@@ -19,6 +19,7 @@ import {
   type Weather,
   type FieldSize,
 } from '@/lib/data/conditions';
+import { reinforcementWeighted, repCountInPhase, recordSessionInPhase, resetPhaseHistory, setupSynergyPairs } from '@/lib/data/harmony';
 import { useAppContext } from '@/lib/AppContext';
 import type { CategoryCode, Exercise, SlotNumber } from '@/lib/data/types';
 
@@ -54,12 +55,15 @@ function pickWeighted(pool: Exercise[], phaseId: number, focusCategory: Category
 
   // An explicit Schwerpunkt already narrowed the pool in poolForSlot, so no need to
   // weight further; otherwise fall back to the phase's soft category bias.
+  let from: Exercise[];
   if (focusCategory !== 'all') {
-    return candidates[Math.floor(Math.random() * candidates.length)];
+    from = candidates;
+  } else {
+    const focusCategories = PHASE_FOCUS_CATEGORIES[phaseId] ?? [];
+    const focused = candidates.filter((e) => focusCategories.includes(e.category));
+    from = focused.length > 0 ? focused : candidates;
   }
-  const focusCategories = PHASE_FOCUS_CATEGORIES[phaseId] ?? [];
-  const focused = candidates.filter((e) => focusCategories.includes(e.category));
-  const from = focused.length > 0 ? focused : candidates;
+  from = reinforcementWeighted(from, phaseId);
   return from[Math.floor(Math.random() * from.length)];
 }
 
@@ -71,7 +75,9 @@ export default function SessionBuilder() {
   const [phaseId, setPhaseId] = useState(1);
   const [focusCategory, setFocusCategory] = useState<CategoryFocus>('all');
   const [session, setSession] = useState<Partial<Record<SlotNumber, string>>>({});
+  const [previousSession, setPreviousSession] = useState<Partial<Record<SlotNumber, string>>>({});
   const [planBOpen, setPlanBOpen] = useState<Record<string, boolean>>({});
+  const [historyVersion, setHistoryVersion] = useState(0); // bumps to re-read localStorage-backed rep counts
 
   const pools = useMemo(
     () =>
@@ -82,24 +88,58 @@ export default function SessionBuilder() {
   );
 
   function generateSession() {
-    const used = new Set<string>();
+    // Intraweek variety: avoid repeating anything from the session currently on
+    // screen (stands in for "not the same drill Tuesday and Thursday") - it's about
+    // to become "previousSession" below, so this reads the pre-update value.
+    const used = new Set(Object.values(session).filter((c): c is string => !!c));
     const next: Partial<Record<SlotNumber, string>> = {};
     for (const s of slots) {
       const pick = pickWeighted(pools[s.number], phaseId, focusCategory, used);
       next[s.number] = pick.code;
       used.add(pick.code);
     }
+    setPreviousSession(session);
     setSession(next);
+    recordSessionInPhase(phaseId, Object.values(next).filter((c): c is string => !!c));
+    setHistoryVersion((v) => v + 1);
   }
 
   function swapSlot(slotNum: SlotNumber) {
     const current = session[slotNum];
-    const avoid = new Set(current ? [current] : []);
+    const avoid = new Set([current, previousSession[slotNum]].filter((c): c is string => !!c));
     const pick = pickWeighted(pools[slotNum], phaseId, focusCategory, avoid);
     setSession((prev) => ({ ...prev, [slotNum]: pick.code }));
   }
 
+  function resetPhase() {
+    resetPhaseHistory(phaseId);
+    setHistoryVersion((v) => v + 1);
+  }
+
   const weatherTip = WEATHER_OPTIONS.find((w) => w.id === weather)?.tip;
+
+  const sessionExercises = useMemo(
+    () =>
+      Object.fromEntries(
+        slots.map((s) => [s.number, session[s.number] ? exerciseByCode[session[s.number]!] : undefined])
+      ) as Partial<Record<SlotNumber, Exercise>>,
+    [session]
+  );
+  const synergy = useMemo(() => setupSynergyPairs(sessionExercises), [sessionExercises]);
+  const sharedSetupCount = synergy.filter((p) => p.shared).length;
+  const hasSession = Object.keys(session).length > 0;
+  const repeatedCodes = Object.values(session).filter(
+    (c): c is string => !!c && Object.values(previousSession).includes(c)
+  );
+  const repCounts = useMemo(() => {
+    const map: Partial<Record<SlotNumber, number>> = {};
+    for (const s of slots) {
+      const ex = sessionExercises[s.number];
+      if (ex) map[s.number] = repCountInPhase(phaseId, ex.code);
+    }
+    return map;
+    // historyVersion forces a re-read after generate/reset even though it's not referenced directly
+  }, [sessionExercises, phaseId, historyVersion]);
 
   return (
     <div>
@@ -205,6 +245,41 @@ export default function SessionBuilder() {
         nicht die Auswahl.
       </p>
 
+      {/* Session-Analyse: transparent, real-signal summary - no invented confidence score */}
+      {hasSession && (
+        <div className="mb-5 rounded-2xl border border-line bg-white p-4">
+          <div className="mb-2.5 flex items-center justify-between">
+            <div className="flex items-center gap-1.5 text-[12px] font-bold uppercase tracking-wide text-muted">
+              <Zap size={13} strokeWidth={2.5} />
+              Session-Analyse
+            </div>
+            <button
+              type="button"
+              onClick={resetPhase}
+              className="flex items-center gap-1 text-[11px] font-bold text-muted transition-colors hover:text-green"
+            >
+              <RotateCcw size={11} strokeWidth={2.5} />
+              Phase-Verlauf zurücksetzen
+            </button>
+          </div>
+          <div className="flex flex-wrap items-center gap-2 text-[12.5px] text-ink">
+            <span className="rounded-full bg-soft px-2.5 py-1">
+              ⚡ {sharedSetupCount} von 3 Übergängen mit gleicher Feldgröße
+            </span>
+            <span className={`rounded-full px-2.5 py-1 ${repeatedCodes.length > 0 ? 'bg-[#fff4cf] text-[#8a6d00]' : 'bg-soft text-ink'}`}>
+              {repeatedCodes.length > 0
+                ? `${repeatedCodes.join(', ')} wiederholt sich zur letzten Session (kein anderer Kandidat im Pool)`
+                : 'Keine Wiederholung zur letzten Session'}
+            </span>
+          </div>
+          <p className="mt-2 text-[11.5px] text-muted">
+            Feldgröße ist die gleiche Richtwert-Schätzung wie oben; „geteilter Aufbau" heißt nur: ähnliche
+            Platzmaße, kein geprüfter Abgleich von Hütchen-/Torstellung. Phase-Zähler zeigt, wie oft eine Übung in
+            dieser Saisonphase bereits generiert wurde (gespeichert in diesem Browser).
+          </p>
+        </div>
+      )}
+
       {/* Slot grid */}
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
         {slots.map((slot) => {
@@ -242,12 +317,19 @@ export default function SessionBuilder() {
                           <img src={exercise.image} alt={exercise.title} className="h-28 w-full object-cover" loading="lazy" />
                         )}
                         <div className="p-2.5">
-                          <span
-                            style={{ background: categoryByCode[exercise.category].color }}
-                            className="mb-1 inline-block rounded px-1.5 py-0.5 font-mono text-[11px] font-extrabold text-white"
-                          >
-                            {exercise.code}
-                          </span>
+                          <div className="mb-1 flex items-center gap-1.5">
+                            <span
+                              style={{ background: categoryByCode[exercise.category].color }}
+                              className="inline-block rounded px-1.5 py-0.5 font-mono text-[11px] font-extrabold text-white"
+                            >
+                              {exercise.code}
+                            </span>
+                            {!!repCounts[slot.number] && (
+                              <span className="rounded px-1.5 py-0.5 font-mono text-[10.5px] font-bold text-muted">
+                                {repCounts[slot.number]}. Mal in Phase {phaseId}
+                              </span>
+                            )}
+                          </div>
                           <div className="text-[13px] font-bold leading-snug text-ink">{exercise.title}</div>
                         </div>
                       </button>

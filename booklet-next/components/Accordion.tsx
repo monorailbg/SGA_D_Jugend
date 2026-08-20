@@ -50,7 +50,9 @@ export default function Accordion({
           <span className="flex min-w-0 flex-1 flex-col gap-0.5">
             <span className="font-ui text-[16px] font-extrabold text-ink">{title}</span>
             {subtitle && (
-              <span className="line-clamp-2 text-[13px] italic text-muted">{subtitle}</span>
+              <span className="line-clamp-2 min-h-[2.6em] text-[13px] italic leading-[1.3] text-muted">
+                {subtitle}
+              </span>
             )}
           </span>
           {badge && (

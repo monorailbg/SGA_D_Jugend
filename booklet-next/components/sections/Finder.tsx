@@ -1,18 +1,19 @@
 'use client';
 
+import { useState } from 'react';
 import { slots } from '@/lib/data/slots';
 import { categoryByCode } from '@/lib/data/categories';
 import { useAppContext } from '@/lib/AppContext';
 import { useExercisesForSlot } from '@/lib/customExercises';
 import SlotVisibilityBar from '../SlotVisibilityBar';
+import Accordion from '../Accordion';
 import type { SlotNumber } from '@/lib/data/types';
 
 const SLOT_EMOJI: Record<number, string> = { 1: '🔥', 2: '🎯', 3: '🎯', 4: '⚽' };
 
-function SlotTiles({ slotNumber, onPick }: { slotNumber: SlotNumber; onPick: (code: string) => void }) {
-  const exercises = useExercisesForSlot(slotNumber);
+function SlotTiles({ exercises, onPick }: { exercises: ReturnType<typeof useExercisesForSlot>; onPick: (code: string) => void }) {
   return (
-    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+    <div className="grid grid-cols-2 gap-3 p-3.5 pt-1 sm:grid-cols-3">
       {exercises.map((ex) => {
         const category = categoryByCode[ex.category];
         return (
@@ -44,8 +45,38 @@ function SlotTiles({ slotNumber, onPick }: { slotNumber: SlotNumber; onPick: (co
   );
 }
 
+function FinderSlotSection({
+  slot,
+  open,
+  onOpenChange,
+  onPick,
+}: {
+  slot: (typeof slots)[number];
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  onPick: (code: string) => void;
+}) {
+  const exercises = useExercisesForSlot(slot.number);
+  return (
+    <div className="card mb-4 overflow-hidden">
+      <Accordion
+        title={`${SLOT_EMOJI[slot.number]} Slot ${slot.number} · ${slot.name}`}
+        badge={`${exercises.length} · 20–25 min`}
+        accent={slot.color}
+        open={open}
+        onOpenChange={onOpenChange}
+      >
+        <SlotTiles exercises={exercises} onPick={onPick} />
+      </Accordion>
+    </div>
+  );
+}
+
 export default function Finder() {
   const { requestExercise, hiddenSlots } = useAppContext();
+  // Finder is a quick-scan tool, so slots start expanded (unlike Katalog's
+  // collapsed-by-default categories) - collapsing is an option, not the default.
+  const [openMap, setOpenMap] = useState<Record<number, boolean>>({ 1: true, 2: true, 3: true, 4: true });
 
   return (
     <div>
@@ -58,21 +89,13 @@ export default function Finder() {
       {slots
         .filter((slot) => !hiddenSlots.has(slot.number))
         .map((slot) => (
-          <div key={slot.number} className="mb-7">
-            <div
-              style={{ borderColor: slot.color, color: slot.color }}
-              className="mb-3 flex items-center gap-2 rounded border-l-[5px] bg-soft px-3 py-1.5"
-            >
-              <span className="shrink-0 whitespace-nowrap font-ui text-lg font-extrabold">
-                {SLOT_EMOJI[slot.number]} Slot {slot.number}
-              </span>
-              <span className="truncate font-ui text-lg font-extrabold">· {slot.name}</span>
-              <span className="ml-auto shrink-0 whitespace-nowrap rounded-full bg-white/60 px-2 py-0.5 text-[11px] font-bold text-muted">
-                20–25 min
-              </span>
-            </div>
-            <SlotTiles slotNumber={slot.number} onPick={requestExercise} />
-          </div>
+          <FinderSlotSection
+            key={slot.number}
+            slot={slot}
+            open={openMap[slot.number] ?? true}
+            onOpenChange={(open) => setOpenMap((prev) => ({ ...prev, [slot.number]: open }))}
+            onPick={requestExercise}
+          />
         ))}
       {hiddenSlots.size === 4 && (
         <p className="rounded-xl border border-dashed border-line p-6 text-center text-sm text-muted">

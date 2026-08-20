@@ -170,7 +170,7 @@ export default function SessionBuilder() {
       </p>
 
       {/* Feldbedingungen control bar */}
-      <div className="sticky top-0 z-10 mb-5 rounded-2xl border border-line bg-paper p-4 shadow-sm">
+      <div className="mb-5 rounded-2xl border border-line bg-paper p-4 shadow-sm">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           <PlayerCountSlider value={playerCount} onChange={setPlayerCount} />
 

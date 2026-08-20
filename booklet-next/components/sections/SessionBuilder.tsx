@@ -2,9 +2,10 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Shuffle, Sparkles, CloudRain, Sun, CloudSun, Users, Maximize, Info, Target, Zap, RotateCcw } from 'lucide-react';
-import { exercisesForSlot, exerciseByCode } from '@/lib/data/exercises';
+import { Shuffle, Sparkles, CloudRain, Sun, CloudSun, Users, Maximize, Info, Target, Zap, RotateCcw, Plus } from 'lucide-react';
 import { slots } from '@/lib/data/slots';
+import { useAllExercises, useExerciseByCode } from '@/lib/customExercises';
+import CreateExerciseModal from '../CreateExerciseModal';
 import { categories, categoryByCode } from '@/lib/data/categories';
 import { phases } from '@/lib/data/phases';
 import {
@@ -30,13 +31,14 @@ const WEATHER_ICON = { normal: CloudSun, rain: CloudRain, heat: Sun } as const;
 type CategoryFocus = CategoryCode | 'all';
 
 function poolForSlot(
+  allExercises: Exercise[],
   slotNum: SlotNumber,
   tier: PlayerTier,
   field: FieldSize,
   phaseId: number,
   focusCategory: CategoryFocus
 ): Exercise[] {
-  const base = exercisesForSlot(slotNum).filter((e) => allowedInPhase(e, phaseId));
+  const base = allExercises.filter((e) => e.slots.includes(slotNum)).filter((e) => allowedInPhase(e, phaseId));
   let pool = base.filter((e) => matchesPlayerTier(e, tier) && matchesFieldSize(e, field));
   if (pool.length === 0) pool = base.filter((e) => matchesPlayerTier(e, tier));
   if (pool.length === 0) pool = base;
@@ -71,6 +73,9 @@ function pickWeighted(pool: Exercise[], phaseId: number, focusCategory: Category
 
 export default function SessionBuilder() {
   const { requestExercise, hiddenSlots } = useAppContext();
+  const allExercises = useAllExercises();
+  const exerciseByCode = useExerciseByCode();
+  const [creating, setCreating] = useState(false);
   const [playerCount, setPlayerCount] = useState(12);
   const tier: PlayerTier = tierForCount(playerCount);
   const [weather, setWeather] = useState<Weather>('normal');
@@ -85,9 +90,9 @@ export default function SessionBuilder() {
   const pools = useMemo(
     () =>
       Object.fromEntries(
-        slots.map((s) => [s.number, poolForSlot(s.number, tier, field, phaseId, focusCategory)])
+        slots.map((s) => [s.number, poolForSlot(allExercises, s.number, tier, field, phaseId, focusCategory)])
       ) as Record<SlotNumber, Exercise[]>,
-    [tier, field, phaseId, focusCategory]
+    [allExercises, tier, field, phaseId, focusCategory]
   );
 
   function generateSession() {
@@ -163,11 +168,23 @@ export default function SessionBuilder() {
 
   return (
     <div>
-      <h2 className="mb-1 text-[30px] font-extrabold tracking-tight">Training-Matrix &amp; Slot-Pool</h2>
+      <div className="mb-1 flex flex-wrap items-start justify-between gap-3">
+        <h2 className="text-[30px] font-extrabold tracking-tight">Training-Matrix &amp; Slot-Pool</h2>
+        <button
+          type="button"
+          onClick={() => setCreating(true)}
+          className="flex shrink-0 items-center gap-1.5 rounded-full bg-green-d px-3.5 py-2 text-[13px] font-bold text-white transition-colors hover:bg-green"
+        >
+          <Plus size={15} strokeWidth={2.5} />
+          Übung erstellen
+        </button>
+      </div>
       <p className="lead mb-4">
         Dynamische Session-Zusammenstellung statt starrem Wochenplan: Bedingungen wählen, Session generieren, pro
         Slot einzeln austauschen.
       </p>
+
+      {creating && <CreateExerciseModal onClose={() => setCreating(false)} />}
 
       {/* Feldbedingungen control bar */}
       <div className="mb-5 rounded-2xl border border-line bg-paper p-4 shadow-sm">

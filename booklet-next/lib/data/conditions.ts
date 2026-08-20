@@ -93,11 +93,13 @@ const derivedByCode: Record<string, Derived> = Object.fromEntries(
 );
 
 export function minPlayersFor(exercise: Exercise): number {
-  return derivedByCode[exercise.code].minPlayers;
+  // Falls back to computing directly for exercises outside the precomputed base set
+  // (e.g. a coach's custom drill, saved after this module already ran once).
+  return derivedByCode[exercise.code]?.minPlayers ?? parsePlanBMin(exercise) ?? CATEGORY_DEFAULT_MIN[exercise.category];
 }
 
 export function fieldSizeFor(exercise: Exercise): FieldSize | 'unknown' {
-  return derivedByCode[exercise.code].fieldSize;
+  return derivedByCode[exercise.code]?.fieldSize ?? parseFieldSize(exercise);
 }
 
 export function matchesPlayerTier(exercise: Exercise, tier: PlayerTier): boolean {

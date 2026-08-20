@@ -2,33 +2,18 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Search, X } from 'lucide-react';
-import { exercises, exerciseByCode } from '@/lib/data/exercises';
+import { Search, X, Plus } from 'lucide-react';
 import { categories } from '@/lib/data/categories';
 import { useAppContext } from '@/lib/AppContext';
 import type { Exercise } from '@/lib/data/types';
+import { useAllExercises, useExerciseByCode } from '@/lib/customExercises';
 import Accordion from '../Accordion';
 import ExerciseCard from '../ExerciseCard';
-
-const grouped = categories.map((category) => ({
-  category,
-  items: exercises.filter((e) => e.category === category.code).sort((a, b) => a.code.localeCompare(b.code)),
-}));
+import CreateExerciseModal from '../CreateExerciseModal';
 
 function stripHtml(html: string): string {
   return html.replace(/<[^>]+>/g, ' ');
 }
-
-// Real content only: title, code, tags, and every authored block (Ziel/Aufbau/
-// Ablauf/Coaching-Punkte/...) - no invented tag taxonomy layered on top.
-const searchIndex: Record<string, string> = Object.fromEntries(
-  exercises.map((e) => [
-    e.code,
-    [e.code, e.title, ...e.tags, ...Object.values(e.blocks).map((v) => stripHtml(v ?? ''))]
-      .join(' ')
-      .toLowerCase(),
-  ])
-);
 
 // Quick-filter chips: each is a verified substring that actually occurs in the
 // real exercise text below (checked against exercises.generated.json), not a
@@ -36,7 +21,7 @@ const searchIndex: Record<string, string> = Object.fromEntries(
 // field (exercise.blocks has a Plan B key).
 const QUICK_FILTERS = ['1v1', 'Zweikampf', 'Umschalten', 'Torschuss', 'Dribbling', 'Plan B'];
 
-function matches(exercise: Exercise, query: string): boolean {
+function matches(exercise: Exercise, query: string, searchIndex: Record<string, string>): boolean {
   if (query.trim() === 'Plan B') {
     return Object.keys(exercise.blocks).some((k) => k.startsWith('Plan B'));
   }
@@ -45,10 +30,37 @@ function matches(exercise: Exercise, query: string): boolean {
 
 export default function Katalog() {
   const { exerciseTarget, clearExerciseTarget } = useAppContext();
+  const exercises = useAllExercises();
+  const exerciseByCode = useExerciseByCode();
   const [openMap, setOpenMap] = useState<Record<string, boolean>>({});
   const [highlightedCode, setHighlightedCode] = useState<string | null>(null);
   const [query, setQuery] = useState('');
+  const [creating, setCreating] = useState(false);
   const cardRefs = useRef<Record<string, HTMLElement | null>>({});
+
+  const grouped = useMemo(
+    () =>
+      categories.map((category) => ({
+        category,
+        items: exercises.filter((e) => e.category === category.code).sort((a, b) => a.code.localeCompare(b.code)),
+      })),
+    [exercises]
+  );
+
+  // Real content only: title, code, tags, and every authored block (Ziel/Aufbau/
+  // Ablauf/Coaching-Punkte/...) - no invented tag taxonomy layered on top.
+  const searchIndex = useMemo(
+    () =>
+      Object.fromEntries(
+        exercises.map((e) => [
+          e.code,
+          [e.code, e.title, ...e.tags, ...Object.values(e.blocks).map((v) => stripHtml(v ?? ''))]
+            .join(' ')
+            .toLowerCase(),
+        ])
+      ),
+    [exercises]
+  );
 
   const trimmed = query.trim();
   const isSearching = trimmed.length > 0;
@@ -56,9 +68,9 @@ export default function Katalog() {
   const results = useMemo(() => {
     if (!isSearching) return grouped;
     return grouped
-      .map(({ category, items }) => ({ category, items: items.filter((e) => matches(e, trimmed)) }))
+      .map(({ category, items }) => ({ category, items: items.filter((e) => matches(e, trimmed, searchIndex)) }))
       .filter(({ items }) => items.length > 0);
-  }, [trimmed, isSearching]);
+  }, [trimmed, isSearching, grouped, searchIndex]);
 
   const totalMatches = useMemo(() => results.reduce((sum, g) => sum + g.items.length, 0), [results]);
 
@@ -100,8 +112,20 @@ export default function Katalog() {
 
   return (
     <div>
-      <h2 className="mb-1 text-[30px] font-extrabold tracking-tight">Übungskatalog</h2>
+      <div className="mb-1 flex flex-wrap items-start justify-between gap-3">
+        <h2 className="text-[30px] font-extrabold tracking-tight">Übungskatalog</h2>
+        <button
+          type="button"
+          onClick={() => setCreating(true)}
+          className="flex shrink-0 items-center gap-1.5 rounded-full bg-green-d px-3.5 py-2 text-[13px] font-bold text-white transition-colors hover:bg-green"
+        >
+          <Plus size={15} strokeWidth={2.5} />
+          Übung erstellen
+        </button>
+      </div>
       <p className="lead mb-4">Alle {exercises.length} Übungen, gruppiert nach Kategorie. Kategorie antippen zum Auf-/Zuklappen.</p>
+
+      {creating && <CreateExerciseModal onClose={() => setCreating(false)} />}
 
       <div className="sticky top-0 z-10 mb-4 rounded-2xl border border-line bg-paper p-3 shadow-sm">
         <div className="relative">

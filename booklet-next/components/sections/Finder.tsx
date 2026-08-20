@@ -1,12 +1,48 @@
 'use client';
 
 import { slots } from '@/lib/data/slots';
-import { exercisesForSlot } from '@/lib/data/exercises';
 import { categoryByCode } from '@/lib/data/categories';
 import { useAppContext } from '@/lib/AppContext';
+import { useExercisesForSlot } from '@/lib/customExercises';
 import SlotVisibilityBar from '../SlotVisibilityBar';
+import type { SlotNumber } from '@/lib/data/types';
 
 const SLOT_EMOJI: Record<number, string> = { 1: '🔥', 2: '🎯', 3: '🎯', 4: '⚽' };
+
+function SlotTiles({ slotNumber, onPick }: { slotNumber: SlotNumber; onPick: (code: string) => void }) {
+  const exercises = useExercisesForSlot(slotNumber);
+  return (
+    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+      {exercises.map((ex) => {
+        const category = categoryByCode[ex.category];
+        return (
+          <button
+            key={ex.code}
+            type="button"
+            onClick={() => onPick(ex.code)}
+            className="flex flex-col overflow-hidden rounded-xl border border-line bg-paper text-left text-ink transition-transform hover:-translate-y-0.5 hover:shadow-lg"
+          >
+            <div className="h-[100px] shrink-0 overflow-hidden bg-soft">
+              {ex.image && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={ex.image} alt={ex.title} className="h-full w-full object-cover" loading="lazy" />
+              )}
+            </div>
+            <div className="flex flex-col gap-0.5 p-2.5">
+              <span
+                style={{ background: category.color }}
+                className="w-fit rounded px-1.5 py-0.5 font-mono text-[11px] font-extrabold text-white"
+              >
+                {ex.code}
+              </span>
+              <span className="text-[12px] leading-snug text-muted">{ex.title}</span>
+            </div>
+          </button>
+        );
+      })}
+    </div>
+  );
+}
 
 export default function Finder() {
   const { requestExercise, hiddenSlots } = useAppContext();
@@ -35,35 +71,7 @@ export default function Finder() {
                 20–25 min
               </span>
             </div>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-              {exercisesForSlot(slot.number).map((ex) => {
-                const category = categoryByCode[ex.category];
-                return (
-                  <button
-                    key={ex.code}
-                    type="button"
-                    onClick={() => requestExercise(ex.code)}
-                    className="flex flex-col overflow-hidden rounded-xl border border-line bg-paper text-left text-ink transition-transform hover:-translate-y-0.5 hover:shadow-lg"
-                  >
-                    <div className="h-[100px] shrink-0 overflow-hidden bg-soft">
-                      {ex.image && (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img src={ex.image} alt={ex.title} className="h-full w-full object-cover" loading="lazy" />
-                      )}
-                    </div>
-                    <div className="flex flex-col gap-0.5 p-2.5">
-                      <span
-                        style={{ background: category.color }}
-                        className="w-fit rounded px-1.5 py-0.5 font-mono text-[11px] font-extrabold text-white"
-                      >
-                        {ex.code}
-                      </span>
-                      <span className="text-[12px] leading-snug text-muted">{ex.title}</span>
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
+            <SlotTiles slotNumber={slot.number} onPick={requestExercise} />
           </div>
         ))}
       {hiddenSlots.size === 4 && (

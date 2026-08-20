@@ -20,7 +20,7 @@ export default function Wochenplan() {
         Auf-/Zuklappen.
       </p>
       <SlotVisibilityBar />
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid grid-cols-1 items-start gap-4 md:grid-cols-2 xl:grid-cols-3">
         {weekPlans.map((week, i) => (
           <div key={week.wknr} className="card overflow-hidden">
             <Accordion title={`${week.wknr} · ${week.wkdate}`} subtitle={week.wkfokus} defaultOpen={i === 0}>

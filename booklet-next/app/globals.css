@@ -161,12 +161,15 @@ body {
   border-radius: 9px;
   padding: 9px 11px;
   margin-top: 8px;
+  border-left: 3px solid var(--line);
 }
 .note.ha {
   background: #fff7e8;
+  border-left-color: #d99a00;
 }
 .note.pb {
   background: #eef5ff;
+  border-left-color: var(--green);
 }
 .note.mat {
   margin-top: 14px;

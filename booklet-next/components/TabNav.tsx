@@ -47,7 +47,7 @@ export default function TabNav() {
           />
         </button>
 
-        <div className="flex min-w-0 flex-1 gap-0.5 overflow-x-auto [mask-image:linear-gradient(90deg,#000_92%,transparent)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="flex min-w-0 flex-1 gap-0.5 overflow-x-auto pr-6 [mask-image:linear-gradient(90deg,#000_calc(100%-32px),transparent)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {TABS.map((tab) => {
             const Icon = ICONS[tab.id];
             const isActive = activeTab === tab.id;
@@ -57,7 +57,7 @@ export default function TabNav() {
                 type="button"
                 onClick={() => setActiveTab(tab.id)}
                 aria-current={isActive ? 'page' : undefined}
-                className={`flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-2 text-[12.5px] font-bold uppercase tracking-wide transition-colors ${
+                className={`flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full px-2.5 py-2 text-[12.5px] font-bold uppercase tracking-wide transition-colors ${
                   isActive ? 'bg-green-d text-white' : 'text-ink hover:bg-soft hover:text-green'
                 }`}
               >

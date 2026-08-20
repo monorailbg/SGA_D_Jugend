@@ -39,7 +39,7 @@ export default function TabNav() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/misc/logo.png"
+            src="/images/misc/sga_logo.svg"
             alt="SGA"
             width={28}
             height={28}

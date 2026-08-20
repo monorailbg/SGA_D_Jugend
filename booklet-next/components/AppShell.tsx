@@ -90,7 +90,7 @@ export default function AppShell() {
             <div className="relative mx-auto flex max-w-[1080px] items-center gap-4 px-4 py-3">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white p-1 shadow-lg">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/misc/logo.png" alt="SGA Logo" width={40} height={40} className="object-contain" />
+                <img src="/images/misc/sga_logo.svg" alt="SGA Logo" width={40} height={40} className="object-contain" />
               </div>
               <div className="min-w-0">
                 <div className="truncate text-[11px] uppercase tracking-widest opacity-90">

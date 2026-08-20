@@ -22,6 +22,7 @@ import {
 import { reinforcementWeighted, repCountInPhase, recordSessionInPhase, resetPhaseHistory, setupSynergyPairs } from '@/lib/data/harmony';
 import { useAppContext } from '@/lib/AppContext';
 import type { CategoryCode, Exercise, SlotNumber } from '@/lib/data/types';
+import SlotVisibilityBar from '../SlotVisibilityBar';
 
 const WEATHER_ICON = { normal: CloudSun, rain: CloudRain, heat: Sun } as const;
 
@@ -68,7 +69,7 @@ function pickWeighted(pool: Exercise[], phaseId: number, focusCategory: Category
 }
 
 export default function SessionBuilder() {
-  const { requestExercise } = useAppContext();
+  const { requestExercise, hiddenSlots } = useAppContext();
   const [tier, setTier] = useState<PlayerTier>('full');
   const [weather, setWeather] = useState<Weather>('normal');
   const [field, setField] = useState<FieldSize>('half');
@@ -281,8 +282,11 @@ export default function SessionBuilder() {
       )}
 
       {/* Slot grid */}
+      <SlotVisibilityBar />
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
-        {slots.map((slot) => {
+        {slots
+          .filter((slot) => !hiddenSlots.has(slot.number))
+          .map((slot) => {
           const code = session[slot.number];
           const exercise = code ? exerciseByCode[code] : null;
           const poolCount = pools[slot.number].length;
@@ -290,11 +294,10 @@ export default function SessionBuilder() {
 
           return (
             <div key={slot.number} className="card overflow-hidden">
-              <div style={{ borderColor: slot.color, color: slot.color }} className="flex items-center justify-between border-b-[3px] px-3.5 py-2.5">
-                <span className="font-ui text-[13px] font-extrabold uppercase tracking-wide">
-                  Slot {slot.number} · {slot.name}
-                </span>
-                <span className="font-mono text-[11px] text-muted">{poolCount} passend</span>
+              <div style={{ borderColor: slot.color, color: slot.color }} className="flex items-center gap-1.5 whitespace-nowrap border-b-[3px] px-3.5 py-2.5">
+                <span className="shrink-0 font-ui text-[13px] font-extrabold uppercase tracking-wide">Slot {slot.number}</span>
+                <span className="truncate font-ui text-[13px] font-extrabold uppercase tracking-wide">· {slot.name}</span>
+                <span className="ml-auto shrink-0 font-mono text-[11px] text-muted">{poolCount} passend</span>
               </div>
 
               <div className="p-3.5">
@@ -379,6 +382,11 @@ export default function SessionBuilder() {
           );
         })}
       </div>
+      {hiddenSlots.size === 4 && (
+        <p className="mt-4 rounded-xl border border-dashed border-line p-6 text-center text-sm text-muted">
+          Alle Slots ausgeblendet – oben wieder einblenden.
+        </p>
+      )}
     </div>
   );
 }

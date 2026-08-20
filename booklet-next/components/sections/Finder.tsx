@@ -4,11 +4,12 @@ import { slots } from '@/lib/data/slots';
 import { exercisesForSlot } from '@/lib/data/exercises';
 import { categoryByCode } from '@/lib/data/categories';
 import { useAppContext } from '@/lib/AppContext';
+import SlotVisibilityBar from '../SlotVisibilityBar';
 
 const SLOT_EMOJI: Record<number, string> = { 1: '🔥', 2: '🎯', 3: '🎯', 4: '⚽' };
 
 export default function Finder() {
-  const { requestExercise } = useAppContext();
+  const { requestExercise, hiddenSlots } = useAppContext();
 
   return (
     <div>
@@ -17,45 +18,59 @@ export default function Finder() {
         Alle Übungen sortiert nach Trainingsslot – zum schnellen Finden einer Alternative. Kachel antippen springt
         direkt in den Katalog.
       </p>
-      {slots.map((slot) => (
-        <div key={slot.number} className="mb-7">
-          <div
-            style={{ borderColor: slot.color, color: slot.color }}
-            className="mb-3 rounded border-l-[5px] bg-soft px-3 py-1.5 font-ui text-lg font-extrabold"
-          >
-            {SLOT_EMOJI[slot.number]} Slot {slot.number} · {slot.name}
+      <SlotVisibilityBar />
+      {slots
+        .filter((slot) => !hiddenSlots.has(slot.number))
+        .map((slot) => (
+          <div key={slot.number} className="mb-7">
+            <div
+              style={{ borderColor: slot.color, color: slot.color }}
+              className="mb-3 flex items-center gap-2 rounded border-l-[5px] bg-soft px-3 py-1.5"
+            >
+              <span className="shrink-0 whitespace-nowrap font-ui text-lg font-extrabold">
+                {SLOT_EMOJI[slot.number]} Slot {slot.number}
+              </span>
+              <span className="truncate font-ui text-lg font-extrabold">· {slot.name}</span>
+              <span className="ml-auto shrink-0 whitespace-nowrap rounded-full bg-white/60 px-2 py-0.5 text-[11px] font-bold text-muted">
+                20–25 min
+              </span>
+            </div>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {exercisesForSlot(slot.number).map((ex) => {
+                const category = categoryByCode[ex.category];
+                return (
+                  <button
+                    key={ex.code}
+                    type="button"
+                    onClick={() => requestExercise(ex.code)}
+                    className="flex flex-col overflow-hidden rounded-xl border border-line bg-paper text-left text-ink transition-transform hover:-translate-y-0.5 hover:shadow-lg"
+                  >
+                    <div className="h-[100px] shrink-0 overflow-hidden bg-soft">
+                      {ex.image && (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img src={ex.image} alt={ex.title} className="h-full w-full object-cover" loading="lazy" />
+                      )}
+                    </div>
+                    <div className="flex flex-col gap-0.5 p-2.5">
+                      <span
+                        style={{ background: category.color }}
+                        className="w-fit rounded px-1.5 py-0.5 font-mono text-[11px] font-extrabold text-white"
+                      >
+                        {ex.code}
+                      </span>
+                      <span className="text-[12px] leading-snug text-muted">{ex.title}</span>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
           </div>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-            {exercisesForSlot(slot.number).map((ex) => {
-              const category = categoryByCode[ex.category];
-              return (
-                <button
-                  key={ex.code}
-                  type="button"
-                  onClick={() => requestExercise(ex.code)}
-                  className="flex flex-col overflow-hidden rounded-xl border border-line bg-paper text-left text-ink transition-transform hover:-translate-y-0.5 hover:shadow-lg"
-                >
-                  <div className="h-[100px] shrink-0 overflow-hidden bg-soft">
-                    {ex.image && (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={ex.image} alt={ex.title} className="h-full w-full object-cover" loading="lazy" />
-                    )}
-                  </div>
-                  <div className="flex flex-col gap-0.5 p-2.5">
-                    <span
-                      style={{ background: category.color }}
-                      className="w-fit rounded px-1.5 py-0.5 font-mono text-[11px] font-extrabold text-white"
-                    >
-                      {ex.code}
-                    </span>
-                    <span className="text-[12px] leading-snug text-muted">{ex.title}</span>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      ))}
+        ))}
+      {hiddenSlots.size === 4 && (
+        <p className="rounded-xl border border-dashed border-line p-6 text-center text-sm text-muted">
+          Alle Slots ausgeblendet – oben wieder einblenden.
+        </p>
+      )}
     </div>
   );
 }

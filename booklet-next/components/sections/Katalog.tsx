@@ -14,7 +14,7 @@ const grouped = categories.map((category) => ({
 
 export default function Katalog() {
   const { exerciseTarget, clearExerciseTarget } = useAppContext();
-  const [openMap, setOpenMap] = useState<Record<string, boolean>>({ K: true });
+  const [openMap, setOpenMap] = useState<Record<string, boolean>>({});
   const [highlightedCode, setHighlightedCode] = useState<string | null>(null);
   const cardRefs = useRef<Record<string, HTMLElement | null>>({});
 

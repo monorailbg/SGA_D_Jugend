@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { AppContext, TABS, type TabId } from '@/lib/AppContext';
+import type { SlotNumber } from '@/lib/data/types';
 import PasswordGate from './PasswordGate';
 import HeaderBanner from './HeaderBanner';
 import TabNav from './TabNav';
@@ -31,7 +32,17 @@ export default function AppShell() {
   const [activeTab, setActiveTabState] = useState<TabId>('ueberblick');
   const [exerciseTarget, setExerciseTarget] = useState<string | null>(null);
   const [phaseTarget, setPhaseTarget] = useState<number | null>(null);
+  const [hiddenSlots, setHiddenSlots] = useState<Set<SlotNumber>>(new Set());
   const contentRef = useRef<HTMLDivElement>(null);
+
+  const toggleSlotVisibility = useCallback((slot: SlotNumber) => {
+    setHiddenSlots((prev) => {
+      const next = new Set(prev);
+      if (next.has(slot)) next.delete(slot);
+      else next.add(slot);
+      return next;
+    });
+  }, []);
 
   const setActiveTab = useCallback((tab: TabId) => {
     setActiveTabState(tab);
@@ -82,6 +93,8 @@ export default function AppShell() {
         phaseTarget,
         requestPhase,
         clearPhaseTarget: () => setPhaseTarget(null),
+        hiddenSlots,
+        toggleSlotVisibility,
       }}
     >
       {!unlocked && <PasswordGate onUnlock={() => setUnlocked(true)} />}

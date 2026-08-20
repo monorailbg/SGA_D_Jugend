@@ -3,9 +3,11 @@
 import { weekPlans } from '@/lib/data/weekplan';
 import { useAppContext } from '@/lib/AppContext';
 import Accordion from '../Accordion';
+import SlotVisibilityBar from '../SlotVisibilityBar';
+import type { SlotNumber } from '@/lib/data/types';
 
 export default function Wochenplan() {
-  const { requestExercise } = useAppContext();
+  const { requestExercise, hiddenSlots } = useAppContext();
 
   return (
     <div>
@@ -14,6 +16,7 @@ export default function Wochenplan() {
         6 Wochen im Detail: Vorbereitung Hinrunde (VB) und die ersten Wochen der Hinrunde (HR). Woche antippen zum
         Auf-/Zuklappen.
       </p>
+      <SlotVisibilityBar />
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
         {weekPlans.map((week, i) => (
           <div key={week.wknr} className="card overflow-hidden">
@@ -28,14 +31,19 @@ export default function Wochenplan() {
                       {day.label}
                     </span>
                     <div className="mt-1.5 flex flex-col gap-1.5">
-                      {day.entries.map((entry, j) => (
-                        <div key={j} className="flex items-center gap-2">
-                          <button type="button" className="ccode" onClick={() => requestExercise(entry.code)}>
-                            {entry.code}
-                          </button>
-                          <span className="text-[13px] leading-tight text-ink">{entry.title}</span>
-                        </div>
-                      ))}
+                      {day.entries.map((entry, j) => {
+                        // Entries are ordered Slot 1 -> 4 within each day (see PROJEKTKONTEXT).
+                        const slotNum = (j + 1) as SlotNumber;
+                        if (hiddenSlots.has(slotNum)) return null;
+                        return (
+                          <div key={j} className="flex items-center gap-2">
+                            <button type="button" className="ccode" onClick={() => requestExercise(entry.code)}>
+                              {entry.code}
+                            </button>
+                            <span className="text-[13px] leading-tight text-ink">{entry.title}</span>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 ))}

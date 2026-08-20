@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useContext } from 'react';
+import type { SlotNumber } from './data/types';
 
 export const TABS = [
   { id: 'ueberblick', label: 'Überblick' },
@@ -27,6 +28,9 @@ export interface AppContextValue {
   phaseTarget: number | null;
   requestPhase: (id: number) => void;
   clearPhaseTarget: () => void;
+  /** Slots currently hidden via the global Slot-Sichtbarkeit control, shared across Finder/Session-Builder/Wochenplan. */
+  hiddenSlots: Set<SlotNumber>;
+  toggleSlotVisibility: (slot: SlotNumber) => void;
 }
 
 export const AppContext = createContext<AppContextValue | null>(null);

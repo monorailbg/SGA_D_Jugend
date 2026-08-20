@@ -29,6 +29,7 @@ const ICONS: Record<TabId, LucideIcon> = {
 export default function TabNav() {
   const { activeTab, setActiveTab } = useAppContext();
   const scrollRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef<HTMLElement>(null);
   const [showLeftFade, setShowLeftFade] = useState(false);
   const [showRightFade, setShowRightFade] = useState(false);
 
@@ -51,8 +52,33 @@ export default function TabNav() {
     };
   }, []);
 
+  // Fixed on mobile, so scrollable content below needs padding matching its real
+  // rendered height (icons/labels can wrap font metrics differently per device,
+  // and it carries a safe-area inset on notched phones) - never a guessed constant.
+  useEffect(() => {
+    const el = navRef.current;
+    if (!el) return;
+
+    function update() {
+      if (!el) return;
+      document.documentElement.style.setProperty('--nav-height', `${el.getBoundingClientRect().height}px`);
+    }
+
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(el);
+    window.addEventListener('resize', update);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', update);
+    };
+  }, []);
+
   return (
-    <nav className="sticky top-0 z-30 border-b border-line/70 bg-white/70 shadow-[0_1px_0_rgba(255,255,255,.6)_inset,0_4px_16px_rgba(10,25,41,.05)] backdrop-blur-xl backdrop-saturate-150 max-[600px]:fixed max-[600px]:inset-x-0 max-[600px]:bottom-0 max-[600px]:top-auto max-[600px]:w-full max-[600px]:border-b-0 max-[600px]:border-t">
+    <nav
+      ref={navRef}
+      className="sticky top-0 z-30 border-b border-line/70 bg-white/70 shadow-[0_1px_0_rgba(255,255,255,.6)_inset,0_4px_16px_rgba(10,25,41,.05)] backdrop-blur-xl backdrop-saturate-150 max-[600px]:fixed max-[600px]:inset-x-0 max-[600px]:bottom-0 max-[600px]:top-auto max-[600px]:w-full max-[600px]:border-b-0 max-[600px]:border-t max-[600px]:pb-[env(safe-area-inset-bottom)]"
+    >
       <div className="mx-auto flex max-w-[1080px] items-center gap-2.5 px-4 py-2">
         <button
           type="button"

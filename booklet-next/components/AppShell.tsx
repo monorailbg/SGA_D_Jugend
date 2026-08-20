@@ -104,7 +104,10 @@ export default function AppShell() {
 
           <TabNav />
 
-          <main ref={contentRef} className="flex-1 overflow-y-auto pb-16 min-[600px]:pb-0">
+          <main
+            ref={contentRef}
+            className="flex-1 overflow-y-auto max-[600px]:pb-[var(--nav-height,4rem)] min-[600px]:pb-0"
+          >
             <div className="mx-auto max-w-[1080px] px-4 py-6">
               <AnimatePresence mode="wait">
                 <motion.div

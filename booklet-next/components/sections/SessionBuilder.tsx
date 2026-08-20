@@ -213,7 +213,7 @@ export default function SessionBuilder() {
                 onClick={() => setFocusCategory(c.code)}
                 accent={focusCategory === c.code ? c.color : undefined}
               >
-                {c.code}
+                {c.name}
               </SegButton>
             ))}
           </ControlGroup>

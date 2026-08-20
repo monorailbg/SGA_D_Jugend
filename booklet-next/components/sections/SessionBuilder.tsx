@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Shuffle, Sparkles, CloudRain, Sun, CloudSun, Users, Maximize, Info, Target, Zap, RotateCcw } from 'lucide-react';
 import { exercisesForSlot, exerciseByCode } from '@/lib/data/exercises';
@@ -8,13 +8,13 @@ import { slots } from '@/lib/data/slots';
 import { categories, categoryByCode } from '@/lib/data/categories';
 import { phases } from '@/lib/data/phases';
 import {
-  PLAYER_TIERS,
   WEATHER_OPTIONS,
   FIELD_SIZES,
   PHASE_FOCUS_CATEGORIES,
   allowedInPhase,
   matchesPlayerTier,
   matchesFieldSize,
+  minPlayersFor,
   type PlayerTier,
   type Weather,
   type FieldSize,
@@ -23,6 +23,7 @@ import { reinforcementWeighted, repCountInPhase, recordSessionInPhase, resetPhas
 import { useAppContext } from '@/lib/AppContext';
 import type { CategoryCode, Exercise, SlotNumber } from '@/lib/data/types';
 import SlotVisibilityBar from '../SlotVisibilityBar';
+import PlayerCountSlider, { tierForCount } from '../PlayerCountSlider';
 
 const WEATHER_ICON = { normal: CloudSun, rain: CloudRain, heat: Sun } as const;
 
@@ -70,7 +71,8 @@ function pickWeighted(pool: Exercise[], phaseId: number, focusCategory: Category
 
 export default function SessionBuilder() {
   const { requestExercise, hiddenSlots } = useAppContext();
-  const [tier, setTier] = useState<PlayerTier>('full');
+  const [playerCount, setPlayerCount] = useState(12);
+  const tier: PlayerTier = tierForCount(playerCount);
   const [weather, setWeather] = useState<Weather>('normal');
   const [field, setField] = useState<FieldSize>('half');
   const [phaseId, setPhaseId] = useState(1);
@@ -117,6 +119,23 @@ export default function SessionBuilder() {
     setHistoryVersion((v) => v + 1);
   }
 
+  // Auto-surface Plan B once the slider drops below an exercise's own real
+  // derived minPlayers threshold - not a flat "<8" rule, each exercise's own
+  // number (from its authored Plan B text or category default).
+  useEffect(() => {
+    setPlanBOpen((prev) => {
+      const next = { ...prev };
+      for (const s of slots) {
+        const code = session[s.number];
+        const exercise = code ? exerciseByCode[code] : null;
+        if (!exercise) continue;
+        const planBKey = Object.keys(exercise.blocks).find((k) => k.startsWith('Plan B'));
+        if (planBKey && playerCount < minPlayersFor(exercise)) next[exercise.code] = true;
+      }
+      return next;
+    });
+  }, [playerCount, session]);
+
   const weatherTip = WEATHER_OPTIONS.find((w) => w.id === weather)?.tip;
 
   const sessionExercises = useMemo(
@@ -153,13 +172,7 @@ export default function SessionBuilder() {
       {/* Feldbedingungen control bar */}
       <div className="sticky top-0 z-10 mb-5 rounded-2xl border border-line bg-white/85 p-4 shadow-sm backdrop-blur-md">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-          <ControlGroup icon={Users} label="Spieleranzahl">
-            {PLAYER_TIERS.map((t) => (
-              <SegButton key={t.id} active={tier === t.id} onClick={() => setTier(t.id)}>
-                {t.label}
-              </SegButton>
-            ))}
-          </ControlGroup>
+          <PlayerCountSlider value={playerCount} onChange={setPlayerCount} />
 
           <ControlGroup icon={CloudSun} label="Wetter / Platz">
             {WEATHER_OPTIONS.map((w) => {
@@ -350,9 +363,18 @@ export default function SessionBuilder() {
                           <button
                             type="button"
                             onClick={() => setPlanBOpen((prev) => ({ ...prev, [exercise.code]: !prev[exercise.code] }))}
-                            className="flex flex-1 items-center justify-center rounded-lg border border-line bg-white py-1.5 text-[12px] font-bold text-ink transition-colors hover:border-green hover:text-green"
+                            className={`flex flex-1 items-center justify-center gap-1 rounded-lg border py-1.5 text-[12px] font-bold transition-colors ${
+                              playerCount < minPlayersFor(exercise)
+                                ? 'border-[#d99a00] bg-[#fff7e8] text-[#8a6d00]'
+                                : 'border-line bg-white text-ink hover:border-green hover:text-green'
+                            }`}
                           >
                             Plan B
+                            {playerCount < minPlayersFor(exercise) && (
+                              <span className="rounded-full bg-[#d99a00] px-1.5 py-0.5 text-[9.5px] font-extrabold uppercase text-white">
+                                Empfohlen
+                              </span>
+                            )}
                           </button>
                         )}
                       </div>

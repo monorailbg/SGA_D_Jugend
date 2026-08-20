@@ -103,7 +103,7 @@ export default function Katalog() {
       <h2 className="mb-1 text-[30px] font-extrabold tracking-tight">Übungskatalog</h2>
       <p className="lead mb-4">Alle {exercises.length} Übungen, gruppiert nach Kategorie. Kategorie antippen zum Auf-/Zuklappen.</p>
 
-      <div className="sticky top-0 z-10 mb-4 rounded-2xl border border-line bg-white/90 p-3 shadow-sm backdrop-blur-md">
+      <div className="sticky top-0 z-10 mb-4 rounded-2xl border border-line bg-paper p-3 shadow-sm">
         <div className="relative">
           <Search size={16} strokeWidth={2.5} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted" />
           <input

@@ -2,12 +2,13 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Trash2 } from 'lucide-react';
+import { Sparkles, Trash2, Pencil } from 'lucide-react';
 import type { Exercise } from '@/lib/data/types';
 import { categoryByCode } from '@/lib/data/categories';
 import { slots as allSlots } from '@/lib/data/slots';
 import { deleteCustomExercise } from '@/lib/customExercises';
 import Accordion from './Accordion';
+import CreateExerciseModal from './CreateExerciseModal';
 
 const BLOCK_ORDER = ['Ziel', 'Material', 'Aufbau', 'Ablauf', 'Varianten', 'Coaching-Punkte'] as const;
 
@@ -26,6 +27,7 @@ export default function ExerciseCard({
   const [confirmingDelete, setConfirmingDelete] = useState(false);
   const [deleting, setDeleting] = useState(false);
   const [deleteError, setDeleteError] = useState<string | null>(null);
+  const [editing, setEditing] = useState(false);
   const showImage = exercise.image && !imgError;
   const planBKey = Object.keys(exercise.blocks).find((k) => k.startsWith('Plan B'));
 
@@ -53,21 +55,32 @@ export default function ExerciseCard({
       whileTap={{ scale: 0.99 }}
       className="card my-3.5 scroll-mt-24 overflow-hidden"
     >
+      {editing && <CreateExerciseModal existing={exercise} onClose={() => setEditing(false)} />}
       <header style={{ borderLeftColor: accent }} className="border-l-[6px] bg-soft px-[18px] py-3.5">
         <div className="flex items-center gap-3">
           <span style={{ borderColor: accent }} className="ccode big">{exercise.code}</span>
           <h3 className="m-0 flex-1 text-[21px] font-extrabold">{exercise.title}</h3>
-          {exercise.isCustom && !confirmingDelete && (
-            <button
-              type="button"
-              onClick={() => setConfirmingDelete(true)}
-              aria-label="Übung löschen"
-              className="shrink-0 rounded-full p-2 text-muted transition-colors hover:bg-[#d23b3b]/10 hover:text-[#d23b3b]"
-            >
-              <Trash2 size={16} strokeWidth={2.5} />
-            </button>
+          {!confirmingDelete && (
+            <div className="flex shrink-0 items-center gap-1">
+              <button
+                type="button"
+                onClick={() => setEditing(true)}
+                aria-label="Übung bearbeiten"
+                className="rounded-full p-2 text-muted transition-colors hover:bg-green/10 hover:text-green"
+              >
+                <Pencil size={16} strokeWidth={2.5} />
+              </button>
+              <button
+                type="button"
+                onClick={() => setConfirmingDelete(true)}
+                aria-label="Übung löschen"
+                className="rounded-full p-2 text-muted transition-colors hover:bg-[#d23b3b]/10 hover:text-[#d23b3b]"
+              >
+                <Trash2 size={16} strokeWidth={2.5} />
+              </button>
+            </div>
           )}
-          {exercise.isCustom && confirmingDelete && (
+          {confirmingDelete && (
             <div className="flex shrink-0 items-center gap-1.5">
               <span className="text-[12px] font-bold text-muted">Löschen?</span>
               <button
@@ -102,12 +115,10 @@ export default function ExerciseCard({
           <span style={{ background: category.color }} className="chip">
             {category.code} · {category.name}
           </span>
-          {exercise.isCustom && (
-            <span className="chip flex items-center gap-1 bg-ink text-white">
-              <Sparkles size={11} strokeWidth={2.5} />
-              Trainer-Übung
-            </span>
-          )}
+          <span className={`chip flex items-center gap-1 ${exercise.isCustom ? 'bg-ink text-white' : 'bg-line text-ink'}`}>
+            {exercise.isCustom && <Sparkles size={11} strokeWidth={2.5} />}
+            {exercise.isCustom ? 'Trainer-Übung' : 'Original'}
+          </span>
         </div>
       </header>
       <div className="grid gap-[18px] p-[18px] md:grid-cols-[minmax(280px,40%)_1fr]">

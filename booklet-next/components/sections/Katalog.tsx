@@ -30,7 +30,7 @@ function matches(exercise: Exercise, query: string, searchIndex: Record<string, 
 
 export default function Katalog() {
   const { exerciseTarget, clearExerciseTarget } = useAppContext();
-  const exercises = useAllExercises();
+  const { exercises } = useAllExercises();
   const exerciseByCode = useExerciseByCode();
   const [openMap, setOpenMap] = useState<Record<string, boolean>>({});
   const [highlightedCode, setHighlightedCode] = useState<string | null>(null);

@@ -2,11 +2,11 @@
 
 import { useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { X, Upload, Plus } from 'lucide-react';
+import { X, Upload, Plus, Save } from 'lucide-react';
 import { categories } from '@/lib/data/categories';
 import { slots } from '@/lib/data/slots';
 import type { CategoryCode, Exercise, SlotNumber } from '@/lib/data/types';
-import { addCustomExercise, uploadDrillImage, useAllExercises } from '@/lib/customExercises';
+import { addCustomExercise, updateExercise, uploadDrillImage, useAllExercises } from '@/lib/customExercises';
 import { supabaseEnabled } from '@/lib/supabaseClient';
 
 const BLOCK_FIELDS: { key: string; label: string; placeholder: string; required?: boolean }[] = [
@@ -42,18 +42,43 @@ function compressImage(file: File, maxWidth = 900, quality = 0.75): Promise<stri
   });
 }
 
-export default function CreateExerciseModal({ onClose }: { onClose: () => void }) {
-  const allExercises = useAllExercises();
-  const existingCodes = useMemo(() => new Set(allExercises.map((e) => e.code)), [allExercises]);
+function blocksToPlainRecord(blocks: Exercise['blocks']): Record<string, string> {
+  const out: Record<string, string> = {};
+  for (const [k, v] of Object.entries(blocks)) if (v) out[k] = v;
+  return out;
+}
 
-  const [category, setCategory] = useState<CategoryCode>('K');
-  const [code, setCode] = useState(() => nextCode('K', allExercises));
-  const [title, setTitle] = useState('');
-  const [slotNumber, setSlotNumber] = useState<SlotNumber>(1);
-  const [image, setImage] = useState<string | null>(null);
+export default function CreateExerciseModal({
+  onClose,
+  existing,
+}: {
+  onClose: () => void;
+  /** When provided, the modal edits this exercise instead of creating a new one. */
+  existing?: Exercise;
+}) {
+  const isEditing = !!existing;
+  const { exercises: allExercises } = useAllExercises();
+  const existingCodes = useMemo(
+    () => new Set(allExercises.filter((e) => e.code !== existing?.code).map((e) => e.code)),
+    [allExercises, existing]
+  );
+
+  const [category, setCategory] = useState<CategoryCode>(existing?.category ?? 'K');
+  const [code, setCode] = useState(() => existing?.code ?? nextCode('K', allExercises));
+  const [title, setTitle] = useState(existing?.title ?? '');
+  const [slotNumbers, setSlotNumbers] = useState<Set<SlotNumber>>(new Set(existing?.slots ?? [1]));
+  const [image, setImage] = useState<string | null>(existing?.image ?? null);
   const [imageError, setImageError] = useState<string | null>(null);
-  const [blocks, setBlocks] = useState<Record<string, string>>({});
-  const [planB, setPlanB] = useState('');
+  const [blocks, setBlocks] = useState<Record<string, string>>(() => {
+    const initial = blocksToPlainRecord(existing?.blocks ?? {});
+    const planBKey = Object.keys(initial).find((k) => k.startsWith('Plan B'));
+    if (planBKey) delete initial[planBKey];
+    return initial;
+  });
+  const [planB, setPlanB] = useState(() => {
+    const planBKey = Object.keys(existing?.blocks ?? {}).find((k) => k.startsWith('Plan B'));
+    return planBKey ? existing!.blocks[planBKey]! : '';
+  });
   const [error, setError] = useState<string | null>(null);
   const [saved, setSaved] = useState(false);
   const [saving, setSaving] = useState(false);
@@ -69,7 +94,16 @@ export default function CreateExerciseModal({ onClose }: { onClose: () => void }
 
   function handleCategoryChange(cat: CategoryCode) {
     setCategory(cat);
-    setCode(nextCode(cat, allExercises));
+    if (!isEditing) setCode(nextCode(cat, allExercises));
+  }
+
+  function toggleSlot(n: SlotNumber) {
+    setSlotNumbers((prev) => {
+      const next = new Set(prev);
+      if (next.has(n)) next.delete(n);
+      else next.add(n);
+      return next;
+    });
   }
 
   async function handleImageChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -88,10 +122,11 @@ export default function CreateExerciseModal({ onClose }: { onClose: () => void }
     setError(null);
     if (!title.trim()) return setError('Titel fehlt.');
     if (!code.trim()) return setError('Code fehlt.');
+    if (slotNumbers.size === 0) return setError('Mindestens ein Slot muss ausgewählt sein.');
     if (!BLOCK_FIELDS.filter((f) => f.required).every((f) => (blocks[f.key] ?? '').trim())) {
       return setError('Ziel, Aufbau und Ablauf sind Pflichtfelder.');
     }
-    if (existingCodes.has(code.trim())) {
+    if (!isEditing && existingCodes.has(code.trim())) {
       return setError(`Code „${code.trim()}“ ist schon vergeben – bitte einen anderen wählen.`);
     }
 
@@ -101,17 +136,30 @@ export default function CreateExerciseModal({ onClose }: { onClose: () => void }
     }
     if (planB.trim()) finalBlocks['Plan B'] = planB.trim();
 
+    const sortedSlots = [...slotNumbers].sort() as SlotNumber[];
+
     setSaving(true);
     try {
-      const hostedImage = image ? await uploadDrillImage(image, code.trim()) : null;
-      await addCustomExercise({
-        code: code.trim(),
-        title: title.trim(),
-        category,
-        slot: slotNumber,
-        image: hostedImage,
-        blocks: finalBlocks,
-      });
+      const hostedImage =
+        image && image !== existing?.image ? await uploadDrillImage(image, code.trim()) : (image ?? null);
+      if (isEditing) {
+        await updateExercise(existing!.code, {
+          title: title.trim(),
+          category,
+          slots: sortedSlots,
+          image: hostedImage,
+          blocks: finalBlocks,
+        });
+      } else {
+        await addCustomExercise({
+          code: code.trim(),
+          title: title.trim(),
+          category,
+          slots: sortedSlots,
+          image: hostedImage,
+          blocks: finalBlocks,
+        });
+      }
       setSaved(true);
       setTimeout(onClose, 900);
     } catch (err) {
@@ -140,11 +188,13 @@ export default function CreateExerciseModal({ onClose }: { onClose: () => void }
         >
           <div className="mb-4 flex items-start justify-between">
             <div>
-              <h3 className="text-[20px] font-extrabold text-ink">Eigene Übung erstellen</h3>
+              <h3 className="text-[20px] font-extrabold text-ink">
+                {isEditing ? 'Übung bearbeiten' : 'Eigene Übung erstellen'}
+              </h3>
               <p className="text-[13px] text-muted">
                 {supabaseEnabled
-                  ? 'Wird für alle Trainer sichtbar gespeichert und erscheint sofort im Katalog.'
-                  : 'Wird lokal in diesem Browser gespeichert und erscheint sofort im Katalog.'}
+                  ? `Wird für alle Trainer sichtbar ${isEditing ? 'aktualisiert' : 'gespeichert'} und erscheint sofort im Katalog.`
+                  : `Wird lokal in diesem Browser ${isEditing ? 'aktualisiert' : 'gespeichert'} und erscheint sofort im Katalog.`}
               </p>
             </div>
             <button type="button" onClick={onClose} aria-label="Schließen" className="rounded-full p-1.5 text-muted hover:bg-soft hover:text-ink">
@@ -154,7 +204,8 @@ export default function CreateExerciseModal({ onClose }: { onClose: () => void }
 
           {saved ? (
             <div className="rounded-xl border border-[#1f9d57]/30 bg-[#1f9d57]/10 p-6 text-center text-[14px] font-bold text-[#1f9d57]">
-              „{title}“ gespeichert{supabaseEnabled ? ' – für alle Trainer sichtbar!' : '!'}
+              „{title}“ {isEditing ? 'aktualisiert' : 'gespeichert'}
+              {supabaseEnabled ? ' – für alle Trainer sichtbar!' : '!'}
             </div>
           ) : (
             <>
@@ -174,7 +225,8 @@ export default function CreateExerciseModal({ onClose }: { onClose: () => void }
                     type="text"
                     value={code}
                     onChange={(e) => setCode(e.target.value.toUpperCase())}
-                    className="input font-mono"
+                    disabled={isEditing}
+                    className="input font-mono disabled:cursor-not-allowed disabled:opacity-60"
                   />
                 </Field>
 
@@ -192,18 +244,25 @@ export default function CreateExerciseModal({ onClose }: { onClose: () => void }
                   </select>
                 </Field>
 
-                <Field label="Slot *">
-                  <select
-                    value={slotNumber}
-                    onChange={(e) => setSlotNumber(Number(e.target.value) as SlotNumber)}
-                    className="input"
-                  >
-                    {slots.map((s) => (
-                      <option key={s.number} value={s.number}>
-                        Slot {s.number} · {s.name}
-                      </option>
-                    ))}
-                  </select>
+                <Field label="Slot(s) *">
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    {slots.map((s) => {
+                      const active = slotNumbers.has(s.number);
+                      return (
+                        <button
+                          key={s.number}
+                          type="button"
+                          onClick={() => toggleSlot(s.number)}
+                          style={active ? { background: s.color } : undefined}
+                          className={`rounded-full px-2.5 py-1 text-[12px] font-bold transition-colors ${
+                            active ? 'text-white' : 'bg-soft text-muted hover:bg-line/60'
+                          }`}
+                        >
+                          Slot {s.number}
+                        </button>
+                      );
+                    })}
+                  </div>
                 </Field>
               </div>
 
@@ -257,6 +316,11 @@ export default function CreateExerciseModal({ onClose }: { onClose: () => void }
                   <>
                     <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" />
                     Wird gespeichert…
+                  </>
+                ) : isEditing ? (
+                  <>
+                    <Save size={17} strokeWidth={2.5} />
+                    Änderungen speichern
                   </>
                 ) : (
                   <>

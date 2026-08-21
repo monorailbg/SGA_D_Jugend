@@ -73,7 +73,7 @@ function pickWeighted(pool: Exercise[], phaseId: number, focusCategory: Category
 
 export default function SessionBuilder() {
   const { requestExercise, hiddenSlots } = useAppContext();
-  const allExercises = useAllExercises();
+  const { exercises: allExercises } = useAllExercises();
   const exerciseByCode = useExerciseByCode();
   const [creating, setCreating] = useState(false);
   const [playerCount, setPlayerCount] = useState(12);

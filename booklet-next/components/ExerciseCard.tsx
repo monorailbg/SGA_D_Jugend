@@ -2,10 +2,11 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles } from 'lucide-react';
+import { Sparkles, Trash2 } from 'lucide-react';
 import type { Exercise } from '@/lib/data/types';
 import { categoryByCode } from '@/lib/data/categories';
 import { slots as allSlots } from '@/lib/data/slots';
+import { deleteCustomExercise } from '@/lib/customExercises';
 import Accordion from './Accordion';
 
 const BLOCK_ORDER = ['Ziel', 'Material', 'Aufbau', 'Ablauf', 'Varianten', 'Coaching-Punkte'] as const;
@@ -22,8 +23,25 @@ export default function ExerciseCard({
   const category = categoryByCode[exercise.category];
   const accent = exercise.color ?? category.color;
   const [imgError, setImgError] = useState(false);
+  const [confirmingDelete, setConfirmingDelete] = useState(false);
+  const [deleting, setDeleting] = useState(false);
+  const [deleteError, setDeleteError] = useState<string | null>(null);
   const showImage = exercise.image && !imgError;
   const planBKey = Object.keys(exercise.blocks).find((k) => k.startsWith('Plan B'));
+
+  async function handleDelete() {
+    setDeleting(true);
+    setDeleteError(null);
+    try {
+      await deleteCustomExercise(exercise.code);
+    } catch (err) {
+      setDeleteError(err instanceof Error ? err.message : 'Löschen fehlgeschlagen.');
+      setDeleting(false);
+      setConfirmingDelete(false);
+    }
+    // On success the card unmounts itself once the exercise disappears from the
+    // shared list, so no need to reset deleting/confirmingDelete state here.
+  }
 
   return (
     <motion.article
@@ -38,8 +56,40 @@ export default function ExerciseCard({
       <header style={{ borderLeftColor: accent }} className="border-l-[6px] bg-soft px-[18px] py-3.5">
         <div className="flex items-center gap-3">
           <span style={{ borderColor: accent }} className="ccode big">{exercise.code}</span>
-          <h3 className="m-0 text-[21px] font-extrabold">{exercise.title}</h3>
+          <h3 className="m-0 flex-1 text-[21px] font-extrabold">{exercise.title}</h3>
+          {exercise.isCustom && !confirmingDelete && (
+            <button
+              type="button"
+              onClick={() => setConfirmingDelete(true)}
+              aria-label="Übung löschen"
+              className="shrink-0 rounded-full p-2 text-muted transition-colors hover:bg-[#d23b3b]/10 hover:text-[#d23b3b]"
+            >
+              <Trash2 size={16} strokeWidth={2.5} />
+            </button>
+          )}
+          {exercise.isCustom && confirmingDelete && (
+            <div className="flex shrink-0 items-center gap-1.5">
+              <span className="text-[12px] font-bold text-muted">Löschen?</span>
+              <button
+                type="button"
+                onClick={handleDelete}
+                disabled={deleting}
+                className="rounded-full bg-[#d23b3b] px-2.5 py-1 text-[12px] font-bold text-white transition-colors hover:bg-[#b32e2e] disabled:opacity-60"
+              >
+                {deleting ? '…' : 'Ja'}
+              </button>
+              <button
+                type="button"
+                onClick={() => setConfirmingDelete(false)}
+                disabled={deleting}
+                className="rounded-full border border-line px-2.5 py-1 text-[12px] font-bold text-ink hover:bg-line/40"
+              >
+                Nein
+              </button>
+            </div>
+          )}
         </div>
+        {deleteError && <p className="mt-1.5 text-[12px] font-bold text-[#d23b3b]">{deleteError}</p>}
         <div className="mt-2 flex flex-wrap items-center gap-1.5">
           {exercise.slots.map((slotNum) => {
             const slot = allSlots.find((s) => s.number === slotNum);

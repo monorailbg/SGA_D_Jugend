@@ -119,6 +119,17 @@ export async function addCustomExercise(drill: NewDrill): Promise<void> {
   persistLocal([...rest, exercise]);
 }
 
+/** Throws on failure so the caller can show an error instead of silently doing nothing. */
+export async function deleteCustomExercise(code: string): Promise<void> {
+  if (supabase) {
+    const { error } = await supabase.from('custom_drills').delete().eq('code', code);
+    if (error) throw new Error(error.message);
+    await loadRemote();
+    return;
+  }
+  persistLocal(loadLocal().filter((e) => e.code !== code));
+}
+
 // Shared across every component using the hook - Supabase's client reuses channels by
 // name, so a second independent `.channel('x').on(...).subscribe()` call for a channel
 // that's already subscribed throws. One module-level subscription notifies everyone.

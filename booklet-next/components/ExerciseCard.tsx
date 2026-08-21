@@ -30,7 +30,7 @@ export default function ExerciseCard({
       id={`ex-${exercise.code}`}
       animate={highlighted ? { boxShadow: ['0 0 0 0 rgba(21,101,192,0)', '0 0 0 6px rgba(21,101,192,.35)', '0 0 0 0 rgba(21,101,192,0)'] } : {}}
       transition={{ duration: 1.4 }}
-      whileHover={{ y: -2, boxShadow: '0 8px 24px rgba(10,25,41,.1)' }}
+      whileHover={{ y: -2 }}
       whileTap={{ scale: 0.99 }}
       className="card my-3.5 scroll-mt-24 overflow-hidden"
     >

@@ -54,7 +54,7 @@ export default function ExerciseCard({
         </div>
       </header>
       <div className="grid gap-[18px] p-[18px] md:grid-cols-[minmax(280px,40%)_1fr]">
-        <div className="overflow-hidden rounded-xl border border-line bg-soft">
+        <div className="aspect-[4/3] overflow-hidden rounded-xl border border-line bg-soft">
           {showImage ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
@@ -62,10 +62,10 @@ export default function ExerciseCard({
               alt={exercise.title}
               loading="lazy"
               onError={() => setImgError(true)}
-              className="block w-full"
+              className="block h-full w-full object-cover"
             />
           ) : (
-            <div style={{ background: category.color }} className="flex aspect-[4/3] items-center justify-center">
+            <div style={{ background: category.color }} className="flex h-full items-center justify-center">
               <span className="font-mono text-3xl font-extrabold text-white/90">{category.code}</span>
             </div>
           )}

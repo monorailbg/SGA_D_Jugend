@@ -23,10 +23,15 @@ function SlotTiles({ exercises, onPick }: { exercises: ReturnType<typeof useExer
             onClick={() => onPick(ex.code)}
             className="flex flex-col overflow-hidden rounded-xl border border-line bg-paper text-left text-ink transition-transform hover:-translate-y-0.5 hover:shadow-lg"
           >
-            <div className="h-[100px] shrink-0 overflow-hidden bg-soft">
+            <div className="relative h-[100px] shrink-0 overflow-hidden bg-soft">
               {ex.image && (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img src={ex.image} alt={ex.title} className="h-full w-full object-cover" loading="lazy" />
+              )}
+              {ex.isCustom && (
+                <span className="absolute right-1.5 top-1.5 rounded-full bg-ink/85 px-1.5 py-0.5 text-[9.5px] font-extrabold uppercase text-white">
+                  Trainer
+                </span>
               )}
             </div>
             <div className="flex flex-col gap-0.5 p-2.5">

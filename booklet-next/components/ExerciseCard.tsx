@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Sparkles } from 'lucide-react';
 import type { Exercise } from '@/lib/data/types';
 import { categoryByCode } from '@/lib/data/categories';
 import { slots as allSlots } from '@/lib/data/slots';
@@ -51,6 +52,12 @@ export default function ExerciseCard({
           <span style={{ background: category.color }} className="chip">
             {category.code} · {category.name}
           </span>
+          {exercise.isCustom && (
+            <span className="chip flex items-center gap-1 bg-ink text-white">
+              <Sparkles size={11} strokeWidth={2.5} />
+              Trainer-Übung
+            </span>
+          )}
         </div>
       </header>
       <div className="grid gap-[18px] p-[18px] md:grid-cols-[minmax(280px,40%)_1fr]">

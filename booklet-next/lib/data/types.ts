@@ -40,6 +40,8 @@ export interface Exercise {
   slots: SlotNumber[];
   image: string | null;
   blocks: ExerciseBlocks;
+  /** True for a coach-submitted drill (from Supabase custom_drills), so the UI can badge it. */
+  isCustom?: boolean;
 }
 
 export interface WeekPlanEntry {

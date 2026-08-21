@@ -362,6 +362,11 @@ export default function SessionBuilder() {
                                 {repCounts[slot.number]}. Mal in Phase {phaseId}
                               </span>
                             )}
+                            {exercise.isCustom && (
+                              <span className="ml-auto rounded-full bg-ink px-1.5 py-0.5 text-[9.5px] font-extrabold uppercase text-white">
+                                Trainer
+                              </span>
+                            )}
                           </div>
                           <div className="text-[13px] font-bold leading-snug text-ink">{exercise.title}</div>
                         </div>

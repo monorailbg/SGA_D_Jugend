@@ -6,7 +6,8 @@ import { X, Upload, Plus } from 'lucide-react';
 import { categories } from '@/lib/data/categories';
 import { slots } from '@/lib/data/slots';
 import type { CategoryCode, Exercise, SlotNumber } from '@/lib/data/types';
-import { addCustomExercise, useAllExercises } from '@/lib/customExercises';
+import { addCustomExercise, uploadDrillImage, useAllExercises } from '@/lib/customExercises';
+import { supabaseEnabled } from '@/lib/supabaseClient';
 
 const BLOCK_FIELDS: { key: string; label: string; placeholder: string; required?: boolean }[] = [
   { key: 'Ziel', label: 'Ziel', placeholder: 'Was soll die Übung trainieren?', required: true },
@@ -55,6 +56,7 @@ export default function CreateExerciseModal({ onClose }: { onClose: () => void }
   const [planB, setPlanB] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [saved, setSaved] = useState(false);
+  const [saving, setSaving] = useState(false);
 
   function nextCode(cat: CategoryCode, all: Exercise[]): string {
     const nums = all
@@ -82,7 +84,7 @@ export default function CreateExerciseModal({ onClose }: { onClose: () => void }
     }
   }
 
-  function handleSave() {
+  async function handleSave() {
     setError(null);
     if (!title.trim()) return setError('Titel fehlt.');
     if (!code.trim()) return setError('Code fehlt.');
@@ -99,22 +101,24 @@ export default function CreateExerciseModal({ onClose }: { onClose: () => void }
     }
     if (planB.trim()) finalBlocks['Plan B'] = planB.trim();
 
-    const categoryMeta = categories.find((c) => c.code === category)!;
-    const slotMeta = slots.find((s) => s.number === slotNumber)!;
-    const exercise: Exercise = {
-      code: code.trim(),
-      title: title.trim(),
-      category,
-      color: null,
-      tags: [`Slot ${slotNumber} · ${slotMeta.name}`, `${category} · ${categoryMeta.name}`, 'Eigene Übung'],
-      slots: [slotNumber],
-      image,
-      blocks: finalBlocks,
-    };
-
-    addCustomExercise(exercise);
-    setSaved(true);
-    setTimeout(onClose, 900);
+    setSaving(true);
+    try {
+      const hostedImage = image ? await uploadDrillImage(image, code.trim()) : null;
+      await addCustomExercise({
+        code: code.trim(),
+        title: title.trim(),
+        category,
+        slot: slotNumber,
+        image: hostedImage,
+        blocks: finalBlocks,
+      });
+      setSaved(true);
+      setTimeout(onClose, 900);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Speichern fehlgeschlagen. Bitte erneut versuchen.');
+    } finally {
+      setSaving(false);
+    }
   }
 
   return (
@@ -137,7 +141,11 @@ export default function CreateExerciseModal({ onClose }: { onClose: () => void }
           <div className="mb-4 flex items-start justify-between">
             <div>
               <h3 className="text-[20px] font-extrabold text-ink">Eigene Übung erstellen</h3>
-              <p className="text-[13px] text-muted">Wird lokal in diesem Browser gespeichert und erscheint sofort im Katalog.</p>
+              <p className="text-[13px] text-muted">
+                {supabaseEnabled
+                  ? 'Wird für alle Trainer sichtbar gespeichert und erscheint sofort im Katalog.'
+                  : 'Wird lokal in diesem Browser gespeichert und erscheint sofort im Katalog.'}
+              </p>
             </div>
             <button type="button" onClick={onClose} aria-label="Schließen" className="rounded-full p-1.5 text-muted hover:bg-soft hover:text-ink">
               <X size={18} strokeWidth={2.5} />
@@ -146,7 +154,7 @@ export default function CreateExerciseModal({ onClose }: { onClose: () => void }
 
           {saved ? (
             <div className="rounded-xl border border-[#1f9d57]/30 bg-[#1f9d57]/10 p-6 text-center text-[14px] font-bold text-[#1f9d57]">
-              „{title}“ gespeichert!
+              „{title}“ gespeichert{supabaseEnabled ? ' – für alle Trainer sichtbar!' : '!'}
             </div>
           ) : (
             <>
@@ -242,10 +250,20 @@ export default function CreateExerciseModal({ onClose }: { onClose: () => void }
               <button
                 type="button"
                 onClick={handleSave}
-                className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-green-d py-3 font-ui text-[14px] font-extrabold text-white transition-transform hover:bg-green active:scale-[0.99]"
+                disabled={saving}
+                className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-green-d py-3 font-ui text-[14px] font-extrabold text-white transition-transform hover:bg-green active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60"
               >
-                <Plus size={17} strokeWidth={2.5} />
-                Übung speichern
+                {saving ? (
+                  <>
+                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" />
+                    Wird gespeichert…
+                  </>
+                ) : (
+                  <>
+                    <Plus size={17} strokeWidth={2.5} />
+                    Übung speichern
+                  </>
+                )}
               </button>
             </>
           )}

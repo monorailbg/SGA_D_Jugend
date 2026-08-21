@@ -13,12 +13,12 @@ interface RawExercise {
 }
 
 function parseSlots(tags: string[]): SlotNumber[] {
-  const result: SlotNumber[] = [];
+  const result = new Set<SlotNumber>();
   for (const tag of tags) {
     const m = tag.match(/^Slot (\d)/);
-    if (m) result.push(Number(m[1]) as SlotNumber);
+    if (m) result.add(Number(m[1]) as SlotNumber);
   }
-  return result;
+  return [...result];
 }
 
 function parseCategory(code: string, tags: string[]): CategoryCode {
